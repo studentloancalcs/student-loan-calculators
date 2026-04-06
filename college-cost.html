@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Cost Calculator 2026 - Compare True Cost of Attendance</title>
+    <meta name="description" content="Compare the true cost of attendance across colleges. Calculate net cost, 4-year totals, monthly loan payments, and ROI to make informed decisions.">
+    <meta name="keywords" content="college cost calculator, compare college costs, true cost of college, college ROI calculator">
+    <meta name="author" content="Student Loan Calculator">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/college-cost.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="College Cost Calculator 2026 - Compare True Cost of Attendance">
+    <meta property="og:description" content="Compare the true cost of attendance across colleges and calculate monthly loan payments with our free calculator.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/college-cost.html">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "College Cost Calculator",
+        "description": "Free calculator to compare college costs and estimate loan payments",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/college-cost.html",
+        "applicationCategory": "FinanceApplication"
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate the true cost of college?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The true cost includes tuition, fees, room and board, books, supplies, and personal expenses, minus any grants, scholarships, and financial aid you receive. Our calculator helps you compare the net cost across multiple schools side by side."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between sticker price and net price?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sticker price is the published cost of attendance. Net price is what you actually pay after subtracting grants and scholarships. Most students pay significantly less than sticker price. Focus on net price when comparing colleges."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much student loan debt is too much?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A common rule of thumb is to borrow no more than your expected first-year salary after graduation. If your total debt exceeds your expected annual income, you may struggle with monthly payments. Our calculator shows the monthly payment for each school's projected loan burden."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is ROI for a college degree?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Return on investment (ROI) compares the total cost of your education to the increase in lifetime earnings it provides. A positive ROI means the degree pays for itself over time. Factors include your major, school, career field, and total debt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are net price calculators at college websites accurate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Unfortunately, about 40% of college net price calculators use data that is 3-4 years old. Some schools have multiple calculators with projections differing by $40,000 or more. Our calculator lets you input your actual financial aid numbers for a more accurate comparison."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my financial information safe on this site?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We do not collect any data. All calculations happen in your browser. No information is sent to our servers or shared with colleges, lenders, or any third parties."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold" style="color: #1B2A4A;">Student Loan Calculators</h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                    <a href="rap-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                    <a href="plan-comparison.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                    <a href="save-transition.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                    <a href="payoff-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                    <a href="pslf-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                    <a href="college-cost.html" class="px-3 py-2 rounded-md text-sm font-medium text-white" style="background-color: #1B2A4A;">College Costs</a>
+                    <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md" style="color: #1B2A4A;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                <a href="rap-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                <a href="plan-comparison.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                <a href="save-transition.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                <a href="payoff-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                <a href="pslf-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                <a href="college-cost.html" class="block px-3 py-2 rounded-md text-base font-medium text-white" style="background-color: #1B2A4A;">College Costs</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">College Cost Comparator</span>
+        </nav>
+    </div>
+
+    <!-- AdSense Placeholder -->
+    <!-- AdSense -->
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-3" style="color: #1B2A4A;">College Cost Calculator 2026</h1>
+            <p class="text-gray-600">Compare the true cost of attendance across colleges and estimate your monthly loan payments.</p>
+        </div>
+
+        <!-- Global Inputs -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8" style="background-color: #EBF5FB;">
+            <h2 class="text-xl font-bold mb-4" style="color: #1B2A4A;">Your Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Expected Starting Salary</label>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                        <input type="number" id="salary" value="50000" min="20000" max="300000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Family Contribution (Per Year)</label>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                        <input type="number" id="familyContribution" value="10000" min="0" max="300000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- College Comparison Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- College 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;">College 1</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">College Name</label>
+                        <input type="text" id="college1Name" value="University A" placeholder="College name" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Annual Tuition ($)</label>
+                        <input type="number" id="college1Tuition" value="30000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Room & Board ($)</label>
+                        <input type="number" id="college1RoomBoard" value="12000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Fees ($)</label>
+                        <input type="number" id="college1Fees" value="2000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Books/Supplies ($)</label>
+                        <input type="number" id="college1Books" value="1500" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Grants/Scholarships ($)</label>
+                        <input type="number" id="college1Aid" value="5000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- College 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;">College 2</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">College Name</label>
+                        <input type="text" id="college2Name" value="University B" placeholder="College name" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Annual Tuition ($)</label>
+                        <input type="number" id="college2Tuition" value="25000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Room & Board ($)</label>
+                        <input type="number" id="college2RoomBoard" value="10000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Fees ($)</label>
+                        <input type="number" id="college2Fees" value="1800" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Books/Supplies ($)</label>
+                        <input type="number" id="college2Books" value="1300" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Grants/Scholarships ($)</label>
+                        <input type="number" id="college2Aid" value="8000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- College 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;">College 3</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">College Name</label>
+                        <input type="text" id="college3Name" value="University C" placeholder="College name" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Annual Tuition ($)</label>
+                        <input type="number" id="college3Tuition" value="20000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Room & Board ($)</label>
+                        <input type="number" id="college3RoomBoard" value="9000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Fees ($)</label>
+                        <input type="number" id="college3Fees" value="1500" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Books/Supplies ($)</label>
+                        <input type="number" id="college3Books" value="1200" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1" style="color: #1B2A4A;">Grants/Scholarships ($)</label>
+                        <input type="number" id="college3Aid" value="10000" min="0" class="w-full px-3 py-2 border-2 border-gray-300 rounded-lg focus:outline-none text-sm" style="border-color: #2E75B6;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="calculateBtn" class="w-full mb-8 py-3 rounded-lg text-white font-bold text-lg" style="background-color: #2E75B6;">Compare Colleges</button>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+
+        <!-- Comparison Chart -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Cost Comparison</h2>
+            <canvas id="costChart" height="80"></canvas>
+        </div>
+
+        <!-- Results Table -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8 overflow-x-auto">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Detailed Comparison</h2>
+            <table class="w-full text-sm">
+                <thead style="background-color: #EBF5FB;">
+                    <tr>
+                        <th class="px-4 py-3 text-left font-bold" style="color: #1B2A4A;">College</th>
+                        <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Annual Cost</th>
+                        <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Net Annual Cost</th>
+                        <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">4-Year Total</th>
+                        <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Est. Loan Needed</th>
+                        <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Monthly Payment</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ROI Analysis -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div id="college1ROI" class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;" id="roi1Name">University A</h3>
+                <div class="space-y-3">
+                    <div>
+                        <p class="text-xs text-gray-600">Years to Break Even</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi1Years">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Debt-to-Income Ratio</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi1DTI">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Est. Loan Balance</p>
+                        <p class="text-lg font-bold" style="color: #1B2A4A;" id="roi1Loan">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="college2ROI" class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;" id="roi2Name">University B</h3>
+                <div class="space-y-3">
+                    <div>
+                        <p class="text-xs text-gray-600">Years to Break Even</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi2Years">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Debt-to-Income Ratio</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi2DTI">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Est. Loan Balance</p>
+                        <p class="text-lg font-bold" style="color: #1B2A4A;" id="roi2Loan">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="college3ROI" class="bg-white rounded-lg shadow-lg p-6" style="background-color: #EBF5FB;">
+                <h3 class="text-lg font-bold mb-4" style="color: #1B2A4A;" id="roi3Name">University C</h3>
+                <div class="space-y-3">
+                    <div>
+                        <p class="text-xs text-gray-600">Years to Break Even</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi3Years">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Debt-to-Income Ratio</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="roi3DTI">--</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-600">Est. Loan Balance</p>
+                        <p class="text-lg font-bold" style="color: #1B2A4A;" id="roi3Loan">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+
+        <!-- Education Section -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8" style="border-left: 4px solid #2E75B6;">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Hidden College Costs to Consider</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Transportation</h4>
+                    <p class="text-sm text-gray-700 mb-4">Travel home during breaks, campus parking, and commuting costs add up quickly.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Technology</h4>
+                    <p class="text-sm text-gray-700 mb-4">Computers, software subscriptions, and internet access are often overlooked.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Personal Expenses</h4>
+                    <p class="text-sm text-gray-700 mb-4">Clothing, toiletries, phone plans, and entertainment vary greatly by student.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Health & Insurance</h4>
+                    <p class="text-sm text-gray-700 mb-4">Medical expenses, health insurance, and dental care may not be included.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>How do I calculate the true cost of college?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>The true cost includes tuition, fees, room and board, books, supplies, and personal expenses, minus any grants, scholarships, and financial aid you receive. Our calculator helps you compare the net cost across multiple schools side by side.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is the difference between sticker price and net price?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Sticker price is the published cost of attendance. Net price is what you actually pay after subtracting grants and scholarships. Most students pay significantly less than sticker price. Focus on net price when comparing colleges.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>How much student loan debt is too much?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>A common rule of thumb is to borrow no more than your expected first-year salary after graduation. If your total debt exceeds your expected annual income, you may struggle with monthly payments. Our calculator shows the monthly payment for each school's projected loan burden.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is ROI for a college degree?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Return on investment (ROI) compares the total cost of your education to the increase in lifetime earnings it provides. A positive ROI means the degree pays for itself over time. Factors include your major, school, career field, and total debt.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Are net price calculators at college websites accurate?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Unfortunately, about 40% of college net price calculators use data that is 3-4 years old. Some schools have multiple calculators with projections differing by $40,000 or more. Our calculator lets you input your actual financial aid numbers for a more accurate comparison.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Is my financial information safe on this site?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. We do not collect any data. All calculations happen in your browser. No information is sent to our servers or shared with colleges, lenders, or any third parties.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Tools</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Related Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="payoff-calculator.html" class="hover:underline">Loan Payoff</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="index.html" class="hover:underline">All Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. College costs based on 2026 estimates. Results are for educational purposes only.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        function getCollegeData(num) {
+            return {
+                name: document.getElementById(`college${num}Name`).value,
+                tuition: parseFloat(document.getElementById(`college${num}Tuition`).value),
+                roomBoard: parseFloat(document.getElementById(`college${num}RoomBoard`).value),
+                fees: parseFloat(document.getElementById(`college${num}Fees`).value),
+                books: parseFloat(document.getElementById(`college${num}Books`).value),
+                aid: parseFloat(document.getElementById(`college${num}Aid`).value)
+            };
+        }
+
+        function calculateCollegeCost() {
+            const salary = parseFloat(document.getElementById('salary').value);
+            const familyContribution = parseFloat(document.getElementById('familyContribution').value) * 4; // 4 years
+
+            const colleges = [
+                getCollegeData(1),
+                getCollegeData(2),
+                getCollegeData(3)
+            ];
+
+            const loanRate = 0.0653; // 6.53% federal loan rate
+            const loanYears = 10;
+            const monthlyRate = loanRate / 12;
+            const numPayments = loanYears * 12;
+
+            const results = [];
+
+            colleges.forEach((college, idx) => {
+                const annualCost = college.tuition + college.roomBoard + college.fees + college.books;
+                const netAnnualCost = Math.max(0, annualCost - college.aid);
+                const fourYearTotal = netAnnualCost * 4;
+                const loanNeeded = Math.max(0, fourYearTotal - familyContribution);
+
+                // Calculate monthly payment using loan formula
+                let monthlyPayment = 0;
+                if (loanNeeded > 0) {
+                    monthlyPayment = (loanNeeded * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -numPayments));
+                }
+
+                // Calculate years to break even (simple payback period)
+                let yearsToBreakEven = loanNeeded / (salary * 0.1); // Assumes 10% of salary toward loans
+                if (yearsToBreakEven < 0) yearsToBreakEven = 0;
+
+                // Debt-to-income ratio (monthly debt / monthly income)
+                const monthlyIncome = salary / 12;
+                const dtiRatio = monthlyPayment / monthlyIncome;
+
+                results.push({
+                    name: college.name,
+                    annualCost: annualCost,
+                    netAnnualCost: netAnnualCost,
+                    fourYearTotal: fourYearTotal,
+                    loanNeeded: loanNeeded,
+                    monthlyPayment: monthlyPayment,
+                    yearsToBreakEven: yearsToBreakEven,
+                    dtiRatio: dtiRatio
+                });
+            });
+
+            // Update table
+            const tbody = document.getElementById('resultsTable');
+            tbody.innerHTML = '';
+            results.forEach(r => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-4 py-3 font-medium">${r.name}</td>
+                    <td class="px-4 py-3 text-right">$${r.annualCost.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+                    <td class="px-4 py-3 text-right">$${r.netAnnualCost.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+                    <td class="px-4 py-3 text-right">$${r.fourYearTotal.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+                    <td class="px-4 py-3 text-right">$${r.loanNeeded.toLocaleString('en-US', {maximumFractionDigits: 0})}</td>
+                    <td class="px-4 py-3 text-right">$${r.monthlyPayment.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                `;
+            });
+
+            // Update ROI cards
+            results.forEach((r, idx) => {
+                document.getElementById(`roi${idx + 1}Name`).textContent = r.name;
+                document.getElementById(`roi${idx + 1}Years`).textContent = r.yearsToBreakEven.toFixed(1) + ' years';
+                document.getElementById(`roi${idx + 1}DTI`).textContent = (r.dtiRatio * 100).toFixed(1) + '%';
+                document.getElementById(`roi${idx + 1}Loan`).textContent = '$' + r.loanNeeded.toLocaleString('en-US', {maximumFractionDigits: 0});
+            });
+
+            // Update chart
+            updateCostChart(results);
+        }
+
+        let costChart;
+
+        function updateCostChart(results) {
+            const ctx = document.getElementById('costChart').getContext('2d');
+            
+            if (costChart) {
+                costChart.destroy();
+            }
+
+            const labels = results.map(r => r.name);
+
+            costChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Tuition & Fees',
+                            data: results.map(r => r.annualCost * 0.5), // Approximate tuition portion
+                            backgroundColor: '#2E75B6'
+                        },
+                        {
+                            label: 'Room & Board',
+                            data: results.map(r => r.annualCost * 0.35),
+                            backgroundColor: '#5B9BD5'
+                        },
+                        {
+                            label: 'Books & Supplies',
+                            data: results.map(r => r.annualCost * 0.15),
+                            backgroundColor: '#B4C6E7'
+                        },
+                        {
+                            label: 'Less: Aid/Scholarships',
+                            data: results.map(r => -r.aid),
+                            backgroundColor: '#70AD47'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    indexAxis: 'x',
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: true,
+                        },
+                        y: {
+                            stacked: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('calculateBtn').addEventListener('click', calculateCollegeCost);
+        
+        ['salary', 'familyContribution'].forEach(id => {
+            document.getElementById(id).addEventListener('change', calculateCollegeCost);
+        });
+
+        // College input listeners
+        for (let i = 1; i <= 3; i++) {
+            [`college${i}Name`, `college${i}Tuition`, `college${i}RoomBoard`, `college${i}Fees`, `college${i}Books`, `college${i}Aid`].forEach(id => {
+                document.getElementById(id).addEventListener('change', calculateCollegeCost);
+            });
+        }
+
+        // Initial calculation
+        calculateCollegeCost();
+    </script>
+</body>
+</html>

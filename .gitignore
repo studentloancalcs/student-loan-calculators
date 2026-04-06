@@ -1,0 +1,4 @@
+# Ignore deploy scripts and logs
+*.ps1
+deploy-log.txt
+seo-content/

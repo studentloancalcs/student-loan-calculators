@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAP Payment Calculator 2026 - Free Repayment Assistance Plan Tool</title>
+    <meta name="description" content="Calculate your RAP (Repayment Assistance Plan) payment based on income and family size. Updated for 2026 Federal Poverty Line. Free calculator, no data collection.">
+    <meta name="keywords" content="RAP calculator, repayment assistance plan, student loan payment calculator, income-driven repayment">
+    <meta name="author" content="Student Loan Calculators">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="RAP Payment Calculator 2026">
+    <meta property="og:description" content="Free RAP payment calculator based on 2026 Federal Poverty Line guidelines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/rap-calculator.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "RAP Payment Calculator",
+        "description": "Calculate Repayment Assistance Plan payments",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/rap-calculator.html",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the Repayment Assistance Plan (RAP)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RAP is a new federal income-driven repayment plan launching July 1, 2026. It replaces the SAVE plan and calculates your monthly payment as 1-10% of discretionary income based on your income tier relative to the Federal Poverty Line. Borrowers below 225% FPL pay just $10/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is my RAP payment calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your payment is based on your discretionary income (your income minus 225% of the Federal Poverty Line for your family size). The percentage applied ranges from 1% at 225-275% FPL up to 10% above 475% FPL. The minimum payment is $10/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When does the RAP plan start?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RAP takes effect July 1, 2026. If you were on the SAVE plan, you have until September 28, 2026 (90 days) to choose a new plan. If you do not select one, you may be auto-enrolled in the Standard or Tiered Standard plan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does RAP offer loan forgiveness?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Under RAP, any remaining balance is forgiven after 30 years of qualifying payments. This is longer than the previous SAVE plan's 20-year forgiveness timeline for undergraduate loans."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the Federal Poverty Line used in RAP calculations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 2026, the FPL is $15,650 for a single person, with $5,580 added for each additional family member. Your family size includes you, your spouse, and your dependents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my data safe when I use this calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. All calculations happen entirely in your browser using JavaScript. No personal data is sent to any server, stored, or shared with third parties. We do not collect any user information."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-navy { background-color: #1B2A4A; }
+        .text-navy { color: #1B2A4A; }
+        .accent-blue { color: #2E75B6; }
+        .bg-accent-blue { background-color: #2E75B6; }
+        .bg-light-blue { background-color: #EBF5FB; }
+        .border-accent { border-color: #2E75B6; }
+    </style>
+</head>
+<body class="bg-light-blue">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="/">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="/" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="/" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 py-3 text-sm text-gray-600">
+        <a href="/" class="accent-blue font-medium">Home</a> / <span>RAP Calculator</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-navy mb-4">RAP Payment Calculator 2026</h1>
+        <p class="text-gray-700 mb-8">Enter your information to estimate your Repayment Assistance Plan payment. Updated for 2026 Federal Poverty Line guidelines.</p>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Input Form -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-8 sticky top-24">
+                    <h2 class="text-2xl font-bold text-navy mb-6">Your Information</h2>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Annual Gross Income</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                            <input type="number" id="income" placeholder="50000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="50000">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Family Size</label>
+                        <select id="familySize" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="1">1 (Just you)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Total Loan Balance</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                            <input type="number" id="loanBalance" placeholder="100000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="100000">
+                        </div>
+                    </div>
+
+                    <button id="calculateBtn" class="w-full bg-accent-blue text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        Calculate RAP Payment
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <h2 class="text-2xl font-bold text-navy mb-6">Your RAP Payment Results</h2>
+
+                    <div id="results" class="hidden">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-light-blue p-6 rounded-lg border-l-4 border-accent-blue">
+                                <p class="text-gray-600 text-sm font-semibold mb-1">MONTHLY PAYMENT</p>
+                                <p id="monthlyPayment" class="text-4xl font-bold accent-blue">$0</p>
+                            </div>
+                            <div class="bg-light-blue p-6 rounded-lg border-l-4 border-accent-blue">
+                                <p class="text-gray-600 text-sm font-semibold mb-1">ANNUAL PAYMENT</p>
+                                <p id="annualPayment" class="text-4xl font-bold accent-blue">$0</p>
+                            </div>
+                            <div class="bg-light-blue p-6 rounded-lg border-l-4 border-accent-blue">
+                                <p class="text-gray-600 text-sm font-semibold mb-1">PAYMENT TIER</p>
+                                <p id="paymentTier" class="text-2xl font-bold text-navy">0%</p>
+                            </div>
+                            <div class="bg-light-blue p-6 rounded-lg border-l-4 border-accent-blue">
+                                <p class="text-gray-600 text-sm font-semibold mb-1">POVERTY LEVEL</p>
+                                <p id="povertyLevel" class="text-2xl font-bold text-navy">0%</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded mb-6">
+                            <p class="text-sm text-yellow-800">
+                                <strong>Note:</strong> This calculator uses the 2026 Federal Poverty Line. Payment amounts are estimates. Verify with your loan servicer for official calculations.
+                            </p>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-navy mb-4">Details</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between pb-3 border-b border-gray-200">
+                                    <span class="text-gray-700">Federal Poverty Line (2026):</span>
+                                    <span id="fpl" class="font-semibold">$0</span>
+                                </div>
+                                <div class="flex justify-between pb-3 border-b border-gray-200">
+                                    <span class="text-gray-700">Discretionary Income:</span>
+                                    <span id="discretionaryIncome" class="font-semibold">$0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Forgiveness After 20 Years:</span>
+                                    <span id="forgivenessPotential" class="font-semibold">Possible</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="noResults" class="text-center py-8 text-gray-500">
+                        <p>Enter your information above and click "Calculate" to see your RAP payment estimate.</p>
+                    </div>
+                </div>
+
+                <!-- AdSense placeholder -->
+                <!-- AdSense -->
+
+                <!-- Chart -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-navy mb-6">Loan Balance Over 30 Years</h2>
+                    <canvas id="balanceChart" height="80"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Educational Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-6">Understanding RAP Payments</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-3">What is RAP?</h3>
+                    <p class="text-gray-700 mb-4">
+                        The Repayment Assistance Plan (RAP) is an income-driven repayment program for Canadian student loans. Your monthly payment is based on your income and family size, ensuring you pay what you can afford.
+                    </p>
+                    <h3 class="text-xl font-bold text-navy mb-3 mt-6">Payment Tiers (2026)</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>Below 225% FPL:</strong> $10/month minimum</li>
+                        <li><strong>225-275% FPL:</strong> 1% of discretionary income</li>
+                        <li><strong>275-325% FPL:</strong> 2% of discretionary income</li>
+                        <li><strong>325-375% FPL:</strong> 3% of discretionary income</li>
+                        <li><strong>375-425% FPL:</strong> 4% of discretionary income</li>
+                        <li><strong>425-475% FPL:</strong> 5% of discretionary income</li>
+                        <li><strong>Above 475% FPL:</strong> Up to 10% of discretionary income</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-navy mb-3">Key Facts</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="accent-blue mr-3 font-bold">•</span>
+                            <span>Payments are reassessed annually based on updated income information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-blue mr-3 font-bold">•</span>
+                            <span>If your payment is $0, interest still accumulates on unpaid loans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-blue mr-3 font-bold">•</span>
+                            <span>After 15 years on RAP, remaining balance may be forgiven (Canadian loans)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-blue mr-3 font-bold">•</span>
+                            <span>Family size includes spouse and dependent children</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="accent-blue mr-3 font-bold">•</span>
+                            <span>You must reapply annually to maintain your RAP status</span>
+                        </li>
+                    </ul>
+                    <h3 class="text-xl font-bold text-navy mb-3 mt-6">When to Use RAP</h3>
+                    <p class="text-gray-700 text-sm">
+                        RAP is ideal if your income is low relative to your loan balance, or if your financial circumstances have changed significantly.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is the Repayment Assistance Plan (RAP)?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>RAP is a new federal income-driven repayment plan launching July 1, 2026. It replaces the SAVE plan and calculates your monthly payment as 1-10% of discretionary income based on your income tier relative to the Federal Poverty Line. Borrowers below 225% FPL pay just $10/month.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>How is my RAP payment calculated?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Your payment is based on your discretionary income (your income minus 225% of the Federal Poverty Line for your family size). The percentage applied ranges from 1% at 225-275% FPL up to 10% above 475% FPL. The minimum payment is $10/month.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>When does the RAP plan start?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>RAP takes effect July 1, 2026. If you were on the SAVE plan, you have until September 28, 2026 (90 days) to choose a new plan. If you do not select one, you may be auto-enrolled in the Standard or Tiered Standard plan.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Does RAP offer loan forgiveness?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. Under RAP, any remaining balance is forgiven after 30 years of qualifying payments. This is longer than the previous SAVE plan's 20-year forgiveness timeline for undergraduate loans.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is the Federal Poverty Line used in RAP calculations?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>For 2026, the FPL is $15,650 for a single person, with $5,580 added for each additional family member. Your family size includes you, your spouse, and your dependents.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Is my data safe when I use this calculator?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. All calculations happen entirely in your browser using JavaScript. No personal data is sent to any server, stored, or shared with third parties. We do not collect any user information.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Calculators Footer -->
+    <section class="bg-white mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-navy mb-8">Related Calculators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="plan-comparison.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">Plan Comparison Tool</h3>
+                    <p class="text-gray-700">Compare RAP with other federal repayment plans.</p>
+                </a>
+                <a href="save-transition.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">SAVE Transition Guide</h3>
+                    <p class="text-gray-700">Learn about upcoming SAVE plan changes in 2026.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="header-navy text-white mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About</h4>
+                    <p class="text-gray-300">Free student loan calculators built to help you understand your repayment options.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Calculators</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rap-calculator.html" class="hover:text-white">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:text-white">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:text-white">SAVE Transition</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-300 text-sm">
+                    <strong>Disclaimer:</strong> This calculator provides estimates only. Contact your loan servicer for official RAP payment calculations.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 2026 Federal Poverty Line
+        const FPL_2026 = {
+            1: 15960,
+            2: 21640,
+            3: 27320,
+            4: 33000,
+            5: 38680,
+            6: 44360,
+            7: 50040,
+            8: 55720
+        };
+
+        let chart = null;
+
+        function calculateRAP() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const familySize = parseInt(document.getElementById('familySize').value) || 1;
+            const loanBalance = parseFloat(document.getElementById('loanBalance').value) || 0;
+
+            const fpl = FPL_2026[familySize] || 15960;
+            const povertyPercent = (income / fpl) * 100;
+            const discretionary = Math.max(0, income - (fpl * 2.25));
+
+            let rate = 0;
+            if (povertyPercent <= 225) {
+                rate = 0; // $10/month minimum handled separately
+            } else if (povertyPercent <= 275) {
+                rate = 0.01;
+            } else if (povertyPercent <= 325) {
+                rate = 0.02;
+            } else if (povertyPercent <= 375) {
+                rate = 0.03;
+            } else if (povertyPercent <= 425) {
+                rate = 0.04;
+            } else if (povertyPercent <= 475) {
+                rate = 0.05;
+            } else {
+                rate = 0.10;
+            }
+
+            let monthlyPayment = discretionary * rate / 12;
+            if (povertyPercent <= 225 && monthlyPayment === 0) {
+                monthlyPayment = 10;
+            }
+
+            const annualPayment = monthlyPayment * 12;
+            const totalIn30Years = annualPayment * 30;
+
+            // Update display
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('noResults').classList.add('hidden');
+
+            document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(2);
+            document.getElementById('annualPayment').textContent = '$' + annualPayment.toFixed(2);
+            document.getElementById('paymentTier').textContent = (rate * 100).toFixed(0) + '%';
+            document.getElementById('povertyLevel').textContent = povertyPercent.toFixed(1) + '%';
+            document.getElementById('fpl').textContent = '$' + fpl.toLocaleString();
+            document.getElementById('discretionaryIncome').textContent = '$' + discretionary.toFixed(2);
+            document.getElementById('forgivenessPotential').textContent = monthlyPayment > 0 ? 'Possible after 15 years' : 'Possible (interest accruing)';
+
+            // Generate chart data for balance over 30 years
+            const labels = [];
+            const balances = [];
+            let currentBalance = loanBalance;
+            const monthlyRate = 0.05 / 12; // Assume 5% annual interest
+
+            for (let year = 0; year <= 30; year++) {
+                labels.push(year);
+                balances.push(Math.max(0, currentBalance));
+                
+                for (let month = 0; month < 12 && year < 30; month++) {
+                    currentBalance = Math.max(0, currentBalance * (1 + monthlyRate) - monthlyPayment);
+                }
+            }
+
+            updateChart(labels, balances);
+        }
+
+        function updateChart(labels, balances) {
+            const ctx = document.getElementById('balanceChart').getContext('2d');
+            
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Loan Balance',
+                        data: balances,
+                        borderColor: '#2E75B6',
+                        backgroundColor: 'rgba(46, 117, 182, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#2E75B6',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: { font: { family: "'Inter', sans-serif" } }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Years'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.getElementById('calculateBtn').addEventListener('click', calculateRAP);
+
+        // Calculate on input change
+        document.getElementById('income').addEventListener('input', calculateRAP);
+        document.getElementById('familySize').addEventListener('change', calculateRAP);
+        document.getElementById('loanBalance').addEventListener('input', calculateRAP);
+
+        // Initial calculation
+        calculateRAP();
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

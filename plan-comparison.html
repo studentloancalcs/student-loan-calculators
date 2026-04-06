@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Student Loan Repayment Plans 2026 - RAP vs Standard vs Extended</title>
+    <meta name="description" content="Compare federal student loan repayment plans side-by-side: RAP, Standard 10-year, Extended 25-year, and IBR. See monthly payments, total costs, and forgiveness amounts.">
+    <meta name="keywords" content="loan plan comparison, repayment plan calculator, RAP vs standard, income-driven repayment">
+    <meta name="author" content="Student Loan Calculators">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Compare Federal Student Loan Repayment Plans 2026">
+    <meta property="og:description" content="Compare RAP, Standard, Extended, and IBR repayment plans side-by-side.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/plan-comparison.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Loan Plan Comparison Tool",
+        "description": "Compare different federal student loan repayment plans",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/plan-comparison.html",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which federal student loan repayment plan is best for me?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your income, loan balance, and goals. If you want the lowest monthly payment, RAP or IBR is usually best. If you want to pay the least total interest, the Standard 10-year plan is typically cheapest overall. Use our comparison tool above to see the exact numbers for your situation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between RAP and IBR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RAP (Repayment Assistance Plan) uses income tiers of 1-10% of discretionary income with 30-year forgiveness. IBR (Income-Based Repayment) uses 10-15% of discretionary income with 20-25 year forgiveness. RAP generally results in lower monthly payments for lower-income borrowers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I switch between repayment plans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Federal borrowers can switch repayment plans at any time by contacting their loan servicer. However, switching plans may affect your progress toward forgiveness, so consider the implications carefully before changing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens to my loans if I do not choose a plan by September 28, 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you were on the SAVE plan and do not select a new plan by the deadline, you will be automatically enrolled in the Standard Repayment Plan or the new Tiered Standard Plan. This could result in significantly higher monthly payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are these calculations exact?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "These are estimates based on 2026 federal poverty guidelines and standard amortization formulas. Actual payments may vary based on your specific loan terms, servicer calculations, and any future regulatory changes. Always verify with your loan servicer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account to use this tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All our calculators are completely free and require no registration, email, or personal information. Everything runs privately in your browser."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-navy { background-color: #1B2A4A; }
+        .text-navy { color: #1B2A4A; }
+        .accent-blue { color: #2E75B6; }
+        .bg-accent-blue { background-color: #2E75B6; }
+        .bg-light-blue { background-color: #EBF5FB; }
+        .border-accent { border-color: #2E75B6; }
+        .table-best { background-color: #E8F5E9; }
+    </style>
+</head>
+<body class="bg-light-blue">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="/">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="/" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="/" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 py-3 text-sm text-gray-600">
+        <a href="/" class="accent-blue font-medium">Home</a> / <span>Plan Comparison</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-navy mb-4">Compare Federal Student Loan Repayment Plans 2026</h1>
+        <p class="text-gray-700 mb-8">Compare RAP, Standard 10-year, Extended 25-year, and IBR plans side-by-side to find the best option for your situation.</p>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Input Form -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-navy mb-6">Enter Your Loan Details</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Annual Gross Income</label>
+                    <div class="flex">
+                        <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                        <input type="number" id="income" placeholder="60000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="60000">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Family Size</label>
+                    <select id="familySize" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option value="1">1 (Just you)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Loan Balance</label>
+                    <div class="flex">
+                        <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                        <input type="number" id="loanBalance" placeholder="120000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="120000">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Interest Rate (%)</label>
+                    <input type="number" id="interestRate" placeholder="5.5" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" value="5.5">
+                </div>
+            </div>
+
+            <button id="compareBtn" class="bg-accent-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Compare Plans
+            </button>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Comparison Table -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="header-navy text-white">
+                            <th class="px-6 py-4 text-left font-semibold">Metric</th>
+                            <th class="px-6 py-4 text-center font-semibold">RAP</th>
+                            <th class="px-6 py-4 text-center font-semibold">Standard 10-Year</th>
+                            <th class="px-6 py-4 text-center font-semibold">Extended 25-Year</th>
+                            <th class="px-6 py-4 text-center font-semibold">IBR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparisonTable">
+                        <tr class="border-b hover:bg-light-blue">
+                            <td class="px-6 py-4 font-semibold text-gray-700">Monthly Payment</td>
+                            <td class="px-6 py-4 text-center"><span id="rap-monthly">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="standard-monthly">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="extended-monthly">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="ibr-monthly">$0</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-light-blue">
+                            <td class="px-6 py-4 font-semibold text-gray-700">Total Amount Paid</td>
+                            <td class="px-6 py-4 text-center"><span id="rap-total">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="standard-total">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="extended-total">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="ibr-total">$0</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-light-blue">
+                            <td class="px-6 py-4 font-semibold text-gray-700">Total Interest Paid</td>
+                            <td class="px-6 py-4 text-center"><span id="rap-interest">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="standard-interest">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="extended-interest">$0</span></td>
+                            <td class="px-6 py-4 text-center"><span id="ibr-interest">$0</span></td>
+                        </tr>
+                        <tr class="border-b hover:bg-light-blue">
+                            <td class="px-6 py-4 font-semibold text-gray-700">Payoff Timeline</td>
+                            <td class="px-6 py-4 text-center"><span id="rap-timeline">Variable</span></td>
+                            <td class="px-6 py-4 text-center"><span id="standard-timeline">10 years</span></td>
+                            <td class="px-6 py-4 text-center"><span id="extended-timeline">25 years</span></td>
+                            <td class="px-6 py-4 text-center"><span id="ibr-timeline">20 years</span></td>
+                        </tr>
+                        <tr class="hover:bg-light-blue">
+                            <td class="px-6 py-4 font-semibold text-gray-700">Forgiveness/Best For</td>
+                            <td class="px-6 py-4 text-center text-sm"><span id="rap-notes">Low income</span></td>
+                            <td class="px-6 py-4 text-center text-sm"><span id="standard-notes">High income</span></td>
+                            <td class="px-6 py-4 text-center text-sm"><span id="extended-notes">Lower payments</span></td>
+                            <td class="px-6 py-4 text-center text-sm"><span id="ibr-notes">Income-based</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-navy mb-6">Total Cost Comparison</h2>
+            <canvas id="costChart" height="80"></canvas>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Recommendations -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-light-blue rounded-lg p-8 border-l-4 border-accent-blue">
+                <h3 class="text-xl font-bold text-navy mb-4">Lowest Monthly Payment</h3>
+                <p class="text-gray-700 mb-4">
+                    The plan offering the most affordable monthly payment option for your situation.
+                </p>
+                <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                    <p class="text-lg font-bold accent-blue" id="lowest-payment-plan">RAP</p>
+                    <p class="text-sm text-gray-600 mt-2" id="lowest-payment-amount">Monthly: $0</p>
+                </div>
+            </div>
+
+            <div class="bg-light-blue rounded-lg p-8 border-l-4 border-accent-blue">
+                <h3 class="text-xl font-bold text-navy mb-4">Lowest Total Cost</h3>
+                <p class="text-gray-700 mb-4">
+                    The plan that will result in the lowest total amount paid over the life of the loan.
+                </p>
+                <div class="bg-white p-4 rounded border-l-4 border-blue-500">
+                    <p class="text-lg font-bold accent-blue" id="lowest-cost-plan">Standard</p>
+                    <p class="text-sm text-gray-600 mt-2" id="lowest-cost-amount">Total: $0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plan Details Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-navy mb-8">Understanding Each Plan</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- RAP -->
+                <div class="border-l-4 border-accent-blue p-6">
+                    <h3 class="text-xl font-bold text-navy mb-3">RAP (Repayment Assistance Plan)</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>Payment:</strong> Based on income and family size</li>
+                        <li><strong>Term:</strong> 15 years to forgiveness (Canadian) or 20 years (federal)</li>
+                        <li><strong>Best For:</strong> Low-income borrowers or those with financial hardship</li>
+                        <li><strong>Pros:</strong> Affordable payments, forgiveness available</li>
+                        <li><strong>Cons:</strong> Higher total interest, long repayment timeline</li>
+                    </ul>
+                </div>
+
+                <!-- Standard 10-Year -->
+                <div class="border-l-4 border-accent-blue p-6">
+                    <h3 class="text-xl font-bold text-navy mb-3">Standard 10-Year Plan</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>Payment:</strong> Fixed equal monthly payments</li>
+                        <li><strong>Term:</strong> 10 years</li>
+                        <li><strong>Best For:</strong> Borrowers with stable, higher income</li>
+                        <li><strong>Pros:</strong> Lowest total interest, fastest payoff</li>
+                        <li><strong>Cons:</strong> Higher monthly payment required</li>
+                    </ul>
+                </div>
+
+                <!-- Extended -->
+                <div class="border-l-4 border-accent-blue p-6">
+                    <h3 class="text-xl font-bold text-navy mb-3">Extended 25-Year Plan</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>Payment:</strong> Fixed equal monthly payments</li>
+                        <li><strong>Term:</strong> 25 years</li>
+                        <li><strong>Best For:</strong> Borrowers needing lower monthly payments</li>
+                        <li><strong>Pros:</strong> Lower monthly payments than standard</li>
+                        <li><strong>Cons:</strong> Higher total interest, longer payoff</li>
+                    </ul>
+                </div>
+
+                <!-- IBR -->
+                <div class="border-l-4 border-accent-blue p-6">
+                    <h3 class="text-xl font-bold text-navy mb-3">IBR (Income-Based Repayment)</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>Payment:</strong> 10-15% of discretionary income</li>
+                        <li><strong>Term:</strong> 20-25 years to forgiveness</li>
+                        <li><strong>Best For:</strong> Moderate to high debt-to-income ratio</li>
+                        <li><strong>Pros:</strong> Income-based payments, forgiveness available</li>
+                        <li><strong>Cons:</strong> Recertification required annually</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Which federal student loan repayment plan is best for me?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>It depends on your income, loan balance, and goals. If you want the lowest monthly payment, RAP or IBR is usually best. If you want to pay the least total interest, the Standard 10-year plan is typically cheapest overall. Use our comparison tool above to see the exact numbers for your situation.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is the difference between RAP and IBR?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>RAP (Repayment Assistance Plan) uses income tiers of 1-10% of discretionary income with 30-year forgiveness. IBR (Income-Based Repayment) uses 10-15% of discretionary income with 20-25 year forgiveness. RAP generally results in lower monthly payments for lower-income borrowers.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Can I switch between repayment plans?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. Federal borrowers can switch repayment plans at any time by contacting their loan servicer. However, switching plans may affect your progress toward forgiveness, so consider the implications carefully before changing.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What happens to my loans if I do not choose a plan by September 28, 2026?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>If you were on the SAVE plan and do not select a new plan by the deadline, you will be automatically enrolled in the Standard Repayment Plan or the new Tiered Standard Plan. This could result in significantly higher monthly payments.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Are these calculations exact?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>These are estimates based on 2026 federal poverty guidelines and standard amortization formulas. Actual payments may vary based on your specific loan terms, servicer calculations, and any future regulatory changes. Always verify with your loan servicer.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Do I need to create an account to use this tool?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>No. All our calculators are completely free and require no registration, email, or personal information. Everything runs privately in your browser.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Calculators Footer -->
+    <section class="bg-white mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-navy mb-8">Related Calculators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="rap-calculator.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">RAP Payment Calculator</h3>
+                    <p class="text-gray-700">Calculate your specific RAP payment amount.</p>
+                </a>
+                <a href="save-transition.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">SAVE Transition Guide</h3>
+                    <p class="text-gray-700">Learn about upcoming SAVE plan changes in 2026.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="header-navy text-white mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About</h4>
+                    <p class="text-gray-300">Free student loan calculators to help you compare your repayment options.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Calculators</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rap-calculator.html" class="hover:text-white">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:text-white">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:text-white">SAVE Transition</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-300 text-sm">
+                    <strong>Disclaimer:</strong> These comparisons are estimates only. Contact your loan servicer for official calculations.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const FPL_2026 = {
+            1: 15960, 2: 21640, 3: 27320, 4: 33000,
+            5: 38680, 6: 44360, 7: 50040, 8: 55720
+        };
+
+        let chart = null;
+
+        function safeNum(val, fallback) {
+            var n = parseFloat(val);
+            return (isNaN(n) || !isFinite(n)) ? fallback : n;
+        }
+
+        function fmt(n) {
+            if (isNaN(n) || !isFinite(n)) return '$0';
+            return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (isNaN(n) || !isFinite(n)) return '$0.00';
+            return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function calcAmortized(balance, annualRate, months) {
+            if (balance <= 0) return 0;
+            if (annualRate <= 0) return balance / months;
+            var r = annualRate / 12;
+            var factor = Math.pow(1 + r, months);
+            return (balance * r * factor) / (factor - 1);
+        }
+
+        function calculatePlans() {
+            try {
+                var income = safeNum(document.getElementById('income').value, 0);
+                var familySize = safeNum(document.getElementById('familySize').value, 1);
+                var balance = safeNum(document.getElementById('loanBalance').value, 0);
+                var rateInput = safeNum(document.getElementById('interestRate').value, 5.5);
+                var rate = rateInput / 100;
+
+                // RAP Calculation
+                var fpl = FPL_2026[Math.round(familySize)] || 15960;
+                var povertyPercent = fpl > 0 ? (income / fpl) * 100 : 0;
+                var discretionary = Math.max(0, income - (fpl * 2.25));
+                var rapRate = 0;
+                if (povertyPercent <= 225) rapRate = 0;
+                else if (povertyPercent <= 275) rapRate = 0.01;
+                else if (povertyPercent <= 325) rapRate = 0.02;
+                else if (povertyPercent <= 375) rapRate = 0.03;
+                else if (povertyPercent <= 425) rapRate = 0.04;
+                else if (povertyPercent <= 475) rapRate = 0.05;
+                else rapRate = 0.10;
+
+                var rapMonthly = discretionary * rapRate / 12;
+                if (povertyPercent <= 225) rapMonthly = 10;
+                rapMonthly = Math.max(10, rapMonthly);
+
+                var rapTotal = rapMonthly * 12 * 30;
+                var rapForgiveness = Math.max(0, balance - rapTotal);
+                var rapInterest = rapTotal > balance ? rapTotal - balance : 0;
+
+                // Standard 10-Year (fixed amortized)
+                var standardMonthly = calcAmortized(balance, rate, 120);
+                var standardTotal = standardMonthly * 120;
+                var standardInterest = Math.max(0, standardTotal - balance);
+
+                // Extended 25-Year (fixed amortized)
+                var extendedMonthly = calcAmortized(balance, rate, 300);
+                var extendedTotal = extendedMonthly * 300;
+                var extendedInterest = Math.max(0, extendedTotal - balance);
+
+                // IBR (10% discretionary income, 20-year forgiveness)
+                var ibrMonthly = Math.max(0, discretionary * 0.10 / 12);
+                var ibrTotal = ibrMonthly * 12 * 20;
+                var ibrInterest = Math.max(0, ibrTotal - balance);
+
+                // Update table cells
+                document.getElementById('rap-monthly').textContent = fmtDec(rapMonthly);
+                document.getElementById('standard-monthly').textContent = fmtDec(standardMonthly);
+                document.getElementById('extended-monthly').textContent = fmtDec(extendedMonthly);
+                document.getElementById('ibr-monthly').textContent = fmtDec(ibrMonthly);
+
+                document.getElementById('rap-total').textContent = fmt(rapTotal);
+                document.getElementById('standard-total').textContent = fmt(standardTotal);
+                document.getElementById('extended-total').textContent = fmt(extendedTotal);
+                document.getElementById('ibr-total').textContent = fmt(ibrTotal);
+
+                document.getElementById('rap-interest').textContent = fmt(rapInterest);
+                document.getElementById('standard-interest').textContent = fmt(standardInterest);
+                document.getElementById('extended-interest').textContent = fmt(extendedInterest);
+                document.getElementById('ibr-interest').textContent = fmt(ibrInterest);
+
+                document.getElementById('rap-timeline').textContent = '30 years (forgiveness)';
+                document.getElementById('standard-timeline').textContent = '10 years';
+                document.getElementById('extended-timeline').textContent = '25 years';
+                document.getElementById('ibr-timeline').textContent = '20 years (forgiveness)';
+
+                document.getElementById('rap-notes').textContent = rapForgiveness > 0 ? 'Forgiveness: ' + fmt(rapForgiveness) : 'Low income borrowers';
+                document.getElementById('standard-notes').textContent = 'Fastest payoff, least interest';
+                document.getElementById('extended-notes').textContent = 'Lower monthly, more interest';
+                document.getElementById('ibr-notes').textContent = ibrTotal < balance ? 'Forgiveness possible' : 'Income-driven payments';
+
+                // Find best options
+                var payments = [rapMonthly, standardMonthly, extendedMonthly, ibrMonthly];
+                var plans = ['RAP', 'Standard 10-Year', 'Extended 25-Year', 'IBR'];
+                var totals = [rapTotal, standardTotal, extendedTotal, ibrTotal];
+
+                var minPayment = Math.min.apply(null, payments);
+                var minTotal = Math.min.apply(null, totals);
+                var lowestPaymentIdx = payments.indexOf(minPayment);
+                var lowestCostIdx = totals.indexOf(minTotal);
+
+                document.getElementById('lowest-payment-plan').textContent = plans[lowestPaymentIdx];
+                document.getElementById('lowest-payment-amount').textContent = 'Monthly: ' + fmtDec(payments[lowestPaymentIdx]);
+                document.getElementById('lowest-cost-plan').textContent = plans[lowestCostIdx];
+                document.getElementById('lowest-cost-amount').textContent = 'Total: ' + fmt(totals[lowestCostIdx]);
+
+                // Chart
+                updateChart(totals, ['RAP', 'Standard', 'Extended', 'IBR']);
+            } catch (e) {
+                console.error('Calculation error:', e);
+            }
+        }
+
+        function updateChart(totals, labels) {
+            try {
+                var ctx = document.getElementById('costChart');
+                if (!ctx) return;
+                if (chart) { chart.destroy(); chart = null; }
+
+                chart = new Chart(ctx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Total Amount Paid',
+                            data: totals,
+                            backgroundColor: ['#2E75B6', '#1B2A4A', '#5B9FBF', '#87CEEB'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: true, labels: { font: { family: "'Inter', sans-serif" } } }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: { callback: function(value) { return '$' + value.toLocaleString(); } }
+                            }
+                        }
+                    }
+                });
+            } catch (e) {
+                console.error('Chart error:', e);
+            }
+        }
+
+        // Attach event listeners to all inputs
+        document.getElementById('compareBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            calculatePlans();
+        });
+
+        var inputIds = ['income', 'familySize', 'loanBalance', 'interestRate'];
+        for (var i = 0; i < inputIds.length; i++) {
+            (function(id) {
+                var el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener('input', calculatePlans);
+                    el.addEventListener('change', calculatePlans);
+                    el.addEventListener('keyup', calculatePlans);
+                }
+            })(inputIds[i]);
+        }
+
+        // Run initial calculation after page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', calculatePlans);
+        } else {
+            calculatePlans();
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

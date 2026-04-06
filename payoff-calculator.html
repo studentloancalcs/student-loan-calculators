@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Loan Payoff Calculator - Pay Off Loans Faster</title>
+    <meta name="description" content="Use our free student loan payoff calculator to see how extra payments save you thousands in interest. Get a detailed amortization schedule and payoff timeline.">
+    <meta name="keywords" content="student loan payoff calculator, extra payment calculator, pay off student loans early, loan amortization">
+    <meta name="author" content="Student Loan Calculator">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/payoff-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Student Loan Payoff Calculator - Pay Off Loans Faster">
+    <meta property="og:description" content="See how extra payments can save you thousands in interest. Plan your path to being debt-free with our free calculator.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/payoff-calculator.html">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Student Loan Payoff Calculator",
+        "description": "Free calculator to plan student loan payoff with extra payments",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/payoff-calculator.html",
+        "applicationCategory": "FinanceApplication"
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save by making extra payments on my student loans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Even small extra payments can save thousands in interest. For example, adding $100/month to a $50,000 loan at 5.5% interest can save over $8,000 in interest and shorten your payoff by several years. Use the calculator above to see your exact savings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between the avalanche and snowball methods?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The avalanche method pays off loans with the highest interest rate first, saving the most money overall. The snowball method pays off the smallest balance first, giving psychological wins. Mathematically, avalanche saves more, but snowball can help with motivation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I pay off student loans early or invest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compare your loan interest rate to potential investment returns. If your loan rate is above 6-7%, paying it off is generally a guaranteed return. If below 4-5%, investing may earn more over time. Consider your risk tolerance and financial goals."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does making extra payments reduce my interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Extra payments reduce your principal balance, which means less interest accrues each month. Make sure your extra payments are applied to principal, not future payments. Contact your servicer to confirm how extra payments are applied."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I make a lump sum payment on my student loans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can make lump sum payments at any time on federal student loans with no prepayment penalty. This is a great strategy when you receive a bonus, tax refund, or inheritance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my information private when using this calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. All calculations run locally in your browser. No data is transmitted, stored, or shared. We have no servers collecting your information."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .slider {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold" style="color: #1B2A4A;">Student Loan Calculators</h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                    <a href="rap-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                    <a href="plan-comparison.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                    <a href="save-transition.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                    <a href="payoff-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium text-white" style="background-color: #1B2A4A;">Payoff</a>
+                    <a href="pslf-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                    <a href="college-cost.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                    <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md" style="color: #1B2A4A;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                <a href="rap-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                <a href="plan-comparison.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                <a href="save-transition.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                <a href="payoff-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-white" style="background-color: #1B2A4A;">Payoff</a>
+                <a href="pslf-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                <a href="college-cost.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">Payoff Calculator</span>
+        </nav>
+    </div>
+
+    <!-- AdSense Placeholder -->
+    <!-- AdSense -->
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-3" style="color: #1B2A4A;">Student Loan Payoff Calculator</h1>
+            <p class="text-gray-600">See how extra payments can save you thousands in interest. Plan your path to being debt-free.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Calculator Panel -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg p-8" style="background-color: #EBF5FB;">
+                    <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Enter Your Loan Details</h2>
+
+                    <div class="space-y-6">
+                        <!-- Loan Balance -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Loan Balance</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                                <input type="number" id="loanBalance" value="50000" min="1" max="500000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            </div>
+                        </div>
+
+                        <!-- Interest Rate -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Annual Interest Rate (%)</label>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="interestRate" value="5.5" min="0.1" max="15" step="0.01" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                                <span class="text-sm text-gray-600">%</span>
+                            </div>
+                        </div>
+
+                        <!-- Minimum Monthly Payment -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Minimum Monthly Payment</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                                <input type="number" id="minPayment" value="500" min="10" max="10000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            </div>
+                        </div>
+
+                        <!-- Extra Monthly Payment -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Extra Monthly Payment: <span class="text-blue-600" style="color: #2E75B6;">$<span id="extraPaymentValue">0</span></span></label>
+                            <input type="range" id="extraPayment" min="0" max="1000" step="10" value="0" class="slider w-full h-2 rounded-lg appearance-none cursor-pointer" style="background-color: #EBF5FB;">
+                            <div class="flex justify-between text-xs text-gray-600 mt-1">
+                                <span>$0</span>
+                                <span>$1,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Lump Sum Payment -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">One-Time Lump Sum Payment</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                                <input type="number" id="lumpSum" value="0" min="0" max="500000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            </div>
+                        </div>
+
+                        <button id="calculateBtn" class="w-full py-3 rounded-lg text-white font-bold text-lg transition-all" style="background-color: #2E75B6;">Calculate</button>
+                    </div>
+                </div>
+
+                <!-- AdSense Placeholder -->
+                <!-- AdSense -->
+            </div>
+
+            <!-- Results Panel -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Results</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Payoff Date (Min. Payment)</p>
+                        <p class="text-xl font-bold" style="color: #1B2A4A;" id="payoffDateMin">--</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Total Interest Paid</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="totalInterestMin">--</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Payoff Date (With Extras)</p>
+                        <p class="text-xl font-bold" style="color: #1B2A4A;" id="payoffDateExtra">--</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Total Interest Paid (With Extras)</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="totalInterestExtra">--</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-2" style="border-color: #2E75B6; background-color: #EBF5FB;">
+                        <p class="text-sm text-gray-600 mb-1">Interest Saved</p>
+                        <p class="text-2xl font-bold" style="color: #2E75B6;" id="interestSaved">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Payoff Comparison</h2>
+            <canvas id="payoffChart" height="80"></canvas>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+
+        <!-- Amortization Table -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Amortization Schedule (First 12 Months)</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead style="background-color: #EBF5FB;">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold" style="color: #1B2A4A;">Month</th>
+                            <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Payment</th>
+                            <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Principal</th>
+                            <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Interest</th>
+                            <th class="px-4 py-3 text-right font-bold" style="color: #1B2A4A;">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="amortTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Educational Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-8" style="border-left: 4px solid #2E75B6;">
+                <h3 class="text-xl font-bold mb-4" style="color: #1B2A4A;">Avalanche Method</h3>
+                <p class="text-gray-700 mb-4">
+                    The avalanche method focuses on paying off loans with the highest interest rates first. This mathematically saves you the most money in interest.
+                </p>
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li>✓ Save the most money overall</li>
+                    <li>✓ Best for multiple loans</li>
+                    <li>✓ Requires discipline and planning</li>
+                    <li>✓ Psychological wins may be slower</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8" style="border-left: 4px solid #2E75B6;">
+                <h3 class="text-xl font-bold mb-4" style="color: #1B2A4A;">Snowball Method</h3>
+                <p class="text-gray-700 mb-4">
+                    The snowball method focuses on paying off the smallest loan first, regardless of interest rate. Quick wins keep you motivated.
+                </p>
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li>✓ Quick psychological wins</li>
+                    <li>✓ Momentum builds confidence</li>
+                    <li>✓ More satisfying milestones</li>
+                    <li>✓ Costs more in interest</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>How much can I save by making extra payments on my student loans?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Even small extra payments can save thousands in interest. For example, adding $100/month to a $50,000 loan at 5.5% interest can save over $8,000 in interest and shorten your payoff by several years. Use the calculator above to see your exact savings.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is the difference between the avalanche and snowball methods?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>The avalanche method pays off loans with the highest interest rate first, saving the most money overall. The snowball method pays off the smallest balance first, giving psychological wins. Mathematically, avalanche saves more, but snowball can help with motivation.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Should I pay off student loans early or invest?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Compare your loan interest rate to potential investment returns. If your loan rate is above 6-7%, paying it off is generally a guaranteed return. If below 4-5%, investing may earn more over time. Consider your risk tolerance and financial goals.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Does making extra payments reduce my interest?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. Extra payments reduce your principal balance, which means less interest accrues each month. Make sure your extra payments are applied to principal, not future payments. Contact your servicer to confirm how extra payments are applied.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Can I make a lump sum payment on my student loans?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Yes. You can make lump sum payments at any time on federal student loans with no prepayment penalty. This is a great strategy when you receive a bonus, tax refund, or inheritance.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Is my information private when using this calculator?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Absolutely. All calculations run locally in your browser. No data is transmitted, stored, or shared. We have no servers collecting your information.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Tools</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Related Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Eligibility</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Costs</a></li>
+                        <li><a href="index.html" class="hover:underline">All Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All calculations are estimates for educational purposes only.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Update slider value display
+        const extraPaymentSlider = document.getElementById('extraPayment');
+        const extraPaymentValue = document.getElementById('extraPaymentValue');
+        extraPaymentSlider.addEventListener('input', function() {
+            extraPaymentValue.textContent = parseInt(this.value).toLocaleString();
+        });
+
+        // Main calculation function
+        function calculatePayoff() {
+            const loanBalance = parseFloat(document.getElementById('loanBalance').value);
+            const annualRate = parseFloat(document.getElementById('interestRate').value);
+            const minPayment = parseFloat(document.getElementById('minPayment').value);
+            const extraPayment = parseFloat(document.getElementById('extraPayment').value);
+            const lumpSum = parseFloat(document.getElementById('lumpSum').value);
+
+            const monthlyRate = annualRate / 100 / 12;
+
+            // Calculate minimum payment scenario
+            const minResult = calculateScenario(loanBalance, monthlyRate, minPayment, 0, 0);
+
+            // Calculate with extra payments scenario
+            const extraResult = calculateScenario(loanBalance, monthlyRate, minPayment, extraPayment, lumpSum);
+
+            // Update results
+            document.getElementById('payoffDateMin').textContent = minResult.payoffDate;
+            document.getElementById('totalInterestMin').textContent = '$' + minResult.totalInterest.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            document.getElementById('payoffDateExtra').textContent = extraResult.payoffDate;
+            document.getElementById('totalInterestExtra').textContent = '$' + extraResult.totalInterest.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            const interestSaved = minResult.totalInterest - extraResult.totalInterest;
+            document.getElementById('interestSaved').textContent = '$' + interestSaved.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+            // Populate amortization table
+            populateAmortTable(loanBalance, monthlyRate, minPayment, 12);
+
+            // Update chart
+            updateChart(loanBalance, monthlyRate, minPayment, extraPayment, lumpSum, minResult.months, extraResult.months);
+        }
+
+        function calculateScenario(initialBalance, monthlyRate, basePayment, extraPayment, lumpSum) {
+            let balance = initialBalance;
+            let totalInterest = 0;
+            let months = 0;
+            let lumpSumApplied = false;
+
+            while (balance > 0.01 && months < 600) {
+                months++;
+                
+                // Apply lump sum after 6 months
+                if (months === 6 && lumpSum > 0 && !lumpSumApplied) {
+                    balance = Math.max(0, balance - lumpSum);
+                    lumpSumApplied = true;
+                }
+
+                if (balance <= 0) break;
+
+                const interestCharge = balance * monthlyRate;
+                totalInterest += interestCharge;
+
+                const totalPayment = basePayment + extraPayment;
+                const principalPayment = totalPayment - interestCharge;
+
+                if (principalPayment > balance) {
+                    balance = 0;
+                } else {
+                    balance -= principalPayment;
+                }
+            }
+
+            // Format payoff date
+            const payoffDate = new Date();
+            payoffDate.setMonth(payoffDate.getMonth() + months);
+            const dateStr = payoffDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+
+            return {
+                months: months,
+                totalInterest: totalInterest,
+                payoffDate: dateStr
+            };
+        }
+
+        function populateAmortTable(initialBalance, monthlyRate, basePayment, rows) {
+            let balance = initialBalance;
+            const tbody = document.getElementById('amortTableBody');
+            tbody.innerHTML = '';
+
+            for (let month = 1; month <= rows && balance > 0.01; month++) {
+                const interestCharge = balance * monthlyRate;
+                const principalPayment = basePayment - interestCharge;
+                const payment = principalPayment + interestCharge;
+
+                balance = Math.max(0, balance - principalPayment);
+
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td class="px-4 py-3">${month}</td>
+                    <td class="px-4 py-3 text-right">$${payment.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td class="px-4 py-3 text-right">$${principalPayment.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td class="px-4 py-3 text-right">$${interestCharge.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td class="px-4 py-3 text-right">$${balance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                `;
+            }
+        }
+
+        let payoffChart;
+
+        function updateChart(initialBalance, monthlyRate, basePayment, extraPayment, lumpSum, monthsMin, monthsExtra) {
+            const maxMonths = Math.ceil(monthsMin * 1.1);
+            const minBalances = [];
+            const extraBalances = [];
+            const labels = [];
+
+            // Calculate minimum scenario
+            let balance = initialBalance;
+            for (let m = 0; m <= maxMonths; m++) {
+                minBalances.push(Math.max(0, balance));
+                if (m > 0) {
+                    const interestCharge = balance * monthlyRate;
+                    const principalPayment = basePayment - interestCharge;
+                    balance = Math.max(0, balance - principalPayment);
+                }
+                labels.push(m);
+            }
+
+            // Calculate with extra payments
+            balance = initialBalance;
+            let lumpSumApplied = false;
+            for (let m = 0; m <= maxMonths; m++) {
+                if (m === 6 && lumpSum > 0 && !lumpSumApplied) {
+                    balance = Math.max(0, balance - lumpSum);
+                    lumpSumApplied = true;
+                }
+                extraBalances.push(Math.max(0, balance));
+                if (m > 0) {
+                    const interestCharge = balance * monthlyRate;
+                    const totalPayment = basePayment + extraPayment;
+                    const principalPayment = totalPayment - interestCharge;
+                    balance = Math.max(0, balance - principalPayment);
+                }
+            }
+
+            const ctx = document.getElementById('payoffChart').getContext('2d');
+            
+            if (payoffChart) {
+                payoffChart.destroy();
+            }
+
+            payoffChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Minimum Payments',
+                            data: minBalances,
+                            borderColor: '#FF6B6B',
+                            backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'With Extra Payments',
+                            data: extraBalances,
+                            borderColor: '#2E75B6',
+                            backgroundColor: 'rgba(46, 117, 182, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Months'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('calculateBtn').addEventListener('click', calculatePayoff);
+        
+        // Calculate on input change
+        ['loanBalance', 'interestRate', 'minPayment', 'extraPayment', 'lumpSum'].forEach(id => {
+            document.getElementById(id).addEventListener('change', calculatePayoff);
+        });
+
+        // Initial calculation
+        calculatePayoff();
+    </script>
+</body>
+</html>

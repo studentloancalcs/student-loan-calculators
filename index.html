@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Loan Calculator Tools - Free Loan & Forgiveness Calculators</title>
+    <meta name="description" content="Free student loan calculators for 2026: RAP payment estimator, federal plan comparison, SAVE transition guide, loan payoff, PSLF forgiveness tracker, and college cost comparator. No data collection.">
+    <meta name="keywords" content="student loan calculator, RAP calculator 2026, student loan repayment plans, SAVE plan transition, PSLF calculator, college cost calculator, loan payoff calculator">
+    <meta name="author" content="Student Loan Calculator">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Student Loan Calculator Tools - Free Loan & Forgiveness Calculators">
+    <meta property="og:description" content="Free student loan calculators to help you plan your payoff, estimate Public Service Loan Forgiveness, and compare college costs.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Student Loan Calculator",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/",
+        "description": "Free student loan calculators for payoff, forgiveness, and college cost comparison",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://studentloancalcs.github.io/student-loan-calculators/search?q={search_term_string}"
+            }
+        }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold" style="color: #1B2A4A;">Student Loan Calculators</h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium text-white" style="background-color: #1B2A4A;">Home</a>
+                    <a href="rap-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                    <a href="plan-comparison.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                    <a href="save-transition.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                    <a href="payoff-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                    <a href="pslf-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                    <a href="college-cost.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                    <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md" style="color: #1B2A4A;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white" style="background-color: #1B2A4A;">Home</a>
+                <a href="rap-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                <a href="plan-comparison.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                <a href="save-transition.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                <a href="payoff-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                <a href="pslf-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">PSLF</a>
+                <a href="college-cost.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <span class="font-medium" style="color: #1B2A4A;">Home</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="bg-white border-b-4" style="border-color: #2E75B6;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4" style="color: #1B2A4A;">
+                    Take Control of Your Student Loans
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Free, private calculators to help you plan your loan payoff, estimate forgiveness, and make informed college decisions.
+                </p>
+                <p class="text-sm text-gray-500">
+                    All calculations are performed locally on your device. We collect no personal data.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AdSense Placeholder -->
+    <!-- AdSense -->
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- URGENT: 2026 Changes Alert Banner -->
+        <div class="rounded-lg p-6 mb-8 border-l-4" style="background-color: #FEF3C7; border-color: #F59E0B;">
+            <div class="flex items-start gap-3">
+                <span class="text-2xl">&#9888;</span>
+                <div>
+                    <h3 class="font-bold text-lg" style="color: #92400E;">Major Student Loan Changes - July 1, 2026</h3>
+                    <p class="text-sm mt-1" style="color: #78350F;">The SAVE plan is being eliminated. 7.5 million borrowers must choose a new repayment plan by September 28, 2026. The new Repayment Assistance Plan (RAP) launches July 1. Use our calculators to compare your options.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- RAP Calculator Card (CRITICAL) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border-2" style="border-color: #EF4444;">
+                <div class="h-2" style="background-color: #EF4444;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-2 py-1 text-xs font-bold text-white rounded mb-3" style="background-color: #EF4444;">CRITICAL - NEW FOR 2026</span>
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">RAP Payment Calculator</h2>
+                    <p class="text-gray-600 mb-4">
+                        Calculate your monthly payments under the new Repayment Assistance Plan launching July 1, 2026.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>&#10003; 2026 income tier calculations</li>
+                        <li>&#10003; Updated Federal Poverty Line data</li>
+                        <li>&#10003; 30-year payment projection</li>
+                        <li>&#10003; Forgiveness amount estimate</li>
+                    </ul>
+                    <a href="rap-calculator.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #EF4444;">
+                        Calculate RAP Payments
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plan Comparison Card (CRITICAL) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border-2" style="border-color: #EF4444;">
+                <div class="h-2" style="background-color: #EF4444;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-2 py-1 text-xs font-bold text-white rounded mb-3" style="background-color: #EF4444;">CRITICAL - UPDATED 2026</span>
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">Plan Comparison Tool</h2>
+                    <p class="text-gray-600 mb-4">
+                        Compare all federal repayment plans side-by-side with accurate 2026 calculations.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>&#10003; RAP vs Standard vs IBR</li>
+                        <li>&#10003; Monthly payment comparison</li>
+                        <li>&#10003; Total cost analysis</li>
+                        <li>&#10003; Forgiveness timeline</li>
+                    </ul>
+                    <a href="plan-comparison.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #EF4444;">
+                        Compare Plans
+                    </a>
+                </div>
+            </div>
+
+            <!-- SAVE Transition Card (CRITICAL) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border-2" style="border-color: #F59E0B;">
+                <div class="h-2" style="background-color: #F59E0B;"></div>
+                <div class="p-6">
+                    <span class="inline-block px-2 py-1 text-xs font-bold text-white rounded mb-3" style="background-color: #F59E0B;">TIME-SENSITIVE</span>
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">SAVE Transition Guide</h2>
+                    <p class="text-gray-600 mb-4">
+                        Step-by-step wizard for SAVE plan borrowers to find the best replacement plan.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>&#10003; Guided plan selection wizard</li>
+                        <li>&#10003; Personalized recommendation</li>
+                        <li>&#10003; Deadline: Sept 28, 2026</li>
+                        <li>&#10003; FAQ and transition guide</li>
+                    </ul>
+                    <a href="save-transition.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #F59E0B;">
+                        Start Transition Guide
+                    </a>
+                </div>
+            </div>
+
+            <!-- Payoff Calculator Card -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-2" style="background-color: #2E75B6;"></div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">Loan Payoff Calculator</h2>
+                    <p class="text-gray-600 mb-4">
+                        See how extra payments can save you thousands in interest. Plan your path to being debt-free.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>✓ Standard amortization calculations</li>
+                        <li>✓ Extra payment scenarios</li>
+                        <li>✓ Visual payoff timeline</li>
+                        <li>✓ Interest savings analysis</li>
+                    </ul>
+                    <a href="payoff-calculator.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #2E75B6;">
+                        Open Calculator
+                    </a>
+                </div>
+            </div>
+
+            <!-- PSLF Calculator Card -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-2" style="background-color: #2E75B6;"></div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">PSLF Tracker</h2>
+                    <p class="text-gray-600 mb-4">
+                        Track your progress toward Public Service Loan Forgiveness and estimate your forgiveness amount.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>✓ 120 payment tracking</li>
+                        <li>✓ Forgiveness estimation</li>
+                        <li>✓ Eligibility guidance</li>
+                        <li>✓ Common pitfalls explained</li>
+                    </ul>
+                    <a href="pslf-calculator.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #2E75B6;">
+                        Open Calculator
+                    </a>
+                </div>
+            </div>
+
+            <!-- College Cost Calculator Card -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div class="h-2" style="background-color: #2E75B6;"></div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold mb-3" style="color: #1B2A4A;">College Cost Comparator</h2>
+                    <p class="text-gray-600 mb-4">
+                        Compare the true cost of attendance across colleges and estimate your monthly loan payments.
+                    </p>
+                    <ul class="text-sm text-gray-700 mb-6 space-y-2">
+                        <li>✓ Compare up to 3 colleges</li>
+                        <li>✓ Total cost of attendance</li>
+                        <li>✓ ROI analysis</li>
+                        <li>✓ Debt-to-income ratio</li>
+                    </ul>
+                    <a href="college-cost.html" class="inline-block px-6 py-2 rounded-lg text-white font-medium" style="background-color: #2E75B6;">
+                        Open Calculator
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+
+        <!-- Features Section -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-12" style="background-color: #EBF5FB;">
+            <h2 class="text-3xl font-bold mb-8 text-center" style="color: #1B2A4A;">Why Use Our Calculators?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md" style="background-color: #2E75B6;">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2" style="color: #1B2A4A;">100% Private</h3>
+                        <p class="text-gray-700">All calculations happen on your device. No data is sent to our servers or shared with third parties.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md" style="background-color: #2E75B6;">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2" style="color: #1B2A4A;">Lightning Fast</h3>
+                        <p class="text-gray-700">Get instant results with zero delays. No servers to query, just pure JavaScript calculations.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md" style="background-color: #2E75B6;">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2" style="color: #1B2A4A;">Detailed Analysis</h3>
+                        <p class="text-gray-700">Interactive charts, amortization tables, and side-by-side comparisons help you understand every detail.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md" style="background-color: #2E75B6;">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2" style="color: #1B2A4A;">Always Updated</h3>
+                        <p class="text-gray-700">Uses current interest rates, forgiveness rules, and cost data for accurate 2026 estimates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Tools</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:underline">Student Loan Guide</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

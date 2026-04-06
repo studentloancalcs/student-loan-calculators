@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVE Plan Transition Guide 2026 - Repayment Plan Changes</title>
+    <meta name="description" content="Step-by-step SAVE plan transition guide for 2026. Learn about new repayment tiers, deadlines, and how your loan payments are changing. Interactive wizard tool included.">
+    <meta name="keywords" content="SAVE plan 2026, student loan transition, repayment plan changes, SAVE repayment">
+    <meta name="author" content="Student Loan Calculators">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SAVE Plan Transition Guide 2026">
+    <meta property="og:description" content="Learn about SAVE plan changes effective July 1, 2026. Interactive guide and calculator included.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/save-transition.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SAVE Plan Transition Guide",
+        "description": "Interactive guide for SAVE plan transition in 2026",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/save-transition.html",
+        "applicationCategory": "EducationalApplication"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-navy { background-color: #1B2A4A; }
+        .text-navy { color: #1B2A4A; }
+        .accent-blue { color: #2E75B6; }
+        .bg-accent-blue { background-color: #2E75B6; }
+        .bg-light-blue { background-color: #EBF5FB; }
+        .border-accent { border-color: #2E75B6; }
+        .step-number { background-color: #2E75B6; color: white; }
+        .step-active { background-color: #EBF5FB; border-l: 4px solid #2E75B6; }
+        .step-complete { background-color: #E8F5E9; border-l: 4px solid #4CAF50; }
+    </style>
+</head>
+<body class="bg-light-blue">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="/">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="/" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="/" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 py-3 text-sm text-gray-600">
+        <a href="/" class="accent-blue font-medium">Home</a> / <span>SAVE Transition Guide</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-navy mb-4">SAVE Plan Transition Guide 2026</h1>
+        <p class="text-gray-700 mb-8">Navigate the changes to the SAVE repayment plan effective July 1, 2026. This guide will help you understand what's changing and what you need to do.</p>
+
+        <!-- Deadline Banner -->
+        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-8 rounded">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-red-700">
+                        <strong>Important Deadline:</strong> September 28, 2026. You must take action by this date to maintain your current loan status on the SAVE plan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Wizard Section -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-navy mb-8">SAVE Plan Transition Wizard</h2>
+
+            <!-- Step Indicators -->
+            <div class="flex justify-between mb-8 flex-wrap gap-4">
+                <div class="text-center flex-1 min-w-40">
+                    <div class="step-number w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 cursor-pointer font-bold text-lg" id="step1-indicator">1</div>
+                    <p class="text-sm font-semibold text-gray-700">Your Status</p>
+                </div>
+                <div class="hidden md:block flex-1"></div>
+                <div class="text-center flex-1 min-w-40">
+                    <div class="step-number w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 cursor-pointer font-bold text-lg opacity-50" id="step2-indicator">2</div>
+                    <p class="text-sm font-semibold text-gray-700">Loan Details</p>
+                </div>
+                <div class="hidden md:block flex-1"></div>
+                <div class="text-center flex-1 min-w-40">
+                    <div class="step-number w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 cursor-pointer font-bold text-lg opacity-50" id="step3-indicator">3</div>
+                    <p class="text-sm font-semibold text-gray-700">Comparison</p>
+                </div>
+                <div class="hidden md:block flex-1"></div>
+                <div class="text-center flex-1 min-w-40">
+                    <div class="step-number w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2 cursor-pointer font-bold text-lg opacity-50" id="step4-indicator">4</div>
+                    <p class="text-sm font-semibold text-gray-700">Recommendation</p>
+                </div>
+            </div>
+
+            <!-- Step 1: Status Confirmation -->
+            <div id="step1" class="step-active p-6 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold text-navy mb-4">Step 1: Confirm Your SAVE Plan Status</h3>
+                <div class="mb-6 bg-light-blue p-4 rounded">
+                    <p class="text-gray-700 mb-4">Are you currently on the SAVE repayment plan?</p>
+                    <div class="flex gap-4">
+                        <button id="saveYes" class="px-6 py-2 bg-accent-blue text-white rounded-lg font-semibold hover:bg-blue-700">
+                            Yes, I'm on SAVE
+                        </button>
+                        <button id="saveNo" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400">
+                            No, different plan
+                        </button>
+                    </div>
+                </div>
+                <button id="step1Next" class="px-6 py-2 bg-accent-blue text-white rounded-lg font-semibold hover:bg-blue-700" disabled>
+                    Continue to Step 2 →
+                </button>
+            </div>
+
+            <!-- Step 2: Loan Details -->
+            <div id="step2" class="hidden p-6 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold text-navy mb-4">Step 2: Enter Your Loan Details</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Annual Gross Income</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                            <input type="number" id="wizard-income" placeholder="60000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="60000">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Family Size</label>
+                        <select id="wizard-familySize" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Total Loan Balance</label>
+                        <div class="flex">
+                            <span class="inline-flex items-center px-3 bg-gray-100 text-gray-700 border border-r-0 border-gray-300 rounded-l-lg">$</span>
+                            <input type="number" id="wizard-loanBalance" placeholder="100000" class="flex-1 px-4 py-2 border border-gray-300 rounded-r-lg focus:outline-none focus:border-blue-500" value="100000">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Interest Rate (%)</label>
+                        <input type="number" id="wizard-interestRate" placeholder="5.5" step="0.01" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" value="5.5">
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button id="step2Prev" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400">
+                        ← Back
+                    </button>
+                    <button id="step2Next" class="px-6 py-2 bg-accent-blue text-white rounded-lg font-semibold hover:bg-blue-700">
+                        Continue to Step 3 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Comparison -->
+            <div id="step3" class="hidden p-6 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold text-navy mb-4">Step 3: See Your Plan Comparison</h3>
+                <div class="bg-light-blue p-6 rounded-lg mb-6">
+                    <h4 class="font-semibold text-gray-700 mb-4">Your Current vs. New SAVE Payments (After July 1, 2026)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded border-l-4 border-blue-500">
+                            <p class="text-gray-600 text-sm mb-1">Current Monthly Payment</p>
+                            <p id="step3-current" class="text-3xl font-bold accent-blue">$0</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                            <p class="text-gray-600 text-sm mb-1">New Monthly Payment (SAVE)</p>
+                            <p id="step3-new" class="text-3xl font-bold accent-blue">$0</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border-l-4 border-orange-500">
+                            <p class="text-gray-600 text-sm mb-1">Estimated Monthly Savings</p>
+                            <p id="step3-savings" class="text-3xl font-bold accent-blue">$0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button id="step3Prev" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400">
+                        ← Back
+                    </button>
+                    <button id="step3Next" class="px-6 py-2 bg-accent-blue text-white rounded-lg font-semibold hover:bg-blue-700">
+                        Continue to Step 4 →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Recommendation -->
+            <div id="step4" class="hidden p-6 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold text-navy mb-4">Step 4: Your Personalized Recommendation</h3>
+                <div id="recommendation" class="bg-light-blue p-6 rounded-lg">
+                    <p class="text-gray-700">Based on your information, your personalized recommendation will appear here.</p>
+                </div>
+                <div class="mt-6 flex gap-4">
+                    <button id="step4Prev" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400">
+                        ← Back
+                    </button>
+                    <button id="step4Reset" class="px-6 py-2 bg-accent-blue text-white rounded-lg font-semibold hover:bg-blue-700">
+                        Start Over
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <!-- AdSense -->
+
+        <!-- Key Changes Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Key SAVE Plan Changes Effective July 1, 2026</h2>
+
+            <div class="space-y-6">
+                <div class="border-l-4 border-accent-blue p-6 bg-light-blue rounded">
+                    <h3 class="text-xl font-bold text-navy mb-3">New Payment Calculation Tiers</h3>
+                    <p class="text-gray-700 mb-4">SAVE plan payment amounts are being adjusted based on federal poverty lines. Your new monthly payment will be calculated as a percentage of your discretionary income:</p>
+                    <ul class="space-y-2 text-gray-700 text-sm ml-4">
+                        <li><strong>Below 225% FPL:</strong> $0 payment (interest does not accrue on undergraduate loans)</li>
+                        <li><strong>225-275% FPL:</strong> 5% of discretionary income (increased from 3.43%)</li>
+                        <li><strong>Above 275% FPL:</strong> Increases gradually up to 10%</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-accent-blue p-6 bg-light-blue rounded">
+                    <h3 class="text-xl font-bold text-navy mb-3">Interest Accrual Changes</h3>
+                    <p class="text-gray-700">
+                        Borrowers with payments of $0 on undergraduate loans will no longer have unpaid interest capitalized (added to principal) monthly. This is a major benefit for low-income borrowers.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-accent-blue p-6 bg-light-blue rounded">
+                    <h3 class="text-xl font-bold text-navy mb-3">Forgiveness Timeline</h3>
+                    <p class="text-gray-700">
+                        The borrower forgiveness timeline remains at 20 years for undergraduate loans and 25 years for graduate/professional loans.
+                    </p>
+                </div>
+
+                <div class="border-l-4 border-accent-blue p-6 bg-light-blue rounded">
+                    <h3 class="text-xl font-bold text-navy mb-3">What You Need to Do</h3>
+                    <ul class="space-y-2 text-gray-700 text-sm ml-4">
+                        <li><strong>Recertify by September 28, 2026:</strong> Submit updated income documentation</li>
+                        <li><strong>Review your new payment amount:</strong> Check your servicer's notice for your new monthly payment</li>
+                        <li><strong>Update your budget:</strong> Plan for any changes in monthly payment amounts</li>
+                        <li><strong>Understand your benefits:</strong> Learn about the new interest accrual rules that benefit you</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+
+            <div class="space-y-6">
+                <details class="border-b pb-6">
+                    <summary class="text-xl font-bold text-navy cursor-pointer py-2 flex justify-between items-center">
+                        <span>Will my payment go up or down on July 1, 2026?</span>
+                        <span class="text-2xl">+</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700">
+                        <p>This depends on your individual situation. Many borrowers will see lower payments due to the new interest accrual protection and adjusted calculation methods. Use the comparison tool above to see your specific impact.</p>
+                    </div>
+                </details>
+
+                <details class="border-b pb-6">
+                    <summary class="text-xl font-bold text-navy cursor-pointer py-2 flex justify-between items-center">
+                        <span>What is "discretionary income"?</span>
+                        <span class="text-2xl">+</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700">
+                        <p>Discretionary income is your adjusted gross income minus 225% of the federal poverty line for your family size. This is the amount the government considers available for loan payments after basic living expenses.</p>
+                    </div>
+                </details>
+
+                <details class="border-b pb-6">
+                    <summary class="text-xl font-bold text-navy cursor-pointer py-2 flex justify-between items-center">
+                        <span>Do I automatically transition to the new SAVE plan?</span>
+                        <span class="text-2xl">+</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700">
+                        <p>If you're already on SAVE, you'll be automatically moved to the new terms on July 1, 2026. However, you must recertify your income by September 28, 2026, to maintain your status and ensure your payment is calculated correctly.</p>
+                    </div>
+                </details>
+
+                <details class="border-b pb-6">
+                    <summary class="text-xl font-bold text-navy cursor-pointer py-2 flex justify-between items-center">
+                        <span>What happens if I don't recertify by the deadline?</span>
+                        <span class="text-2xl">+</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700">
+                        <p>If you don't recertify by September 28, 2026, you may be moved to the Standard 10-year repayment plan and receive a higher monthly payment. Recertify as soon as possible to avoid this.</p>
+                    </div>
+                </details>
+
+                <details class="border-b pb-6">
+                    <summary class="text-xl font-bold text-navy cursor-pointer py-2 flex justify-between items-center">
+                        <span>How do I recertify my income?</span>
+                        <span class="text-2xl">+</span>
+                    </summary>
+                    <div class="mt-4 text-gray-700">
+                        <p>You can recertify through your loan servicer's website (the company managing your loans) or by contacting them directly. You'll need to provide recent tax returns or income documentation. Visit studentaid.gov for more information on the recertification process.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Related Calculators Footer -->
+    <section class="bg-white mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-navy mb-8">Related Calculators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="rap-calculator.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">RAP Payment Calculator</h3>
+                    <p class="text-gray-700">Calculate your RAP payment for comparison.</p>
+                </a>
+                <a href="plan-comparison.html" class="p-6 bg-light-blue rounded-lg hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold text-navy mb-2">Plan Comparison Tool</h3>
+                    <p class="text-gray-700">Compare multiple repayment plans side-by-side.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="header-navy text-white mt-16 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About</h4>
+                    <p class="text-gray-300">Free student loan information and calculators to help you navigate loan changes.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Calculators</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="rap-calculator.html" class="hover:text-white">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:text-white">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:text-white">SAVE Transition</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-300 text-sm">
+                    <strong>Disclaimer:</strong> This guide provides educational information about SAVE plan changes. For official information, visit studentaid.gov or contact your loan servicer.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const FPL_2026 = {
+            1: 15960, 2: 21640, 3: 27320, 4: 33000,
+            5: 38680, 6: 44360, 7: 50040, 8: 55720
+        };
+
+        let currentStep = 1;
+        let isOnSave = false;
+
+        function showStep(step) {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.add('hidden');
+            document.getElementById(`step${step}`).classList.remove('hidden');
+            currentStep = step;
+
+            ['step1-indicator', 'step2-indicator', 'step3-indicator', 'step4-indicator'].forEach((id, i) => {
+                const elem = document.getElementById(id);
+                if (i + 1 < step) {
+                    elem.classList.add('opacity-50', 'bg-gray-400');
+                    elem.classList.remove('step-number');
+                } else if (i + 1 === step) {
+                    elem.classList.remove('opacity-50', 'bg-gray-400');
+                    elem.classList.add('step-number');
+                } else {
+                    elem.classList.add('opacity-50');
+                    elem.classList.remove('step-number');
+                }
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('saveYes').addEventListener('click', () => {
+            isOnSave = true;
+            document.getElementById('saveYes').classList.add('bg-green-500', 'hover:bg-green-600');
+            document.getElementById('saveNo').classList.remove('bg-accent-blue');
+            document.getElementById('step1Next').disabled = false;
+        });
+
+        document.getElementById('saveNo').addEventListener('click', () => {
+            isOnSave = false;
+            document.getElementById('saveNo').classList.add('bg-orange-500', 'hover:bg-orange-600');
+            document.getElementById('saveYes').classList.remove('bg-green-500', 'hover:bg-green-600');
+            document.getElementById('step1Next').disabled = false;
+        });
+
+        document.getElementById('step1Next').addEventListener('click', () => showStep(2));
+        document.getElementById('step2Prev').addEventListener('click', () => showStep(1));
+        document.getElementById('step2Next').addEventListener('click', () => {
+            showStep(3);
+            calculateComparison();
+        });
+
+        document.getElementById('step3Prev').addEventListener('click', () => showStep(2));
+        document.getElementById('step3Next').addEventListener('click', () => {
+            showStep(4);
+            generateRecommendation();
+        });
+
+        document.getElementById('step4Prev').addEventListener('click', () => showStep(3));
+        document.getElementById('step4Reset').addEventListener('click', () => {
+            currentStep = 1;
+            isOnSave = false;
+            document.getElementById('saveYes').classList.remove('bg-green-500', 'hover:bg-green-600');
+            document.getElementById('saveNo').classList.remove('bg-orange-500', 'hover:bg-orange-600');
+            document.getElementById('step1Next').disabled = true;
+            showStep(1);
+        });
+
+        function calculateComparison() {
+            const income = parseFloat(document.getElementById('wizard-income').value) || 0;
+            const familySize = parseInt(document.getElementById('wizard-familySize').value) || 1;
+            const loanBalance = parseFloat(document.getElementById('wizard-loanBalance').value) || 0;
+            const rate = parseFloat(document.getElementById('wizard-interestRate').value) / 100 || 0.055;
+
+            const fpl = FPL_2026[familySize] || 15960;
+            const discretionary = Math.max(0, income - (fpl * 2.25));
+
+            // Old SAVE: 3.43% of discretionary income
+            const oldMonthly = discretionary * 0.0343 / 12;
+
+            // New SAVE (simplified): 5% up to 10% depending on poverty level
+            const povertyPercent = (income / fpl) * 100;
+            let newRate = 0.05;
+            if (povertyPercent > 300) newRate = 0.07;
+            if (povertyPercent > 400) newRate = 0.10;
+            const newMonthly = discretionary * newRate / 12;
+
+            const savings = Math.max(0, oldMonthly - newMonthly);
+
+            document.getElementById('step3-current').textContent = '$' + oldMonthly.toFixed(2);
+            document.getElementById('step3-new').textContent = '$' + newMonthly.toFixed(2);
+            document.getElementById('step3-savings').textContent = '$' + savings.toFixed(2);
+        }
+
+        function generateRecommendation() {
+            const income = parseFloat(document.getElementById('wizard-income').value) || 0;
+            const familySize = parseInt(document.getElementById('wizard-familySize').value) || 1;
+            const loanBalance = parseFloat(document.getElementById('wizard-loanBalance').value) || 0;
+
+            const fpl = FPL_2026[familySize] || 15960;
+            const povertyPercent = (income / fpl) * 100;
+
+            let recommendation = '';
+            if (!isOnSave) {
+                recommendation = `<div class="bg-blue-50 border-l-4 border-accent-blue p-4 rounded mb-4">
+                    <h4 class="font-bold text-gray-900 mb-2">You're Not Currently on SAVE</h4>
+                    <p class="text-gray-700">Based on your income and family size, you may be eligible to switch to the SAVE plan. Contact your loan servicer to request the switch.</p>
+                </div>`;
+            } else if (povertyPercent < 225) {
+                recommendation = `<div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
+                    <h4 class="font-bold text-gray-900 mb-2">Excellent News: $0 Payment Possible</h4>
+                    <p class="text-gray-700">Your income is below 225% of the federal poverty line. You may qualify for a $0 monthly payment under SAVE, and interest won't accrue on undergraduate loans. This is a significant benefit.</p>
+                </div>`;
+            } else if (povertyPercent < 300) {
+                recommendation = `<div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
+                    <h4 class="font-bold text-gray-900 mb-2">SAVE Plan is Likely Your Best Option</h4>
+                    <p class="text-gray-700">Your income qualifies for a 5-7% payment tier under SAVE, which is typically lower than standard or extended plans. The new interest accrual rules also provide protection on undergraduate loans.</p>
+                </div>`;
+            } else {
+                recommendation = `<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-4">
+                    <h4 class="font-bold text-gray-900 mb-2">Compare Plans Carefully</h4>
+                    <p class="text-gray-700">Your income is higher, so you'll pay a higher percentage of discretionary income. Use our Plan Comparison tool to see if SAVE or Standard 10-year is better for your situation.</p>
+                </div>`;
+            }
+
+            recommendation += `<div class="bg-light-blue p-4 rounded">
+                <h4 class="font-bold text-gray-900 mb-3">Action Items for September 28, 2026 Deadline:</h4>
+                <ul class="space-y-2 text-gray-700 text-sm">
+                    <li><strong>1. Recertify Income:</strong> Log into your servicer's website and submit your 2025 income documentation</li>
+                    <li><strong>2. Review Your New Payment:</strong> Confirm your new monthly payment amount and due date</li>
+                    <li><strong>3. Update Your Budget:</strong> Adjust your monthly expenses to account for any changes</li>
+                    <li><strong>4. Ask Questions:</strong> Contact your servicer if anything is unclear</li>
+                </ul>
+            </div>`;
+
+            document.getElementById('recommendation').innerHTML = recommendation;
+        }
+
+        // Details/FAQ styling
+        document.querySelectorAll('details summary').forEach(summary => {
+            summary.addEventListener('click', () => {
+                document.querySelectorAll('details').forEach(details => {
+                    if (details !== summary.parentElement) details.removeAttribute('open');
+                });
+            });
+        });
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

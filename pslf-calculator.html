@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSLF Calculator 2026 - Public Service Loan Forgiveness Estimator</title>
+    <meta name="description" content="Calculate your Public Service Loan Forgiveness eligibility and track your progress toward loan forgiveness. Learn PSLF requirements and how to avoid common mistakes.">
+    <meta name="keywords" content="PSLF calculator, public service loan forgiveness calculator, PSLF tracker, loan forgiveness">
+    <meta name="author" content="Student Loan Calculator">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/pslf-calculator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PSLF Calculator 2026 - Public Service Loan Forgiveness Estimator">
+    <meta property="og:description" content="Calculate your PSLF eligibility and track your progress toward loan forgiveness with our free calculator.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/pslf-calculator.html">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PSLF Calculator",
+        "description": "Free calculator to estimate Public Service Loan Forgiveness",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/pslf-calculator.html",
+        "applicationCategory": "FinanceApplication"
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Public Service Loan Forgiveness (PSLF)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PSLF forgives the remaining balance on your Direct Loans after you make 120 qualifying monthly payments (10 years) while working full-time for a qualifying employer such as government agencies, nonprofits, or other public service organizations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who qualifies for PSLF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You must work full-time (30+ hours/week) for a qualifying employer, have Direct Loans (or consolidate into Direct Loans), be on a qualifying repayment plan (income-driven plans like RAP or IBR), and make 120 qualifying payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do so many PSLF applications get rejected?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common reasons include: wrong loan type (FFEL instead of Direct), wrong repayment plan (Standard instead of income-driven), payments made while not working for a qualifying employer, and incomplete employment certification forms. Use the PSLF Help Tool at studentaid.gov to check your eligibility."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do my 120 payments need to be consecutive?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The 120 qualifying payments do not need to be consecutive. If you leave public service and later return, your previous qualifying payments still count. However, payments made while not employed by a qualifying employer do not count."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is PSLF forgiveness taxable?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Under current law, PSLF forgiveness is not considered taxable income. This is a significant advantage over other income-driven repayment forgiveness, which may be taxable depending on the year and applicable law."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator collect my personal data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All calculations are performed in your browser. We do not collect, store, or share any personal or financial information."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-navy { color: #1B2A4A; }
+        .bg-accent-blue { background-color: #2E75B6; }
+        .progress-bar {
+            height: 30px;
+            background-color: #EBF5FB;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2E75B6, #1B2A4A);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold" style="color: #1B2A4A;">Student Loan Calculators</h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="index.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                    <a href="rap-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                    <a href="plan-comparison.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                    <a href="save-transition.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                    <a href="payoff-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                    <a href="pslf-calculator.html" class="px-3 py-2 rounded-md text-sm font-medium text-white" style="background-color: #1B2A4A;">PSLF</a>
+                    <a href="college-cost.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                    <a href="blog.html" class="px-3 py-2 rounded-md text-sm font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md" style="color: #1B2A4A;">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Home</a>
+                <a href="rap-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">RAP Calculator</a>
+                <a href="plan-comparison.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Plan Comparison</a>
+                <a href="save-transition.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">SAVE Transition</a>
+                <a href="payoff-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Payoff</a>
+                <a href="pslf-calculator.html" class="block px-3 py-2 rounded-md text-base font-medium text-white" style="background-color: #1B2A4A;">PSLF</a>
+                <a href="college-cost.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">College Costs</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium hover:text-white hover:bg-gray-700" style="color: #2E75B6;">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">PSLF Tracker</span>
+        </nav>
+    </div>
+
+    <!-- AdSense Placeholder -->
+    <!-- AdSense -->
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-3" style="color: #1B2A4A;">PSLF Calculator 2026</h1>
+            <p class="text-gray-600">Track your progress toward Public Service Loan Forgiveness and estimate when your loans will be forgiven.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Calculator Panel -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg p-8" style="background-color: #EBF5FB;">
+                    <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Your PSLF Information</h2>
+
+                    <div class="space-y-6">
+                        <!-- Total Loan Balance -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Total Loan Balance</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                                <input type="number" id="totalBalance" value="75000" min="1" max="1000000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">Total across all loans being tracked for PSLF</p>
+                        </div>
+
+                        <!-- Monthly Payment -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Current Monthly Payment (PAYE/REPAYE/IBR)</label>
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-semibold" style="color: #2E75B6;">$</span>
+                                <input type="number" id="monthlyPayment" value="400" min="10" max="50000" class="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">Must be enrolled in qualifying repayment plan</p>
+                        </div>
+
+                        <!-- Qualifying Payments Made -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Qualifying Payments Already Made</label>
+                            <input type="number" id="paymentsMade" value="24" min="0" max="120" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            <p class="text-xs text-gray-600 mt-1">Out of 120 payments needed</p>
+                        </div>
+
+                        <!-- Years of Service -->
+                        <div>
+                            <label class="block text-sm font-bold mb-2" style="color: #1B2A4A;">Years of Public Service Completed</label>
+                            <input type="number" id="yearsService" value="2" min="0" max="50" step="0.5" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="border-color: #2E75B6;">
+                            <p class="text-xs text-gray-600 mt-1">Years working for qualifying employer</p>
+                        </div>
+
+                        <button id="calculateBtn" class="w-full py-3 rounded-lg text-white font-bold text-lg transition-all" style="background-color: #2E75B6;">Calculate PSLF</button>
+                    </div>
+                </div>
+
+                <!-- AdSense Placeholder -->
+                <!-- AdSense -->
+            </div>
+
+            <!-- Results Panel -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Your Progress</h2>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold" style="color: #1B2A4A;">Payments Made: <span id="paymentCount">0</span>/120</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%;">
+                            <span id="progressPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Remaining Payments</p>
+                        <p class="text-2xl font-bold" style="color: #2E75B6;" id="remainingPayments">96</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Est. Forgiveness Date</p>
+                        <p class="text-xl font-bold" style="color: #1B2A4A;" id="forgiveDate">--</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-600 mb-1">Total You Will Pay</p>
+                        <p class="text-xl font-bold" style="color: #2E75B6;" id="totalPaid">--</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-2" style="border-color: #2E75B6; background-color: #EBF5FB;">
+                        <p class="text-sm text-gray-600 mb-1">Amount to be Forgiven</p>
+                        <p class="text-2xl font-bold" style="color: #2E75B6;" id="forgivenAmount">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Chart -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6" style="color: #1B2A4A;">Payment Progress Over Time</h2>
+            <canvas id="progressChart" height="80"></canvas>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+
+        <!-- PSLF Requirements -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-8" style="border-left: 4px solid #2E75B6;">
+                <h3 class="text-xl font-bold mb-4" style="color: #1B2A4A;">Eligibility Requirements</h3>
+                <ul class="text-sm text-gray-700 space-y-3">
+                    <li class="flex gap-3">
+                        <span style="color: #2E75B6;">✓</span>
+                        <span><strong>Qualifying Employer:</strong> Federal, state, local government, or 501(c)(3) non-profit</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #2E75B6;">✓</span>
+                        <span><strong>Qualifying Plan:</strong> PAYE, REPAYE, IBR, or Standard 10-year plan</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #2E75B6;">✓</span>
+                        <span><strong>Loan Type:</strong> Federal direct loans (not PLUS or private loans)</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #2E75B6;">✓</span>
+                        <span><strong>120 Payments:</strong> Full-time employment required</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #2E75B6;">✓</span>
+                        <span><strong>Certification:</strong> Annual PSLF form submission (PSLF Form or ECF)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8" style="border-left: 4px solid #FF6B6B;">
+                <h3 class="text-xl font-bold mb-4" style="color: #1B2A4A;">Common Mistakes to Avoid</h3>
+                <ul class="text-sm text-gray-700 space-y-3">
+                    <li class="flex gap-3">
+                        <span style="color: #FF6B6B;">✗</span>
+                        <span><strong>Wrong Plan:</strong> Standard or old income-based plans don't count</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #FF6B6B;">✗</span>
+                        <span><strong>Wrong Loan Type:</strong> PLUS loans and private loans are ineligible</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #FF6B6B;">✗</span>
+                        <span><strong>Skipped Certification:</strong> Missing annual PSLF form submission</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #FF6B6B;">✗</span>
+                        <span><strong>Job Change Issues:</strong> Changing employers can reset eligibility</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span style="color: #FF6B6B;">✗</span>
+                        <span><strong>Part-time Work:</strong> Less than full-time hours don't count</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="bg-blue-50 rounded-lg shadow-lg p-8 mb-8" style="background-color: #EBF5FB;">
+            <h2 class="text-2xl font-bold mb-4" style="color: #1B2A4A;">Understanding PSLF</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">What is PSLF?</h4>
+                    <p class="text-sm text-gray-700">Public Service Loan Forgiveness forgives the remaining balance on Direct loans after you've made 120 qualifying payments while employed full-time by a qualifying employer.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Who Qualifies?</h4>
+                    <p class="text-sm text-gray-700">Federal, state, or local government employees and employees of 501(c)(3) non-profit organizations working full-time.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2" style="color: #1B2A4A;">Tax Implications</h4>
+                    <p class="text-sm text-gray-700">The forgiven amount is not considered taxable income as of 2026, a significant benefit compared to other forgiveness programs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mt-12">
+            <h2 class="text-3xl font-bold text-navy mb-8">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>What is Public Service Loan Forgiveness (PSLF)?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>PSLF forgives the remaining balance on your Direct Loans after you make 120 qualifying monthly payments (10 years) while working full-time for a qualifying employer such as government agencies, nonprofits, or other public service organizations.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Who qualifies for PSLF?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>You must work full-time (30+ hours/week) for a qualifying employer, have Direct Loans (or consolidate into Direct Loans), be on a qualifying repayment plan (income-driven plans like RAP or IBR), and make 120 qualifying payments.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Why do so many PSLF applications get rejected?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>Common reasons include: wrong loan type (FFEL instead of Direct), wrong repayment plan (Standard instead of income-driven), payments made while not working for a qualifying employer, and incomplete employment certification forms. Use the PSLF Help Tool at studentaid.gov to check your eligibility.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Do my 120 payments need to be consecutive?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>No. The 120 qualifying payments do not need to be consecutive. If you leave public service and later return, your previous qualifying payments still count. However, payments made while not employed by a qualifying employer do not count.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Is PSLF forgiveness taxable?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>No. Under current law, PSLF forgiveness is not considered taxable income. This is a significant advantage over other income-driven repayment forgiveness, which may be taxable depending on the year and applicable law.</p>
+                    </div>
+                </details>
+
+                <details class="border border-gray-200 rounded-lg">
+                    <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:bg-gray-50 flex justify-between items-center">
+                        <span>Does this calculator collect my personal data?</span>
+                        <svg class="w-5 h-5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="px-6 pb-4 text-gray-700">
+                        <p>No. All calculations are performed in your browser. We do not collect, store, or share any personal or financial information.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- AdSense Placeholder -->
+        <!-- AdSense -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Tools</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Related Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="payoff-calculator.html" class="hover:underline">Loan Payoff</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Costs</a></li>
+                        <li><a href="index.html" class="hover:underline">All Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. PSLF rules and guidelines are current as of 2026.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        function safeNum(val, fallback) {
+            var n = parseFloat(val);
+            return (isNaN(n) || !isFinite(n)) ? fallback : n;
+        }
+
+        function safeInt(val, fallback) {
+            var n = parseInt(val, 10);
+            return (isNaN(n) || !isFinite(n)) ? fallback : n;
+        }
+
+        function calculatePSLF() {
+            try {
+                const totalBalance = safeNum(document.getElementById('totalBalance').value, 0);
+                const monthlyPayment = safeNum(document.getElementById('monthlyPayment').value, 0);
+                const paymentsMade = safeInt(document.getElementById('paymentsMade').value, 0);
+                const yearsService = safeNum(document.getElementById('yearsService').value, 0);
+
+                const totalPaymentsNeeded = 120;
+                const remainingPayments = Math.max(0, totalPaymentsNeeded - paymentsMade);
+                const remainingMonths = remainingPayments;
+                const paymentPercentage = Math.min(100, (paymentsMade / totalPaymentsNeeded) * 100);
+
+                // Calculate total amount paid
+                const totalPaid = monthlyPayment * paymentsMade;
+
+                // Calculate forgiveness date
+                const forgiveDate = new Date();
+                forgiveDate.setMonth(forgiveDate.getMonth() + remainingMonths);
+                const forgiveStr = forgiveDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+
+                // Estimate forgiven amount (balance minus what's been paid)
+                // This is simplified; actual calculation depends on interest accrual
+                const forgivenAmount = Math.max(0, totalBalance - totalPaid);
+
+                // Update display
+                document.getElementById('paymentCount').textContent = paymentsMade;
+                document.getElementById('remainingPayments').textContent = remainingPayments;
+                document.getElementById('forgiveDate').textContent = forgiveStr;
+                document.getElementById('totalPaid').textContent = '$' + totalPaid.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('forgivenAmount').textContent = '$' + forgivenAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+                // Update progress bar
+                var progressFill = document.getElementById('progressFill');
+                if (progressFill) {
+                    progressFill.style.width = Math.round(paymentPercentage) + '%';
+                }
+                document.getElementById('progressPercent').textContent = Math.round(paymentPercentage) + '%';
+
+                // Update chart
+                updateProgressChart(paymentsMade, remainingPayments);
+            } catch (e) {
+                console.error('PSLF calculation error:', e);
+            }
+        }
+
+        let progressChart;
+
+        function updateProgressChart(paymentsMade, remainingPayments) {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            
+            if (progressChart) {
+                progressChart.destroy();
+            }
+
+            // Create data showing progress over time
+            const labels = [];
+            const paymentsData = [];
+            
+            for (let year = 0; year <= 10; year++) {
+                labels.push('Year ' + year);
+                const paymentsAtYear = Math.min(120, paymentsMade + (year * 12));
+                paymentsData.push(paymentsAtYear);
+            }
+
+            progressChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Qualifying Payments',
+                            data: paymentsData,
+                            backgroundColor: '#2E75B6',
+                            borderColor: '#1B2A4A',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Target (120 Payments)',
+                            data: Array(11).fill(120),
+                            borderColor: '#FF6B6B',
+                            borderWidth: 2,
+                            type: 'line',
+                            fill: false,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#FF6B6B'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 140,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + ' payments';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('calculateBtn').addEventListener('click', calculatePSLF);
+        
+        ['totalBalance', 'monthlyPayment', 'paymentsMade', 'yearsService'].forEach(id => {
+            var el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('change', calculatePSLF);
+                el.addEventListener('input', calculatePSLF);
+                el.addEventListener('keyup', calculatePSLF);
+            }
+        });
+
+        // Initial calculation
+        calculatePSLF();
+    </script>
+</body>
+</html>
