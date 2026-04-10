@@ -473,8 +473,8 @@
                 <div>
                     <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
                         <li><a href="#" class="hover:underline">Disclaimer</a></li>
                     </ul>
                 </div>
@@ -644,21 +644,4 @@
         }
 
         // Event listeners
-        document.getElementById('calculateBtn').addEventListener('click', calculateCollegeCost);
-        
-        ['salary', 'familyContribution'].forEach(id => {
-            document.getElementById(id).addEventListener('change', calculateCollegeCost);
-        });
-
-        // College input listeners
-        for (let i = 1; i <= 3; i++) {
-            [`college${i}Name`, `college${i}Tuition`, `college${i}RoomBoard`, `college${i}Fees`, `college${i}Books`, `college${i}Aid`].forEach(id => {
-                document.getElementById(id).addEventListener('change', calculateCollegeCost);
-            });
-        }
-
-        // Initial calculation
-        calculateCollegeCost();
-    </script>
-</body>
-</html>
+        document.getElementById('calculateBtn').addEventLis

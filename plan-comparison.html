@@ -442,7 +442,7 @@
                 <div>
                     <h4 class="text-xl font-bold mb-4">Legal</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-white">Disclaimer</a></li>
                     </ul>
                 </div>
@@ -625,22 +625,4 @@
                 var el = document.getElementById(id);
                 if (el) {
                     el.addEventListener('input', calculatePlans);
-                    el.addEventListener('change', calculatePlans);
-                    el.addEventListener('keyup', calculatePlans);
-                }
-            })(inputIds[i]);
-        }
-
-        // Run initial calculation after page loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', calculatePlans);
-        } else {
-            calculatePlans();
-        }
-
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
+     

@@ -427,7 +427,7 @@
                 <div>
                     <h4 class="text-xl font-bold mb-4">Legal</h4>
                     <ul class="space-y-2 text-gray-300">
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-white">Disclaimer</a></li>
                     </ul>
                 </div>
@@ -580,19 +580,3 @@
 
             document.getElementById('recommendation').innerHTML = recommendation;
         }
-
-        // Details/FAQ styling
-        document.querySelectorAll('details summary').forEach(summary => {
-            summary.addEventListener('click', () => {
-                document.querySelectorAll('details').forEach(details => {
-                    if (details !== summary.parentElement) details.removeAttribute('open');
-                });
-            });
-        });
-
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
