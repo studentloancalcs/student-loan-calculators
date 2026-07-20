@@ -12,8 +12,8 @@
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <title>SAVE Plan Ending 2026 - How to Switch Repayment Plans Before the Deadline</title>
-    <meta name="description" content="The SAVE plan has been declared unlawful and is ending. Learn your options: switch to RAP, Standard, or Tiered Standard plan before the September 2026 deadline. Interactive guide included.">
+    <title>SAVE Plan Has Ended 2026 - How to Switch to RAP, IBR, or Tiered Standard</title>
+    <meta name="description" content="The SAVE plan officially ended July 1, 2026. Servicers are sending 90-day switch notices in waves through December 2026. Learn your options: RAP, IBR, Standard, or Tiered Standard. Interactive guide included.">
     <meta name="keywords" content="SAVE plan ending 2026, SAVE plan unlawful, switch from SAVE plan, RAP repayment plan, student loan transition">
     <meta name="author" content="Student Loan Calculators">
     <meta name="robots" content="index, follow">
@@ -270,14 +270,14 @@
             <div id="step3" class="hidden p-6 rounded-lg mb-6">
                 <h3 class="text-2xl font-bold text-navy mb-4">Step 3: See Your Plan Comparison</h3>
                 <div class="bg-light-blue p-6 rounded-lg mb-6">
-                    <h4 class="font-semibold text-gray-700 mb-4">Your Current SAVE Payment vs. RAP Replacement (After July 1, 2026)</h4>
+                    <h4 class="font-semibold text-gray-700 mb-4">Your Prior SAVE Forbearance Payment vs. RAP Replacement (SAVE ended July 1, 2026)</h4>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-white p-4 rounded border-l-4 border-blue-500">
-                            <p class="text-gray-600 text-sm mb-1">Current Monthly Payment</p>
+                            <p class="text-gray-600 text-sm mb-1">Prior Monthly Payment (SAVE forbearance)</p>
                             <p id="step3-current" class="text-3xl font-bold accent-blue">$0</p>
                         </div>
                         <div class="bg-white p-4 rounded border-l-4 border-green-500">
-                            <p class="text-gray-600 text-sm mb-1">New Monthly Payment (SAVE)</p>
+                            <p class="text-gray-600 text-sm mb-1">New Monthly Payment (RAP)</p>
                             <p id="step3-new" class="text-3xl font-bold accent-blue">$0</p>
                         </div>
                         <div class="bg-white p-4 rounded border-l-4 border-orange-500">
@@ -314,12 +314,12 @@
         </div>
         <!-- Key Changes Section -->
         <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
-            <h2 class="text-3xl font-bold text-navy mb-8">SAVE Plan Is Ending: What You Need to Know</h2>
+            <h2 class="text-3xl font-bold text-navy mb-8">SAVE Plan Has Ended: How to Switch Now</h2>
 
             <div class="space-y-6">
                 <div class="border-l-4 border-red-400 p-6 bg-red-50 rounded">
-                    <h3 class="text-xl font-bold text-navy mb-3">SAVE Has Been Declared Unlawful</h3>
-                    <p class="text-gray-700 mb-4">The Department of Education has declared the SAVE plan unlawful and reached an agreement to end it. Starting July 1, 2026, loan servicers will send notices to all 7.5 million SAVE borrowers instructing them to switch to a legal repayment plan within 90 days. SAVE forbearance will end by September 30, 2026.</p>
+                    <h3 class="text-xl font-bold text-navy mb-3">SAVE Was Declared Unlawful and Ended July 1, 2026</h3>
+                    <p class="text-gray-700 mb-4">The Department of Education officially ended the SAVE plan on July 1, 2026. Loan servicers began sending notices to all 7.5 million SAVE borrowers on July 1 instructing them to switch to a legal repayment plan within 90 days. Notices are rolling out in waves through December 2026, so your individual deadline depends on when your servicer sends your letter. Borrowers who do not act within their 90-day window will be auto-enrolled in the Standard or Tiered Standard plan.</p>
                 </div>
 
                 <div class="border-l-4 border-accent-blue p-6 bg-light-blue rounded">
@@ -459,6 +459,7 @@
                 <p class="text-gray-300 text-sm">
                     <strong>Disclaimer:</strong> This guide provides educational information about SAVE plan changes. For official information, visit studentaid.gov or contact your loan servicer.
                 </p>
+                <p class="text-gray-400 text-xs mt-3">Last updated: July 20, 2026</p>
             </div>
         </div>
     </footer>
@@ -571,33 +572,34 @@
             let recommendation = '';
             if (!isOnSave) {
                 recommendation = `<div class="bg-blue-50 border-l-4 border-accent-blue p-4 rounded mb-4">
-                    <h4 class="font-bold text-gray-900 mb-2">You're Not Currently on SAVE</h4>
-                    <p class="text-gray-700">Based on your income and family size, you may be eligible to switch to the SAVE plan. Contact your loan servicer to request the switch.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">You're Not on SAVE (SAVE Has Ended)</h4>
+                    <p class="text-gray-700">SAVE ended July 1, 2026 and enrollment is closed. If you're already on IBR, PAYE, or ICR, you can generally stay there — but consolidating loans or taking out any new loan will force a switch to RAP or Tiered Standard. Use our Plan Comparison tool to see how RAP would compare to your current plan.</p>
                 </div>`;
             } else if (povertyPercent < 225) {
                 recommendation = `<div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
-                    <h4 class="font-bold text-gray-900 mb-2">Excellent News: $0 Payment Possible</h4>
-                    <p class="text-gray-700">Your income is below 225% of the federal poverty line. You may qualify for a $0 monthly payment under SAVE, and interest won't accrue on undergraduate loans. This is a significant benefit.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">Low-Income Note: RAP Has a $10 Minimum</h4>
+                    <p class="text-gray-700">Your income is below 225% of the federal poverty line. Under the now-ended SAVE plan you could have qualified for a $0 monthly payment; under its replacement (RAP), the minimum is $10/month regardless of income. Dependents reduce your payment by $50 each, and unpaid interest is waived when you pay on time. If you were already on IBR before July 1, 2026, you may still qualify for a $0 payment there.</p>
                 </div>`;
             } else if (povertyPercent < 300) {
                 recommendation = `<div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mb-4">
-                    <h4 class="font-bold text-gray-900 mb-2">SAVE Plan is Likely Your Best Option</h4>
-                    <p class="text-gray-700">Your income qualifies for a 5-7% payment tier under SAVE, which is typically lower than standard or extended plans. The new interest accrual rules also provide protection on undergraduate loans.</p>
+                    <h4 class="font-bold text-gray-900 mb-2">RAP Is Likely Your Best Replacement Option</h4>
+                    <p class="text-gray-700">Your income puts you in a lower RAP payment tier (1-4% of AGI), which is typically less than Standard or Tiered Standard. RAP also waives unpaid interest on on-time payments and adds a $50 principal-match match, so your balance always goes down. If you had qualifying PSLF employment, RAP counts toward PSLF.</p>
                 </div>`;
             } else {
                 recommendation = `<div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mb-4">
                     <h4 class="font-bold text-gray-900 mb-2">Compare Plans Carefully</h4>
-                    <p class="text-gray-700">Your income is higher, so you'll pay a higher percentage of discretionary income. Use our Plan Comparison tool to see if SAVE or Standard 10-year is better for your situation.</p>
+                    <p class="text-gray-700">Your income is higher, so RAP would charge you 5-10% of AGI. Depending on your balance, the new Tiered Standard plan (fixed payments over 10-25 years based on balance) or the traditional Standard plan may cost less. Use our Plan Comparison tool to see the head-to-head.</p>
                 </div>`;
             }
 
             recommendation += `<div class="bg-light-blue p-4 rounded">
-                <h4 class="font-bold text-gray-900 mb-3">Action Items for September 28, 2026 Deadline:</h4>
+                <h4 class="font-bold text-gray-900 mb-3">Action Items for Your 90-Day Switch Window:</h4>
                 <ul class="space-y-2 text-gray-700 text-sm">
-                    <li><strong>1. Recertify Income:</strong> Log into your servicer's website and submit your 2025 income documentation</li>
-                    <li><strong>2. Review Your New Payment:</strong> Confirm your new monthly payment amount and due date</li>
-                    <li><strong>3. Update Your Budget:</strong> Adjust your monthly expenses to account for any changes</li>
-                    <li><strong>4. Ask Questions:</strong> Contact your servicer if anything is unclear</li>
+                    <li><strong>1. Watch for your servicer notice:</strong> Notices are being sent in waves through December 2026. Once yours arrives, the 90-day clock starts.</li>
+                    <li><strong>2. Don't wait — pick your plan proactively:</strong> Log into studentaid.gov and apply for RAP, IBR, Standard, or Tiered Standard now.</li>
+                    <li><strong>3. Enroll in auto-pay:</strong> Auto-pay borrowers get a 1% interest rate reduction through June 30, 2028. Enroll by September 30, 2026.</li>
+                    <li><strong>4. Recertify income if choosing RAP or IBR:</strong> Have your most recent tax return or a pay stub ready.</li>
+                    <li><strong>5. Avoid auto-enrollment:</strong> If you don't act within 90 days, you'll be placed in the Standard or Tiered Standard plan — often at a higher monthly payment than RAP.</li>
                 </ul>
             </div>`;
 
