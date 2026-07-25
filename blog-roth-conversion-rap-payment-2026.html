@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Roth Conversions and RAP: How a 2026 Roth Conversion Can Spike Your Student Loan Payment for Two Years</title>
+    <meta name="description" content="A Roth conversion adds the converted amount to your AGI &mdash; and RAP payments scale directly with AGI. Convert $40,000 in 2026, and your RAP payment can climb a full percentage bracket for the next two years. Here is the full arithmetic, a worked example, the four legal ways to soften the hit, and the calendar move that separates the conversion year from your recertification year.">
+    <meta name="keywords" content="Roth conversion RAP 2026, Roth conversion student loans, Roth conversion AGI, RAP payment increase, student loan Roth IRA, income driven repayment Roth conversion, RAP recertification AGI spike, backdoor Roth student loans">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-07-25">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-roth-conversion-rap-payment-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Roth Conversions and RAP: How a 2026 Roth Conversion Can Spike Your Student Loan Payment for Two Years">
+    <meta property="og:description" content="A $40,000 Roth conversion in 2026 can push your RAP payment up an entire percentage bracket for two full years. Here is the exact math and how to plan around it.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-roth-conversion-rap-payment-2026.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Roth Conversions and RAP: The 2-Year Payment Spike Nobody Warned You About">
+    <meta name="twitter:description" content="Convert to Roth in 2026, feel it on your RAP bill in 2027 and 2028. Here is the arithmetic and the four moves that shrink the damage.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Roth Conversions and RAP: How a 2026 Roth Conversion Can Spike Your Student Loan Payment for Two Years",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-07-25",
+        "dateModified": "2026-07-25",
+        "description": "A Roth conversion adds the full converted amount to your Adjusted Gross Income (AGI) in the year of conversion. Because the Repayment Assistance Plan scales payments directly with AGI in 1-percentage-point brackets, a mid-sized conversion can push a borrower up an entire bracket for two consecutive recertifications. This article works through the exact arithmetic for a typical $40,000 conversion, shows the two-year ripple effect on RAP payments, and describes the four legal moves that reduce the damage: staging the conversion across tax years, timing recertification against the conversion year, using MFS filing where the numbers support it, and pairing the conversion with above-the-line deductions.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-roth-conversion-rap-payment-2026.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does a Roth conversion count as income for RAP student loan payments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. A Roth conversion from a traditional IRA or a pre-tax 401(k) to a Roth account is treated as ordinary taxable income in the year you convert. It flows onto Form 1040 as a taxable IRA distribution (Line 4b) or a taxable pension distribution (Line 5b), which lifts your Adjusted Gross Income by the full converted amount. RAP calculates your monthly payment as a percentage of AGI, so the conversion amount raises your RAP payment the next time your servicer recertifies you against the tax return that includes it."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does a Roth conversion affect my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A single Roth conversion affects your RAP payment for two annual recertification cycles. If you convert in 2026, the higher AGI shows on your 2026 tax return, which your servicer uses to recertify you in 2027. That elevated payment runs for twelve months until the 2028 recertification, which uses your 2027 return &mdash; a year with no conversion &mdash; and the payment drops back to your baseline. So a one-time conversion produces roughly twelve months of higher RAP payments, sometimes spread across parts of two calendar years depending on your recertification month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do Roth 401(k) contributions raise my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Regular Roth contributions to a Roth IRA or the Roth portion of an employer 401(k) are made with money that has already been taxed, so they do not affect your Adjusted Gross Income and do not raise your RAP payment. The AGI impact only occurs on a conversion &mdash; moving money from a pre-tax bucket (traditional IRA, traditional 401(k), traditional 403(b)) into a Roth bucket. The tax code treats that movement as if the pre-tax money became income in the year of the conversion."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I split a Roth conversion across two tax years to reduce the RAP impact?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, and this is one of the primary planning moves for RAP borrowers. You can convert any dollar amount in any tax year. Splitting a $60,000 conversion into two $30,000 pieces done in December 2026 and January 2027 keeps each year's AGI increase smaller, which may keep you inside a single RAP percentage bracket each year instead of jumping into a higher one. The tradeoff is you pay federal income tax on each piece in its respective year and lose one year of tax-free growth on the deferred half."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the Backdoor Roth strategy affect my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A pure Backdoor Roth &mdash; nondeductible contribution to a traditional IRA followed by a same-year conversion &mdash; typically has zero AGI impact because the converted basis is not taxable. But this only holds if you have no other pre-tax IRA balance to trigger the pro-rata rule. If you have any pre-tax traditional IRA money (a rollover from an old 401(k), for example), the pro-rata rule spreads the taxable basis across all your IRA balances, and part of the conversion becomes taxable income &mdash; which does raise your AGI and your RAP payment. Clean the pre-tax IRA balance (roll it into a current employer 401(k)) before doing a Backdoor Roth to keep the AGI impact at zero."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "If I am on PSLF, should I still avoid Roth conversions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On PSLF the calculus is different. Higher payments during a Roth conversion year still count toward your 120-month PSLF requirement. If you have a long time horizon to forgiveness and expect a large forgiven balance at month 120, the higher conversion-year payments reduce the ultimate forgiveness &mdash; they are dollars paid instead of forgiven. But they are still less painful than for a non-PSLF borrower because there is no principal you would otherwise pay off, only forgiveness reduction. PSLF borrowers considering a mid-career conversion should model the exact reduction in forgiveness before deciding."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can married filing separately protect me from a spouse's Roth conversion?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. RAP uses only the AGI on the specific tax return the servicer is using. If a married borrower files MFS, only that borrower's AGI applies to the RAP payment &mdash; a spouse's Roth conversion on a separate MFS return has no effect. But MFS has real tax costs (loss of certain credits, less favorable brackets), and the RAP savings from filing MFS in a conversion year has to be weighed against those costs. Use the RAP calculator to model both scenarios before choosing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I do the Roth conversion in December or January to time it around RAP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "December places the conversion in the current tax year; January places it in the next tax year. For RAP planning, the choice depends on your recertification calendar. A borrower recertified every October will have a full year to absorb a January conversion before the next recertification pulls the elevated AGI. Timing does not eliminate the payment increase, but it can push a single conversion into a year where you also have offsetting factors &mdash; a career change with lower earned income, a large above-the-line deduction, or a switch to MFS &mdash; that soften the AGI hit."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">Roth Conversions and RAP: The 2-Year Payment Spike</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>July 25, 2026</span>
+                <span>&bull;</span>
+                <span>10 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">Roth Conversions and RAP: How a 2026 Roth Conversion Can Spike Your Student Loan Payment for Two Years</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">Year-end Roth conversion season starts in earnest each September. For the first time in 2026, tens of thousands of borrowers are running that decision through a new filter: what does converting $30,000 or $40,000 do to my RAP payment? The answer is not trivial. RAP scales payments directly with Adjusted Gross Income in 1-percentage-point brackets, so a mid-sized conversion can push you into a higher bracket for the next full year of bills. Here is the exact arithmetic, a worked example, and the four moves that shrink the hit.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- Ad Unit: Top of Article -->
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">A Roth conversion is one of the cleanest tax planning moves available: pay ordinary income tax on pre-tax retirement dollars now, in exchange for tax-free growth and tax-free qualified withdrawals forever. The conversion is popular in years of low earned income, in the early retirement gap, or during a career transition. And in 2026, with the new tax brackets from the reconciliation bill and expiring TCJA provisions still in place through 2028, conversion volume is elevated.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">But conversions are ordinary income in the year they happen. The full converted amount &mdash; every dollar &mdash; lands on Form 1040 Line 4b or 5b, flows into your Adjusted Gross Income, and stays there. For RAP borrowers, the exact same feature that makes conversions a tax planning tool makes them a payment planning problem. RAP payments are set from AGI, so an AGI spike this year becomes a payment spike next year.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: After Introduction -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Mechanism: How a Roth Conversion Reaches Your RAP Bill</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The chain of events runs in five steps and takes about fifteen months from conversion to first affected bill:</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <p class="text-gray-700 mb-2"><strong>Step 1:</strong> October 2026. You convert $40,000 from a traditional IRA to a Roth IRA. Your brokerage issues a 1099-R with distribution code 2 and taxable amount $40,000.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 2:</strong> February 2027. You file your 2026 return. The $40,000 flows onto Line 4b, then into Line 11 as part of AGI. Your 2026 AGI is now $85,000 (say) instead of $45,000.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 3:</strong> Your RAP annual recertification is triggered (typically around your enrollment anniversary). Your servicer pulls your 2026 return via the IRS data-share consent and calculates a new payment against the $85,000 AGI.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 4:</strong> Twelve months of higher RAP payments begin at the new bracket.</p>
+                <p class="text-gray-700"><strong>Step 5:</strong> Your next recertification uses your 2027 return, which has no conversion. Your payment drops back to the pre-conversion bracket. The spike lasted one recertification cycle.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The important insight is that the payment increase is <em>delayed</em> from the conversion and <em>time-boxed</em> to a single twelve-month window. It is not a permanent hit. But the twelve months of higher payments are real cash out of your pocket, and for many borrowers the total exceeds the tax benefit of the conversion itself. Run the numbers before you convert.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">A Worked Example: Jamal, RAP Borrower, Considering a $40,000 Conversion</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Jamal is 34, single, no dependents, working as a data engineer with a baseline AGI of $45,000 (he maxes his 401(k), which is why the number is lower than his gross salary). He has $52,000 in an old employer 401(k) from a previous job that he rolled into a traditional IRA. His financial planner suggests converting $40,000 in October 2026 to fill up the 22% federal bracket while it lasts.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Baseline RAP payment on $45,000 AGI:</strong></p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <p class="text-gray-700 mb-1">AGI $45,000. floor(45,000 / 10,000) = 4. Plus 1 = 5% bracket ($40,001&ndash;$50,000).</p>
+                <p class="text-gray-700 mb-1">$45,000 x 5% = $2,250. Divided by 12 = $187.50/month.</p>
+                <p class="text-gray-700 mb-1">Zero dependents, so no $50 subtraction.</p>
+                <p class="text-gray-700 font-semibold">Baseline monthly payment: $187.50.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Post-conversion RAP payment on $85,000 AGI:</strong></p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <p class="text-gray-700 mb-1">AGI $85,000. floor(85,000 / 10,000) = 8. Plus 1 = 9% bracket ($80,001&ndash;$90,000).</p>
+                <p class="text-gray-700 mb-1">$85,000 x 9% = $7,650. Divided by 12 = $637.50/month.</p>
+                <p class="text-gray-700 mb-1">Zero dependents.</p>
+                <p class="text-gray-700 font-semibold">Recertified monthly payment: $637.50.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>The two-year cost:</strong> $637.50 &minus; $187.50 = $450 per month of additional RAP payment for twelve months = <strong>$5,400 total</strong>. That is the RAP-side cost of the conversion, on top of the roughly $8,800 in federal income tax Jamal will owe on the $40,000 conversion (at his blended 22% marginal rate). Total cost of the conversion in cash: about $14,200 the first year.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Whether this is a good trade depends on time horizon. Over thirty years of tax-free growth in a Roth IRA at a 7% real return, $40,000 becomes about $305,000 &mdash; and all of the appreciation is tax-free. The $5,400 RAP hit is a rounding error against that. But over three or five years, or if Jamal is close to a career change that will lower his income anyway, the conversion may be better delayed to a year without the RAP penalty. The <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> lets you plug in both AGI figures side by side and see the payment difference in seconds.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Bracket-Jump Problem: Why RAP Is Different From Older IDR Plans</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">On legacy income-driven plans (IBR, PAYE, ICR), payments scaled with income roughly linearly &mdash; higher income meant higher payments, but the increase was smooth. A $10,000 AGI increase on IBR at 10% of discretionary income meant roughly an $83/month payment increase. Predictable, gradual.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">RAP works differently. Every $10,000 of AGI moves you into a higher percentage bracket, and the entire AGI is multiplied by the higher percentage &mdash; not just the marginal $10,000. That creates a step function: crossing from $79,999 to $80,000 changes your bracket from 8% to 9%, so your entire AGI moves from being multiplied by 8% to being multiplied by 9%. The marginal $1 of AGI triggers a payment jump of AGI x 1% / 12, which for an $80,000 AGI is $66.67 extra per month, or $800 for the year. On <em>one dollar</em> of extra AGI.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">This makes RAP unusually sensitive to bracket-crossing events. A Roth conversion, a large capital gain, an inheritance IRA distribution, a bonus, or a year with unusual W-2 income can all push you across a bracket line and produce a payment increase far larger than the underlying income change would suggest. See the <a href="blog-rap-repayment-plan-2026-complete-guide.html" style="color: #2E75B6;" class="hover:underline">RAP complete guide</a> for the full bracket schedule.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Move 1: Stage the Conversion Across Two Tax Years</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The cleanest planning move is to split a large conversion across two calendar years. You can convert any amount in any year; there are no annual conversion limits. Splitting a $40,000 conversion into $20,000 in December 2026 and $20,000 in January 2027 keeps each year's AGI increase smaller.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">In Jamal's case, staging the $40,000 conversion 50/50 across 2026 and 2027 changes the arithmetic like this:</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <p class="text-gray-700 mb-1"><strong>2026 AGI with $20,000 conversion:</strong> $45,000 + $20,000 = $65,000. Bracket = 7%. Monthly payment when recertified in 2027 = $65,000 x 7% / 12 = $379.17.</p>
+                <p class="text-gray-700 mb-1"><strong>2027 AGI with $20,000 conversion:</strong> $45,000 + $20,000 = $65,000. Same bracket, same $379.17 monthly payment when recertified in 2028.</p>
+                <p class="text-gray-700 mb-1">Extra RAP cost across two recertification cycles: ($379.17 &minus; $187.50) x 24 = <strong>$4,600</strong>.</p>
+                <p class="text-gray-700 mb-1">Compared to the all-at-once conversion at $5,400, this saves $800.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The savings are modest in this specific example because both partial conversions still crossed into a higher bracket. Staging works best when you can keep each year's addition <em>inside</em> your current bracket. If Jamal's baseline AGI is $45,000 (5% bracket) and he splits so each year's conversion adds only $4,999, both years stay in the 5% bracket and the RAP hit is minimal. Real-world planning: check the bracket boundaries against your existing baseline AGI before choosing the conversion amount.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Move 2: Time the Conversion Around Your Recertification Anniversary</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Your RAP recertification runs on an annual cadence keyed to your enrollment date. A July 2026 enrollee will be recertified around July 2027, then July 2028, and so on. The servicer uses whichever return the IRS has on file at recertification time.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">This creates a timing lever. If you convert in October 2026, the higher 2026 AGI shows on your return filed in February 2027 &mdash; before your July 2027 recertification. That recertification will use the elevated AGI, and you will pay the higher amount for a full year. But if you convert in October 2027 instead, your July 2027 recertification is already complete (using pre-conversion 2026 AGI), and the elevated 2027 AGI does not affect your bill until July 2028. That gives you an extra year of baseline payments and one less year of elevated payments in a specific rolling window.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">This is not a permanent savings &mdash; the total number of years affected is the same &mdash; but it can shift the cash flow into a year where you have more capacity. If you know 2028 will be a low-income year (a career transition, a sabbatical, parental leave), and 2027 will be a normal income year, timing the conversion into 2027 pushes the elevated RAP payment into 2028 where you may already be at a lower baseline, absorbing the increase more gracefully.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Move 3: Pair the Conversion With Above-the-Line Deductions</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Not all of your AGI is fixed. Certain deductions come off gross income <em>above</em> the AGI line, meaning they reduce the AGI figure that RAP uses. The main levers in a conversion year:</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Traditional 401(k) contributions.</strong> Employee deferrals to a traditional 401(k) reduce AGI dollar for dollar (subject to the 2026 limit of $23,500, plus catch-up). Maxing the traditional 401(k) in a conversion year is the highest-leverage move.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Deductible traditional IRA contributions.</strong> Reduces AGI up to $7,000 in 2026 ($8,000 with catch-up), subject to income phaseouts. Note: a deductible traditional IRA contribution and a Roth conversion in the same year net out unless you contribute to a separate account and are careful about the pro-rata rule.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>HSA contributions.</strong> Reduces AGI up to the 2026 limit of $4,400 self-only or $8,750 family. Requires eligible HDHP coverage.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Self-employed retirement plans (SEP-IRA, Solo 401(k)).</strong> Substantially larger deduction ceilings if you have self-employment income.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Student loan interest deduction.</strong> Up to $2,500, though this is often reduced to near-zero for RAP borrowers because of the interest waiver. See our <a href="blog-student-loan-interest-deduction-2026-rap-waiver-tax-break.html" style="color: #2E75B6;" class="hover:underline">2026 student loan interest deduction guide</a> for the details.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The full list of above-the-line moves that lower RAP payments is longer &mdash; our dedicated guide on <a href="blog-how-to-lower-agi-reduce-student-loan-payments-2026.html" style="color: #2E75B6;" class="hover:underline">how to lower AGI for student loan payments</a> covers each of them with 2026 limits.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Combined, an aggressive AGI-management year for a single filer can shave $30,000&ndash;$40,000 off AGI. That is enough to fully offset a mid-sized Roth conversion in many cases &mdash; converting $30,000 while contributing an extra $30,000 to a traditional 401(k) is roughly AGI-neutral for the year.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Mid Article -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Move 4: Married Filing Separately in Conversion Years</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">RAP uses the AGI on the specific tax return the servicer is using. For married borrowers, filing status is a switchable lever. Filing MFS instead of MFJ means only your individual AGI applies to RAP, not the combined household income &mdash; and if your spouse is doing a Roth conversion, MFS insulates you from it entirely.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The tradeoff is real. MFS filers lose access to the education credits, the child and dependent care credit is limited, the standard deduction rules differ, and the tax brackets are less favorable at higher incomes. For a household where one spouse has student loans and the other is doing a $50,000 Roth conversion, running both filing scenarios through a tax preparer for one year is usually worth the fee. The MFS savings on RAP can easily exceed the additional tax cost, especially in years where the borrower's individual AGI would drop into a much lower RAP bracket. See the <a href="blog-rap-marriage-penalty-mfs-vs-mfj-2026.html" style="color: #2E75B6;" class="hover:underline">RAP marriage penalty guide</a> for the full comparison framework.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Backdoor Roth: Usually Safe, Sometimes Not</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The Backdoor Roth &mdash; a nondeductible contribution to a traditional IRA followed by a same-year conversion &mdash; is the standard workaround for high earners who cannot contribute directly to a Roth IRA (2026 phaseout $150,000&ndash;$165,000 single, $236,000&ndash;$246,000 joint). Done clean, the AGI impact is zero: the $7,000 contribution is nondeductible (does not reduce AGI), and the conversion of that same $7,000 basis is not taxable (does not add to AGI).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">But the IRS pro-rata rule breaks this clean math if you have any pre-tax IRA balance. Suppose you have $80,000 in a traditional IRA (from an old 401(k) rollover). Contribute $7,000 nondeductible and convert $7,000 to a Roth. The pro-rata rule says the conversion is $7,000 &times; ($7,000 / $87,000) nontaxable and the rest ($6,437) taxable. That $6,437 flows onto your AGI and raises your RAP payment.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The fix: before doing a Backdoor Roth, roll all pre-tax traditional IRA money into your current employer's 401(k). 401(k) balances do not count in the pro-rata denominator, so your remaining pre-tax IRA balance drops to zero, and the Backdoor Roth becomes clean.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The PSLF Wrinkle</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For borrowers pursuing Public Service Loan Forgiveness, the calculus of a Roth conversion is a little different. Higher RAP payments in a conversion year still count toward the 120-month PSLF requirement &mdash; you do not lose PSLF credit for higher payments. But you do reduce the balance that will ultimately be forgiven at month 120, because more principal and interest is being paid down.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If you have five years left to PSLF forgiveness and expect $80,000 to be forgiven, a $5,400 RAP payment increase during a conversion year is $5,400 less forgiven &mdash; still a real cost, but only about 6.75% of the forgiveness at stake. For a borrower two years from PSLF forgiveness with $150,000 forgiven, the same $5,400 is 3.6% of the forgiveness. PSLF borrowers can generally tolerate a conversion better than borrowers on the 30-year RAP forgiveness track. Our <a href="pslf-calculator.html" style="color: #2E75B6;" class="hover:underline">PSLF Calculator</a> models the impact of a payment change on remaining forgiveness.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Before Bottom Line -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Common Questions From RAP Borrowers</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: I already did a $30,000 conversion in March 2026. Am I stuck?</strong> Not entirely. You can still lower your 2026 AGI through the rest of the year: max your traditional 401(k), open and fund an HSA if you have eligible coverage, make deductible traditional IRA contributions if income permits, and consider bunching charitable giving into 2025 rather than 2026 to preserve any itemizing benefit. You cannot undo the conversion (recharacterizations were eliminated in 2017), but the RAP payment is set by AGI, and AGI is affected by everything above the line for the full calendar year.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Does an inherited IRA required minimum distribution count the same as a conversion?</strong> Yes and no. An RMD from an inherited traditional IRA is ordinary taxable income and raises AGI the same way a conversion does &mdash; and inherited IRAs under the 10-year rule can produce large forced distributions in a single year. But unlike a conversion, you cannot choose the amount or timing (beyond the 10-year window). RAP borrowers who inherit a substantial IRA should plan the 10-year distribution schedule around RAP recertification years, taking larger distributions in low-baseline-income years and smaller distributions otherwise.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: What about Roth conversions from an old 401(k) instead of a traditional IRA?</strong> Same AGI impact. The IRS treats direct 401(k)-to-Roth-IRA conversions and traditional-IRA-to-Roth-IRA conversions identically for AGI purposes. The full converted amount is taxable in the year of conversion and flows into your AGI. Roth conversions from a 401(k) do have some advantages (no pro-rata rule against your IRA balances, sometimes a wider window of low-cost investment options), but the RAP impact is the same.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: If I recertify early after a low-income year, can I lock in a lower AGI before the conversion?</strong> The RAP early recertification path is for borrowers whose income has dropped, not for borrowers strategically resetting the calendar. But you can use it in one scenario: if 2027 turns out to be a much lower income year (job loss, sabbatical), you can request an early recertification in 2027 using 2027 documentation, which forces the servicer off the elevated 2026 AGI early. That shortens the twelve-month spike window and can save several months of higher payments.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Q: Does my conversion affect my Free Application for Federal Student Aid (FAFSA) if my child is applying for college?</strong> Yes, and this is a related but separate issue. The FAFSA uses AGI from two years prior, so a 2026 conversion appears on the 2028&ndash;29 FAFSA. If you have a college-age child applying for need-based aid, the conversion can reduce their aid package. For families with both parent RAP payments and a child in the FAFSA window, Roth conversion planning gets multidimensional.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Decision Checklist Before Converting</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>1. Calculate the pre-conversion RAP payment</strong> using your current baseline AGI. Use the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> or the formula: (AGI x bracket% / 12) &minus; ($50 &times; dependents), floor $10.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>2. Calculate the post-conversion RAP payment</strong> with the conversion amount added to AGI. Note the new bracket.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>3. Multiply the monthly difference by 12</strong> to get the RAP-specific annual cost of the conversion.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>4. Add the federal income tax</strong> on the conversion at your marginal rate.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>5. Compare against the expected long-term Roth benefit</strong> (tax-free growth, tax-free withdrawal in retirement, estate planning value).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>6. If the RAP cost is uncomfortable, apply one or more moves:</strong> stage the conversion across years, time it around your recertification anniversary, pair it with above-the-line deductions, or consider MFS filing.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A Roth conversion is a powerful long-term tax planning move. But under RAP, it has a short-term price tag that older IDR plans did not impose as sharply. The bracket-step design of RAP magnifies the impact of any AGI event, and Roth conversions are one of the largest voluntary AGI events most borrowers will make.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The good news is the impact is bounded. A single conversion produces roughly one recertification cycle of higher payments, then returns to baseline. Model the exact cost before you convert, use the four planning moves to reduce it where possible, and treat the RAP payment increase as one component of the total cost of the conversion &mdash; alongside the federal income tax you would owe anyway. For most borrowers, a well-timed conversion still comes out ahead. For borrowers close to a PSLF forgiveness date or a career change, timing matters more than usual. Do the math before you click convert.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not tax, legal, or investment advice. Roth conversions have permanent tax consequences and should be modeled against your specific situation with a CPA or fee-only financial planner. RAP formula parameters described here reflect the Department of Education's RAP final rule effective July 1, 2026. Contribution and phase-out limits reflect 2026 IRS figures.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
