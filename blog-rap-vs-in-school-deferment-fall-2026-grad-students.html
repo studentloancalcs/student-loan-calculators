@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>RAP vs In-School Deferment for Fall 2026 Grad Students: Which Preserves More PSLF and Forgiveness Credit?</title>
+    <meta name="description" content="Returning to grad school in fall 2026 with existing federal loans? You can either request in-school deferment (interest accrues, no PSLF or RAP credit) or stay in RAP paying $10 per month (interest waived, credit accrues). Here is the four-scenario decision framework, the exact request language, and the FAFSA-consent trap that silently flips new borrowers into RAP-only status on all their loans.">
+    <meta name="keywords" content="RAP in-school deferment fall 2026, grad school student loan RAP, RAP $10 payment while in school, in-school deferment vs RAP payment, PSLF credit during grad school 2026, one-loan trap RAP consolidation grad school">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-08-09">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-vs-in-school-deferment-fall-2026-grad-students.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="RAP vs In-School Deferment for Fall 2026 Grad Students: Which Preserves More PSLF and Forgiveness Credit?">
+    <meta property="og:description" content="Fall 2026 grad students with existing federal loans face a real choice: deferment (interest accrues, no credit) or $10 RAP payments (interest waived, PSLF and forgiveness months accrue). Framework, math, and traps.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-vs-in-school-deferment-fall-2026-grad-students.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAP vs In-School Deferment: Fall 2026 Grad Student Guide">
+    <meta name="twitter:description" content="Deferment or a $10 RAP payment while in grad school? For borrowers on PSLF, the answer is almost always: pay the $10. Here is the math &mdash; and the FAFSA-consent trap.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "RAP vs In-School Deferment for Fall 2026 Grad Students: Which Preserves More PSLF and Forgiveness Credit?",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-08-09",
+        "dateModified": "2026-08-09",
+        "description": "Returning to grad school in fall 2026 with existing federal loans creates a decision that most FAFSA counselors are not walking borrowers through: request an automatic in-school deferment, or stay in the Repayment Assistance Plan and pay $10 per month. Deferment stops the monthly bill but accrues interest and earns zero PSLF or RAP forgiveness credit. A $10 RAP payment keeps interest waived, banks the $50 principal match, and earns a qualifying month for both PSLF and RAP forgiveness. For borrowers on any forgiveness track, the math almost always favors paying. This guide walks through four common grad-school scenarios, the exact request language for each servicer, and the one-loan trap that silently converts every pre-July 1, 2026 balance into RAP-only status the moment a new Direct Loan disburses.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-rap-vs-in-school-deferment-fall-2026-grad-students.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I stay in RAP while I am enrolled in grad school in fall 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. There is no rule that forces you into deferment just because you enrolled in school. If you take no action, the servicer will automatically place your loans in in-school deferment as soon as it receives an enrollment record from the National Student Loan Data System, but you can override that automatic deferment by writing your servicer and requesting to remain in active repayment on the Repayment Assistance Plan. Interest continues to be waived on RAP as long as you make your calculated monthly payment on time, and each on-time month counts toward PSLF (if your employment qualifies) and toward the RAP 30-year forgiveness clock."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "If my AGI dropped because I am now in school full time, what will my RAP payment be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most full-time students, the calculated RAP payment will land at the $10 monthly floor. RAP applies a percentage of AGI (1% for AGI at $10,000 to $19,999, stepping up 1 point per $10,000 to a cap of 10% at $100,000 or more), then subtracts $50 per tax dependent, then floors at $10. A grad student with a stipend of $22,000 and no dependents pays $18.33 per month (2% of $22,000, divided by 12). A student with a $12,000 assistantship and one dependent pays the $10 floor. File an early income recalculation as soon as your assistantship or stipend starts, do not wait for your recertification anniversary."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does taking a new Direct Unsubsidized Loan for grad school affect my old undergrad loans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, and this is the biggest trap in fall 2026 enrollment. Any single new federal Direct Loan disbursed on or after July 1, 2026 converts your entire loan portfolio to the post-reform IDR menu, which is RAP and Tiered Standard only. IBR, PAYE, ICR, Graduated, and Extended are stripped from all your loans, not just the new one. Borrowers who were relying on grandfathered access to IBR or PAYE for their undergrad loans should understand this trigger before signing the promissory note for a Fall 2026 grad school loan. In many cases, the answer is still to borrow, but it should be a conscious decision, not a surprise."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do RAP payments made during grad school count toward PSLF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, if you are also employed by a qualifying PSLF employer during the same month. Grad school does not disqualify PSLF credit. A student working 30 or more hours per week (across one or more qualifying part-time employers) while in a graduate program qualifies for PSLF credit for every month a RAP payment is made on time. Full-time grad students who are not working a qualifying job simply do not earn PSLF credit for those months, but the underlying RAP forgiveness clock still runs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens to my loans if I do nothing when I start grad school?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your servicer receives an enrollment file from the school through the National Student Loan Data System within two to eight weeks of your first day of classes. When that file posts, the servicer automatically places your Direct Loans in in-school deferment. Interest accrues on unsubsidized loans (subsidized loans continue their interest subsidy while in-school). You receive no PSLF credit, no RAP forgiveness credit, and no $50 principal match for those months. If you want to keep any of those benefits, you must actively opt out of the automatic deferment before it posts or request to end it after it posts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I claim the $50 principal match on RAP while I am in grad school?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The $50 monthly principal match is a feature of RAP itself, not tied to employment or in-school status. As long as you make your calculated monthly payment on time (even if that payment is $10), the servicer must apply the $50 principal match to your loan balance for that month. Over a two-year MBA or law school program, that adds up to $1,200 in balance reduction that a deferred borrower does not receive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "If I request to stay in RAP during grad school, do I still get the six-month grace period after I graduate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The six-month grace period applies to new Direct Loans after they enter repayment status for the first time. Loans that were already in repayment before you started grad school, and that you kept in active repayment during grad school, do not get a fresh grace period after you graduate; they simply continue on RAP. Any new grad school loans (Direct Unsubsidized or Direct Consolidation of grad loans) get their first grace period when you graduate, drop below half-time, or complete school. The two categories are handled separately by the servicer."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I lose my assistantship or stipend mid-semester?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you are on RAP and lose income mid-semester, you can file an early income recalculation immediately. Submit updated income documentation (pay stubs, an unemployment award letter, or a signed statement that the assistantship ended) and request that your RAP payment be recalculated based on current income. The servicer must respond within 30 days. If you were in in-school deferment and lose income, there is no equivalent recalculation, you are still in deferment and interest continues to accrue, but you can request to switch out of deferment and back to RAP at any time."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">RAP vs In-School Deferment for Fall 2026 Grad Students</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>August 9, 2026</span>
+                <span>&bull;</span>
+                <span>12 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">RAP vs In-School Deferment for Fall 2026 Grad Students: Which Preserves More PSLF and Forgiveness Credit?</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">Fall 2026 grad school orientation packets almost never mention it: you have a choice. When you enroll in classes, your undergrad loans do not have to slide into in-school deferment automatically. You can keep them on the Repayment Assistance Plan and pay $10 per month while you are in school &mdash; and for anyone chasing PSLF, RAP 30-year forgiveness, or the new $50 monthly principal match, that $10 is almost always the better trade. This guide walks through the math, the four scenarios that come up most often, and the one-loan trap that quietly reshuffles your entire loan portfolio the day your fall grad-school loan disburses.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- Ad Unit: Top of Article -->
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">The old default answer &mdash; "you are in school, so obviously you defer" &mdash; came from an era when in-school deferment was free money. Federally subsidized loans paid no interest during deferment, unsubsidized loans capitalized cheaply, and there was no income-driven plan generous enough to make $10 monthly payments look attractive. That world ended on July 1, 2026 when the Repayment Assistance Plan launched with three simultaneous benefits that in-school deferment does not offer: a monthly interest waiver on any calculated payment made on time, a flat $50 principal match on every on-time payment, and PSLF or RAP forgiveness credit for the month.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A borrower who defers a two-year master's program walks out with two years of accrued unsubsidized interest, zero PSLF months, and no principal reduction. A borrower who stays in RAP walks out with the same principal balance (interest waived), 24 PSLF months if their part-time job qualifies, and $1,200 of principal knocked down by the match. The gap is not close.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: After Introduction -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">What Happens Automatically When You Enroll</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Two to eight weeks after your first day of graduate classes, your school reports your enrollment to the National Student Loan Data System (NSLDS). Your servicer pulls that enrollment file on its next NSLDS refresh, usually within 30 days, and automatically places any Direct Loan in your name into in-school deferment. Interest on unsubsidized loans accrues at the note rate and either sits in the accrued-but-unpaid bucket or capitalizes at the end of deferment, depending on the specific loan and the timing of any repayment plan change.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">You do not have to accept this. Federal regulations preserve a borrower's right to remain in active repayment even while enrolled at least half-time. The mechanism is a written request to your servicer, sent either through the servicer's message portal or by certified mail, that reads (in substance): "I am enrolled half-time or greater at [school] beginning [term start date]. I request that my loans remain in active repayment on the Repayment Assistance Plan and that no in-school deferment be applied. I will notify you if my enrollment status changes." Send it as soon as you have registered for classes, ideally before your school submits your enrollment to NSLDS.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Three RAP Benefits That Deferment Forfeits</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">To make the trade concrete, look at what a borrower loses each month they sit in in-school deferment instead of paying $10 on RAP.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">Per-Month Cost of Deferment vs Paying $10 on RAP</h3>
+                <p class="text-gray-700 mb-2"><strong>Interest waiver:</strong> On RAP, the servicer waives any accrued unpaid interest for a month in which you make the calculated payment on time. In deferment on unsubsidized loans, interest accrues at your note rate. On a $40,000 unsubsidized balance at 8.08% (2026-27 grad rate), that is about $269 per month of accruing interest.</p>
+                <p class="text-gray-700 mb-2"><strong>$50 principal match:</strong> On RAP, the servicer applies a flat $50 credit to your principal every month you pay on time. In deferment, no match. Over 24 months, that is $1,200 of principal reduction.</p>
+                <p class="text-gray-700"><strong>PSLF / RAP forgiveness month:</strong> On RAP with an on-time payment, the month counts. In deferment, it does not. For a borrower two years away from PSLF completion, that is 24 lost qualifying months.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For a typical borrower with $40,000 in prior unsubsidized grad or undergrad debt, staying on RAP through a two-year master's program instead of deferring is worth roughly $6,456 of avoided interest, $1,200 of principal match, and 24 PSLF-qualifying months &mdash; for a total cash outlay of $240 (24 months x $10). Try the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> with your own AGI and balance to see the exact numbers before you request the enrollment change.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Four Common Scenarios, Ranked</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Not every borrower comes out ahead by staying in RAP. Here are the four scenarios that show up most in fall 2026 orientation office hours, ranked from "clearly pay the $10" to "deferment is defensible."</p>
+
+            <h3 class="text-xl font-bold mt-6 mb-3" style="color: #1B2A4A;">Scenario 1: PSLF-Track Borrower Working a Qualifying Part-Time Job</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A borrower entering an MSW program in September 2026 while working 30 hours a week at a 501(c)(3) nonprofit. They have 42 PSLF months already logged and are pointed at forgiveness in month 120. Stay in RAP. Every $10 payment during grad school earns a PSLF month and preserves the interest waiver. The path to forgiveness accelerates by exactly the number of months they are in school. Deferring instead adds two years to their PSLF timeline.</p>
+
+            <h3 class="text-xl font-bold mt-6 mb-3" style="color: #1B2A4A;">Scenario 2: Full-Time Grad Student on RAP Not Working PSLF-Qualifying Job</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A full-time law student, no qualifying employment, $52,000 in prior undergrad loans. They lose PSLF month credit either way (no qualifying job), but they still gain the interest waiver and $50 principal match by staying in RAP. Over three years at $10/month, that is $360 out of pocket in exchange for roughly $12,600 of avoided interest at 8.08% plus $1,800 of principal match. Stay in RAP. Also, every RAP-paid month still counts toward the 30-year RAP forgiveness clock, even without PSLF.</p>
+
+            <h3 class="text-xl font-bold mt-6 mb-3" style="color: #1B2A4A;">Scenario 3: Grandfathered IBR or PAYE Borrower Considering a New Loan</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A borrower with $85,000 in undergrad loans on IBR, 6 years toward PSLF, considering an MBA that requires a $30,000 Direct Unsubsidized Loan disbursement in August 2026. Here is the trap: a single new federal Direct Loan disbursed on or after July 1, 2026 converts every loan in the portfolio to the post-reform IDR menu (RAP or Tiered Standard). IBR is stripped from the old loans. Our <a href="blog-one-new-loan-after-july-1-locks-all-loans-into-rap-2026.html" style="color: #2E75B6;" class="hover:underline">one-loan trap guide</a> walks through the mechanics. The decision is not really "defer or pay $10" &mdash; it is "borrow or find another funding source." If they do borrow, RAP is what remains and the $10 payment strategy applies to all their loans. If they find a way to fund grad school without a new federal loan (private loan, employer sponsorship, savings), they preserve IBR access on the old loans.</p>
+
+            <h3 class="text-xl font-bold mt-6 mb-3" style="color: #1B2A4A;">Scenario 4: High-Balance Borrower Not on Any Forgiveness Track, Planning to Refinance After Grad School</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A borrower with $180,000 in undergrad loans, high projected post-grad income (management consulting, tech, medicine), planning to refinance to a lower private rate after landing the first post-grad job. In-school deferment is defensible here. The $50 principal match and interest waiver still favor RAP, but the borrower is planning to walk away from the federal system entirely within 12 months of graduation, so PSLF and RAP forgiveness credit are irrelevant. Whether the interest-waiver savings justify the $10 monthly payment depends on their unsubsidized-loan interest exposure. For most borrowers in this bracket the answer is still to pay the $10, but the case is closer, and pausing during grad school may make sense if cash flow is tight and refinancing is truly imminent.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Mid Article -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The FAFSA-Consent Trap</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A related snag catches grad students who are also filing a new FAFSA for the upcoming aid year. The 2026-27 FAFSA includes IRS data consent that pulls a fresh AGI from your most recent tax return. That data feed is separate from the RAP income data feed, but the servicer receives an updated AGI record around the same time. If your prior year's AGI was higher (because you were working full-time), the automatic recertification uses that number, and your RAP payment can jump for a full year until the next recertification, exactly the year you can least afford it.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The fix: as soon as your grad-school assistantship, stipend, or reduced income begins, file an early income recalculation with your servicer. Submit documentation of the new income (assistantship award letter, stipend agreement, or a signed statement of no income) and request that your RAP payment be recalculated. The servicer must respond within 30 days. For most full-time grad students, this recalculation drops the payment to the $10 floor.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">A Worked Example: Priya, MSW Program at a State University</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Priya has $38,400 in Direct Unsubsidized undergrad loans from her BSW, currently on RAP after enrolling in July 2026. Her 2025 AGI was $47,800 as a full-time case worker, giving her a RAP payment of $199 per month ($47,800 x 5% / 12, no dependents). She starts an MSW program September 1, 2026 with a $14,400 stipend and no other income. She works 20 hours per week at a 501(c)(3) counseling clinic (below the PSLF 30-hour threshold, so no PSLF credit during school). What should she do?</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <p class="text-gray-700 mb-2"><strong>Step 1:</strong> Send her servicer a written request within one week of registering for classes: keep loans in active repayment on RAP, do not apply in-school deferment.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 2:</strong> File an early income recalculation using her new $14,400 stipend. Documentation: stipend award letter from the graduate school.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 3:</strong> New calculated RAP payment: $14,400 x 2% / 12 = $24.00. No dependents. Above the $10 floor. She pays $24/month during grad school.</p>
+                <p class="text-gray-700 mb-2"><strong>Step 4:</strong> Over 24 months, she pays $576. In exchange: $6,205 of accrued interest waived (24 months x 8.08% x $38,400 / 12), plus $1,200 of principal match applied.</p>
+                <p class="text-gray-700"><strong>Net gain:</strong> $6,829 of financial benefit for $576 of payment. Plus 24 RAP forgiveness months credited toward her 30-year clock. Plus a clean transition into whatever job she takes after her MSW, without a capitalized interest bump.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">How to Send the Request, By Servicer</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Every major federal servicer accepts a written request to opt out of automatic in-school deferment. The exact channel differs:</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Nelnet:</strong> Log in, click Documents &rarr; Forms &rarr; Deferment / Forbearance Request. Instead of selecting in-school deferment, use the "Custom Request" free-text field and paste the request language. Alternatively, send a secure message from your Nelnet inbox.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>MOHELA:</strong> Send a message through the MOHELA portal (Contact Us &rarr; Send Us a Message). Subject line: "Opt Out of In-School Deferment, Maintain RAP Enrollment." MOHELA responds in writing within 10 business days.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Aidvantage:</strong> Aidvantage does not have a specific opt-out form. Call 800-722-1300 and follow up with a written message through the account portal to create a paper trail. Reference "In-School Deferment Waiver" in the message subject.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Edfinancial:</strong> Message through the account portal with the same language. Edfinancial has been observed to occasionally still apply automatic deferment when NSLDS enrollment files post, so re-check your account status within 30 days of the NSLDS refresh and re-send if needed.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Whatever the servicer, ask for a written confirmation that the opt-out has been applied and that no automatic in-school deferment will be posted. If a deferment is applied by mistake, request that it be reversed retroactively so that the affected months are recoded as active RAP months, preserving your PSLF and forgiveness credit.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Interaction With PSLF Employer Certification</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If any of your grad-school months should count toward PSLF, file an updated PSLF Employer Certification Form (PSLF ECF) at the start of the term and again at the end of each academic year. The certification confirms that your qualifying employer relationship remained in place during the RAP months you paid. Do not wait until you graduate to certify grad-school PSLF months, servicers occasionally fail to import backdated certifications correctly. Our <a href="pslf-calculator.html" style="color: #2E75B6;" class="hover:underline">PSLF Tracker</a> makes it easy to audit month-by-month.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If your grad-school hours are below 30 per week and no qualifying job otherwise applies, you will not get PSLF credit for those months but the underlying RAP forgiveness clock still runs. The two forgiveness paths are separate. Do not skip filing PSLF ECFs just because grad-school months look uncertain, file and let the Federal Student Aid PSLF review team decide.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The One Case Where Deferment Actually Wins</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">There is one narrow case where in-school deferment is the right answer: a borrower whose loans are entirely subsidized (older Perkins loans, older subsidized Stafford loans still in the portfolio, or subsidized Direct Loans from undergrad), who is not pursuing any forgiveness, and who plans to pay the loans off in full within a few years of graduation. Subsidized loans have their interest paid by the federal government during in-school deferment, so the interest-waiver value of RAP is zero for those specific balances. In that narrow case, the $50 principal match on RAP is still a benefit, but the case for deferring is closer to break-even.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">In practice, almost no borrower has an all-subsidized portfolio in 2026. If any part of the balance is unsubsidized (which is nearly universal for anyone who borrowed grad debt or high-balance undergrad debt), the interest waiver alone tips the decision back toward staying on RAP.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Before Bottom Line -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Common Questions From Fall 2026 Grad Students</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: I already got the automatic deferment notice from my servicer. Can I still opt out?</strong> Yes. Send the opt-out request as soon as possible. Servicers can reverse an in-school deferment retroactively and re-code the affected months as active RAP months if the reversal happens within a reasonable window (usually 90 days). The sooner you request the reversal, the cleaner the recode.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: What if I do not have a stipend or income at all during grad school? Do I still pay $10?</strong> Yes. The $10 floor applies regardless of AGI. Even a borrower with $0 income pays the $10 floor to earn the interest waiver, principal match, and forgiveness credit for that month.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Do I have to make the $10 payment out of pocket, or can I use a scholarship or fellowship?</strong> The source of the funds does not matter to the servicer. Scholarship, fellowship, family support, part-time job income, savings, all are fine.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Will paying $10 during grad school count as "in repayment" for federal aid eligibility purposes?</strong> Yes. Active repayment on RAP does not affect your eligibility for new federal aid, Pell Grant, or subsidized loans (if any remain in the grad program). Your school's financial aid office should treat RAP borrowers exactly the same as deferred borrowers for satisfactory academic progress and packaging purposes.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Q: My spouse and I file jointly. Does my spouse's income during my grad school affect my RAP payment?</strong> If you file MFJ, the servicer uses joint AGI. Many grad students in this situation file married filing separately during grad school to keep the spouse's income out of the RAP calculation. See our <a href="blog-rap-marriage-penalty-mfs-vs-mfj-2026.html" style="color: #2E75B6;" class="hover:underline">RAP marriage penalty guide</a> for the math on when MFS makes sense.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">What to Do This Week If You Are Starting Grad School</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>1. Register for classes.</strong> Your enrollment starts the automatic-deferment clock, so know your first day of classes.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>2. Send the opt-out request in writing to your servicer</strong>, immediately. Do not wait for the deferment notice.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>3. Gather your grad-school income documentation</strong>: assistantship or stipend award letter, TA/RA contract, or signed statement of no income.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>4. File an early income recalculation</strong> with the servicer, using the new grad-school income figure. Include the documentation.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>5. Confirm your new RAP payment</strong> with the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a>, and set up autopay (which also captures the 1% autopay interest-rate reduction through June 30, 2028).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>6. If you are on PSLF and working a qualifying part-time job</strong>, file a PSLF Employer Certification Form now. Refile at the end of each academic year.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>7. If your grad-school program requires a new federal Direct Loan disbursement</strong>, understand the one-loan trap before you sign the promissory note. The trigger cannot be undone once a single new loan disburses. Our <a href="blog-should-i-consolidate-student-loans-before-july-1-2026.html" style="color: #2E75B6;" class="hover:underline">consolidation timing guide</a> has more on the interaction with any planned consolidation.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The default answer &mdash; "you are in grad school, so obviously defer" &mdash; is wrong for almost every borrower in fall 2026. A $10 monthly RAP payment while enrolled preserves the interest waiver, banks the $50 principal match, and earns qualifying months for PSLF and RAP forgiveness that in-school deferment does not. For a typical two-year master's program on a $40,000 unsubsidized undergrad balance, the trade is roughly $240 of payments in exchange for $6,000-plus of avoided interest, $1,200 of principal reduction, and 24 forgiveness-eligible months.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The move takes two forms: send your servicer a written opt-out of automatic in-school deferment before the NSLDS enrollment file posts, and file an early income recalculation as soon as your grad-school income begins. Do both this week if your fall term is starting soon. Every month you delay is a month where the servicer's automated systems will default you into deferment and quietly cost you the benefits RAP was built to deliver.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">One caveat &mdash; the one-loan trap is real. If you are taking any new Direct Loan for grad school and you had grandfathered access to IBR or PAYE on your older loans, that access is gone the moment the new loan disburses. That is a separate decision that should happen before you sign the master promissory note, not after. Compare your options with the <a href="plan-comparison.html" style="color: #2E75B6;" class="hover:underline">Plan Comparison Tool</a> before you commit.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not financial, tax, or legal advice. Consult a licensed student loan counselor or your school's financial aid office before opting out of in-school deferment or committing to a new grad-school loan. Interest rates, program parameters, and servicer procedures cited here reflect Department of Education guidance and 2026-27 loan rate publications current through August 8, 2026.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
