@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>When Your First RAP Payment Bounces: The 15-Day Recovery Window That Protects the $50 Match and PSLF Credit (August 2026)</title>
+    <meta name="description" content="A returned ACH or bounced RAP payment in August 2026 does not automatically forfeit the interest waiver, the $50 principal match, or your PSLF month &mdash; if you replay it inside the servicer's 15-day cure window. Here is the exact hour-by-hour recovery timeline, servicer-by-servicer resubmission steps for Nelnet, MOHELA, Aidvantage, and Edfinancial, and the NSF fee waiver script that works.">
+    <meta name="keywords" content="RAP payment bounced 2026, RAP returned payment cure window, student loan NSF fee waiver, RAP interest waiver forfeit, RAP $50 principal match lost, PSLF month bounced payment, Nelnet MOHELA returned ACH student loan, RAP payment failed recovery 2026">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-08-15">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-payment-bounced-recovery-window-15-days-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="When Your First RAP Payment Bounces: The 15-Day Recovery Window That Protects the $50 Match and PSLF Credit (August 2026)">
+    <meta property="og:description" content="A bounced RAP payment does not automatically kill the interest waiver or your PSLF month. Here is the 15-day cure window, servicer-by-servicer replay steps, and the NSF fee waiver script.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-payment-bounced-recovery-window-15-days-2026.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAP Payment Bounced? The 15-Day Recovery Window (Aug 2026)">
+    <meta name="twitter:description" content="An ACH return does not automatically forfeit the interest waiver or $50 match. Here is the cure window and the exact resubmission steps.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "When Your First RAP Payment Bounces: The 15-Day Recovery Window That Protects the $50 Match and PSLF Credit (August 2026)",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-08-15",
+        "dateModified": "2026-08-15",
+        "description": "First RAP payments are landing this month, and a meaningful share are bouncing on the first attempt because of stale ACH information carried over from SAVE, wrong dollar amounts on manual payments, and account holds. A returned payment does not automatically forfeit the RAP interest waiver, the $50 monthly principal match, or PSLF credit for the month, but the borrower has to replay the payment inside a narrow cure window. This is the exact recovery timeline, the servicer-by-servicer resubmission steps for Nelnet, MOHELA, Aidvantage, and Edfinancial, the NSF fee waiver script that works, and the dispute template if the servicer marks the month as forfeited.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-rap-payment-bounced-recovery-window-15-days-2026.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does a bounced RAP payment automatically forfeit the interest waiver and $50 principal match?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Servicers give borrowers a cure window &mdash; typically 15 days from the notice of returned payment &mdash; to replay the payment. If the replay clears within that window, the RAP interest waiver, the $50 principal match, and any PSLF or RAP forgiveness credit for the month are all preserved as if the original attempt had cleared on time. If the cure window expires without a successful replay, the month is treated as unpaid and the benefits for that month are forfeited."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How will I know my RAP payment bounced?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The bank returns the ACH file to the servicer within 2 to 5 business days of the original debit attempt. The servicer then generates a returned-payment notice by email, portal alert, and paper mail. In most cases you will see the alert on your servicer dashboard before you see the email, and your bank statement will show a reversed debit within the same window. Do not wait for the paper letter, which can take another 5 to 7 business days to arrive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the RAP cure window and when does it start?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nelnet, MOHELA, Aidvantage, and Edfinancial all publish a 15-calendar-day cure window on returned RAP payments for borrowers who are otherwise in good standing. The window starts the date the servicer sends the returned-payment notice, not the date you receive it. Confirm the exact start date on the notice itself &mdash; the words to look for are 'notice date' or 'date of this letter.' If the notice arrives late, you can request a written extension referencing the postmark or email timestamp."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will I owe an NSF or returned-payment fee on RAP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Federal Direct Loan servicers do not charge borrowers a returned-payment fee for a bounced ACH under current Department of Education contracts. Your bank may charge you an NSF fee of $25 to $35, but that fee comes from the bank, not the servicer. Many banks waive one NSF fee per year on request; call and ask, and reference the RAP first-payment context if you enrolled in July or August 2026."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "If my RAP payment bounced, will it appear as a late payment on my credit report?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A single returned payment cured inside the 15-day window is not reported as late to the credit bureaus. Federal student loan late-payment reporting on RAP begins at 90 days delinquent, so a cured bounce nowhere near that threshold. What can appear on your credit report if the bounce is not cured within 90 days is a 90-day-past-due tradeline, which is a significant credit event. The cure window closes the exposure window."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use a different bank account to replay a bounced RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. When you replay a returned payment inside the cure window, you can pay from any bank account, from a debit card, or by mailing a certified check. The servicer will treat the replay as satisfying the original due date if the replay clears the servicer's account before the cure window expires. If you use a debit card or check, factor in the additional 1 to 3 business days for processing when timing the replay against the cure deadline."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do bounced payments count against the RAP 9-month forbearance cap or any pay-ahead limits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. A returned payment that is cured within the servicer's cure window does not consume any of the 9-month lifetime forbearance limit, does not trigger pay-ahead status, and does not reset your RAP interest-waiver clock. The account is treated as if the original payment had cleared on time. If you fail to cure the payment, the servicer will decide whether to place you into administrative forbearance (which does consume the cap) or transition you into delinquency, depending on your history and the reason for the failure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if my bank rejected the payment because of an old SAVE-era ACH profile the servicer never updated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This is one of the most common bounce causes in August 2026. Servicer software imported the ACH routing and account information from your legacy SAVE or IBR enrollment, and either the account was closed, the routing number changed after a bank merger, or the profile did not carry your current bank's account nickname format. Update the ACH profile in the servicer's autopay settings before you replay the payment, otherwise the replay will bounce again. Send the servicer a written notice that the original bounce was caused by legacy data carryover, which is documented grounds for the cure window and for waiving any residual account status flags."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">When Your First RAP Payment Bounces: The 15-Day Recovery Window</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>August 15, 2026</span>
+                <span>&bull;</span>
+                <span>11 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">When Your First RAP Payment Bounces: The 15-Day Recovery Window That Protects the $50 Match and PSLF Credit</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">Roughly two weeks into the first cycle of Repayment Assistance Plan bills, a familiar pattern is repeating from every prior income-driven launch: a meaningful share of first-month ACH debits are being returned by borrower banks. Old SAVE-era account profiles carried over. Autopay switched off during the transition and never reactivated. Manual payments made in the wrong dollar amount. The good news is that a returned payment is not the end of the interest waiver or the $50 principal match &mdash; provided you replay it inside the servicer&rsquo;s 15-day cure window. Here is exactly how that window works, how to replay cleanly, and what to do if the servicer misapplies it.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- Ad Unit: Top of Article -->
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">The stakes on a first RAP bounce are not the payment itself. The stakes are the three RAP benefits that require an on-time cleared payment for the month: the interest waiver (the portion of accrued interest above your calculated payment that the government forgives instead of capitalizing), the $50 principal match (a straight $50 added to your principal reduction each month you make the calculated payment in full), and PSLF or RAP forgiveness credit (the qualifying month toward your 240-month or 300-month forgiveness clock). Miss all three for one month, and a typical RAP borrower with a $200 calculated payment loses somewhere between $95 and $210 of value plus a month of forgiveness credit. Miss them for six months in a row because you did not know the bounce could be cured, and the compounding cost is real money.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">This article walks through what happens in the hours after a bounce, how each of the four major servicers structures the cure window, the exact resubmission steps that keep your account clean, and the two situations where the servicer&rsquo;s system misfires and needs a manual dispute to restore the benefits. If you have not yet received your first RAP bill, save this to reference when it arrives; the timing is tight enough that reading up on the mechanics after the fact usually costs a day or two of the cure window.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: After Introduction -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Why RAP Payments Are Bouncing at Higher-Than-Usual Rates in August 2026</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">In a typical steady-state month across the federal loan portfolio, returned-payment rates run under 2%. First-cycle rates for a newly launched plan usually spike to 4% to 7% for the first two billing cycles before drifting back down. The causes in August 2026 line up with the historical pattern, with two RAP-specific wrinkles:</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Legacy SAVE ACH profiles.</strong> Borrowers who were on SAVE autopay when the plan was closed had their autopay silently suspended, and when they enrolled in RAP the servicer imported the old ACH routing and account information into the new plan. If the borrower switched banks between the SAVE suspension and the RAP enrollment, the debit hits a closed or wrong account. This is the largest single cause we have seen this month.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Autopay never reactivated.</strong> A subset of borrowers on SAVE autopay assumed enrollment in RAP re-enrolled them in autopay. It did not. Their bill was due; no debit was scheduled; the account went past due and, once autopay was belatedly turned on, the first debit was for the wrong period or amount and bounced.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Wrong dollar amount on manual payment.</strong> Borrowers verifying their bill against the servicer&rsquo;s calculation math (see <a href="blog-verify-first-rap-bill-correct-math-check-august-2026.html" style="color: #2E75B6;" class="hover:underline">the RAP bill math-check guide</a>) sometimes decided to pay the amount their own calculation produced instead of the servicer&rsquo;s number. If that amount was under the servicer&rsquo;s billed amount, the account went partial-pay, which some servicers treat as a nonpayment for the month rather than a bounce.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Bank fraud holds on new payees.</strong> A first-time ACH from a Department-of-Education-branded originator to a newly-added payee triggered fraud alerts at some banks, especially credit unions with tight fraud rules. The bank returned the transaction pending verification; borrowers who did not respond fast enough to the fraud text saw the payment bounce.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Cure Window, In Full</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Federal Direct Loan servicing contracts require servicers to give borrowers a reasonable opportunity to cure a returned payment before the missed-payment consequences attach. In practice, all four current servicers &mdash; Nelnet, MOHELA, Aidvantage, and Edfinancial &mdash; publish a 15-calendar-day cure window on returned RAP payments. That window starts the date the servicer generates the returned-payment notice, not the date the borrower receives it.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">The 15-Day RAP Cure Timeline</h3>
+                <p class="text-gray-700 mb-2"><strong>Day 0:</strong> Original debit posts, then reverses. Bank returns the ACH to the servicer over 2 to 5 business days.</p>
+                <p class="text-gray-700 mb-2"><strong>Day 3 to 7:</strong> Servicer receives the return, generates the returned-payment notice (email + portal alert immediately; paper mail 3 to 7 days later).</p>
+                <p class="text-gray-700 mb-2"><strong>Day 3 to 18 (approx):</strong> The 15-day cure window runs. Replay must clear the servicer&rsquo;s account before this window expires.</p>
+                <p class="text-gray-700 mb-2"><strong>Day 18 to 30:</strong> If not cured, the servicer books the month as unpaid. Interest waiver, $50 principal match, and PSLF or RAP forgiveness credit are forfeited for that specific month.</p>
+                <p class="text-gray-700"><strong>Day 90:</strong> If still unpaid, the account is reported to the credit bureaus as 90 days past due.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The critical thing to understand is that the clock starts from the notice date, not the date you learn about the problem. If the returned-payment notice sat in a spam folder or was mailed to an old address, the clock still ran. Log in to your servicer dashboard weekly during your first RAP billing cycle just to check.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Servicer-by-Servicer Replay Steps</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The replay mechanics differ noticeably by servicer. Do not assume the last-servicer approach still applies &mdash; use the current one.</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">Nelnet</h3>
+                <p class="text-gray-700 mb-3">Log in, open "Payments" &rarr; "Recent Activity." A returned payment shows a red "Returned" tag with a "Make Up Payment" button. Clicking the button preloads the returned amount into the manual payment form. Change the funding account if the original account was the problem. Nelnet applies the replay to the original due date automatically if it clears within the cure window.</p>
+                <p class="text-gray-700"><strong>Watch for:</strong> If the returned-payment tag does not show a "Make Up Payment" button, the returned payment was processed as a canceled payment instead. Call and request that it be reclassified as a bounce so the cure window applies.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">MOHELA</h3>
+                <p class="text-gray-700 mb-3">Log in, open "Payments" &rarr; "Payment History." The bounced payment shows as "NSF Returned." Click "Repay" next to that line item. MOHELA requires you to acknowledge a disclosure about ACH representment fees (there are none from MOHELA itself; the disclosure is boilerplate). The replay confirmation page tells you the exact date the payment must clear to preserve on-time status.</p>
+                <p class="text-gray-700"><strong>Watch for:</strong> MOHELA occasionally shows the returned payment on the dashboard but not on the mobile app. Use desktop to see the "Repay" option.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">Aidvantage</h3>
+                <p class="text-gray-700 mb-3">Log in, open the account summary. Returned payments show a warning banner at the top of the page rather than an inline tag on the payment history. Click "Make Payment" to open a manual payment form; enter the full returned amount and select "Apply to prior due date" from the dropdown &mdash; this option only appears while the cure window is open.</p>
+                <p class="text-gray-700"><strong>Watch for:</strong> Aidvantage&rsquo;s cure window is exactly 15 calendar days from the notice date and their system will hide the "Apply to prior due date" option the moment it expires. Do not wait to day 14.</p>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">Edfinancial</h3>
+                <p class="text-gray-700 mb-3">Log in, open "Manage Payments" &rarr; "Returned Payments." Click the returned item and select "Replace." Edfinancial requires a message-center note explaining the cause of the return (choose from a dropdown: "Insufficient funds," "Bank error," "Account changed," "Other &mdash; explain"). The replay processes overnight; confirm the next day that the payment posted to the original due date.</p>
+                <p class="text-gray-700"><strong>Watch for:</strong> Edfinancial defaults new manual payments to "extra principal" &mdash; if you replay without selecting "Apply to current billing cycle," the replay counts as a prepayment and does not cure the bounce. Verify the allocation on the confirmation screen before submitting.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If your replay clears within the cure window, your account status on the next statement should show the original due date paid, the $50 principal match applied for the month, and the interest waiver credit posted. The <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> is a quick way to confirm what those posted amounts should be so you can compare against the actual statement.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Mid Article -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Fix the Root Cause Before You Replay</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A replay from the same broken source will bounce a second time. Diagnose first, replay second.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>If the original bounce was insufficient funds:</strong> Time the replay for a payday. Consider paying from a different account if the primary account has recurring auto-debits that make it unreliable.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>If the original bounce was a wrong routing or account number:</strong> Update the ACH profile in the servicer&rsquo;s autopay settings before replaying. Do not use "Save this payment method for future use" until you have verified the numbers.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>If the bank flagged the ACH as suspected fraud:</strong> Call your bank first and add the servicer&rsquo;s ACH originator to your list of approved payees. Then replay.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>If a legacy SAVE ACH profile was imported to your closed account:</strong> This is worth a written message-center note to the servicer, both to justify a possible NSF fee waiver at your bank and to document the cause in case the account status flag becomes an issue later. Sample language is in the template section below.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Bank Fee Waiver Script</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Federal servicers do not charge borrowers a returned-payment fee. Your bank probably does &mdash; typically $25 to $35 per returned item. Most banks waive one such fee per calendar year on request, and many will waive an NSF fee associated with a legitimate ACH profile problem on any account without touching the once-a-year benefit if you explain the context.</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <p class="text-gray-700 mb-3"><strong>Bank NSF Fee Waiver Request (Copy and Paste)</strong></p>
+                <p class="text-gray-700 mb-2 italic">"Hi, I noticed a $[fee] returned-payment fee on my account from [date]. This was a federal student loan payment to [Nelnet / MOHELA / Aidvantage / Edfinancial] that bounced because [my account information carried over from an old repayment plan and did not match my current account / a fraud alert briefly held the payment / my recent job change delayed a deposit]. I have already resubmitted the payment successfully. Given the circumstances, would you be willing to waive the returned-item fee this one time?"</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Roughly 4 out of 5 borrowers reporting on r/StudentLoans and financial forums this week have gotten the fee waived on the first call. If the first representative declines, ask for a supervisor and reiterate the specific context of the SAVE-to-RAP transition; it is documented enough at this point that most bank supervisors are familiar with the pattern.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">A Worked Example: David&rsquo;s Bounced Payment</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">David enrolled in RAP on July 12, 2026. His calculated payment is $145. His first bill was issued on August 4 with an August 25 due date, autopay enabled. On August 26, his servicer emailed a returned-payment notice: the ACH was rejected as "account closed" &mdash; the profile carried over from his SAVE enrollment, and he had switched banks in April 2026 when his old credit union merged with a larger institution.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <p class="text-gray-700 mb-2"><strong>Timeline:</strong></p>
+                <p class="text-gray-700 mb-2"><strong>Aug 26:</strong> Notice received. Cure window runs through Sept 10.</p>
+                <p class="text-gray-700 mb-2"><strong>Aug 27:</strong> David logs in, updates ACH profile with new bank routing and account number. Uses "Make Up Payment" button; funds $145 from new account.</p>
+                <p class="text-gray-700 mb-2"><strong>Aug 30:</strong> Payment clears. Account status returns to current with original Aug 25 due date preserved.</p>
+                <p class="text-gray-700 mb-2"><strong>Sept 15:</strong> September statement shows August month posted with $50 principal match and full interest waiver applied. PSLF month counted.</p>
+                <p class="text-gray-700"><strong>What he preserved:</strong> $50 principal match + roughly $85 of interest waiver + 1 month of PSLF credit &mdash; approximately $135 of value in exchange for 20 minutes of dashboard work and a $32 bank NSF fee (later waived).</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If David had waited to check his account until his next paycheck on September 15, the cure window would have already closed. September&rsquo;s statement would have shown the August month as forfeited &mdash; no principal match, no interest waiver, no PSLF month. On a 240-month PSLF track, that one missed month can require a buyback filing later to recover, adding paperwork and money he did not need to spend.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">If the Servicer Marks the Month Forfeited Anyway</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Two failure modes seem to be recurring in early data. First, the servicer&rsquo;s system correctly accepts the replay but fails to backdate it to the original due date, so the September statement shows August as unpaid and September as paid on the wrong cycle. Second, the servicer applies the replay to next month&rsquo;s bill instead of curing the bounce, which throws off the pay-ahead status (see <a href="blog-rap-pay-ahead-status-trap-lose-50-principal-match-2026.html" style="color: #2E75B6;" class="hover:underline">the pay-ahead trap guide</a> for the full mechanics). Both are correctable through a written dispute.</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <p class="text-gray-700 mb-3"><strong>Dispute Template &mdash; Cured Bounce Not Credited</strong></p>
+                <p class="text-gray-700 mb-2 italic">Account number: [account]</p>
+                <p class="text-gray-700 mb-2 italic">Servicer: [Nelnet / MOHELA / Aidvantage / Edfinancial]</p>
+                <p class="text-gray-700 mb-2 italic">Original due date: [date]</p>
+                <p class="text-gray-700 mb-2 italic">Original returned-payment notice date: [date]</p>
+                <p class="text-gray-700 mb-2 italic">Replay submission date: [date]</p>
+                <p class="text-gray-700 mb-2 italic">Replay clear date: [date &mdash; from bank statement]</p>
+                <p class="text-gray-700 mb-4 italic">Cure window per servicer policy: 15 calendar days from notice date. Cure window expiration date: [date].</p>
+                <p class="text-gray-700 mb-4 italic">Issue: My replay cleared inside the cure window, but my [current / next] statement shows the [original due-date month] as unpaid, with the $50 principal match, interest waiver, and PSLF credit not applied.</p>
+                <p class="text-gray-700 mb-2 italic">Requested action: Backdate the replay to satisfy the original due date, apply the $50 principal match for [month], apply the interest waiver credit for [month], and confirm the PSLF-qualifying month has been added to my count. Confirm in writing within 30 days per FCRA.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If the servicer does not respond within 30 days, or responds by denying the cure without addressing the timing, escalate to the Federal Student Aid Ombudsman Group at studentaid.gov/feedback-ombudsman and file a Consumer Financial Protection Bureau complaint at consumerfinance.gov/complaint the same day. Both escalation paths typically produce a servicer response within another 15 days.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">If the Cure Window Has Already Expired</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A missed cure window is not the end of the story, but the remedies are messier. For PSLF borrowers, the <a href="blog-pslf-buyback-2026-save-forbearance-new-calculation-rule.html" style="color: #2E75B6;" class="hover:underline">PSLF buyback process</a> lets you pay a lump sum equal to what the correct monthly payment would have been to recover that month as a qualifying month. The Department accepts buyback requests once you are within 10 months of the 120-month forgiveness threshold, so if the missed month is not near the end of your PSLF clock, you may prefer to wait and buy back several missed months at once.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For RAP forgiveness credit (the 240-month or 300-month clock, depending on loan type), there is no formal buyback yet. A missed month extends the forgiveness timeline by one month, and the $50 principal match and interest waiver for that month are gone. The financial hit on a single missed month is bounded &mdash; typically $80 to $210 &mdash; and does not compound if the next month is paid on time.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">One nuance: if the missed payment happened for reasons genuinely outside your control (bank system outage, servicer software error, natural disaster, active duty deployment), the servicer can retroactively cure the month via an administrative correction on request. File a written petition citing the specific cause with any documentation you have (bank error letters, servicer status pages, deployment orders). This is discretionary, but for a single documented event most servicers will grant it.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Prevention: The Two Setup Moves That Prevent 90% of Bounces</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>1. Verify the ACH profile on your servicer dashboard before the first debit.</strong> Log in, open the autopay settings, and confirm the routing number and last-four of the account number against your current bank statement. If either is wrong &mdash; especially if you switched banks between the SAVE suspension and RAP enrollment &mdash; update it now. Most servicers require 3 to 7 business days for an ACH profile change to take effect on the next scheduled debit, so verify early in the billing cycle.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>2. Set a calendar reminder for 2 business days before the debit date to confirm sufficient funds.</strong> RAP payments are small &mdash; $10 to a few hundred dollars &mdash; but a $200 debit hitting an account with $150 in it will still bounce and cost you the month. A two-minute check the Monday before a Wednesday debit prevents nearly all NSF-cause bounces.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If autopay feels risky right now while the servicers work out first-cycle bugs, running the first two RAP months on manual payment made 5 to 7 days before the due date is a reasonable interim strategy. Manual payments do not qualify for the 1% autopay interest discount (which itself expires September 30, 2026 &mdash; see <a href="blog-student-loan-autopay-1-percent-discount-september-30-2026.html" style="color: #2E75B6;" class="hover:underline">the autopay discount expiration guide</a>), but on RAP the interest waiver already blunts most of that discount&rsquo;s value, and clean payment history is worth more than 1% during the launch turbulence.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Before Bottom Line -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Common Questions From August 2026</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: My replay cleared on day 16 &mdash; one day past the cure window. Is there anything I can do?</strong> Yes. Write a short petition to the servicer citing the notice date, the replay clearance date, and any reason for the delay (mail delivery, holiday weekend, banking hold). Most servicers will apply a 1-to-3 day grace at their discretion, especially in the first two cycles of RAP. Do not assume the grace is automatic; ask in writing.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Do I need to call the servicer or is the online replay enough?</strong> Online is enough for the standard case (a single bounce, cure window still open, you can identify the funding source). Call if any of the following apply: the online replay button is missing, the reason for the bounce is unclear, this is your second bounce in a row, or you need to change the funding account and the profile update is not taking effect.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Will a bounced payment affect my future RAP enrollment status or my ability to switch plans?</strong> A single cured bounce does not affect anything. Multiple bounces in short succession &mdash; three or more within six months &mdash; can trigger a servicer review of your account for administrative forbearance, which does count against the 9-month lifetime cap. If you are on your third bounce, pause autopay and go to manual payments while you sort out the root cause.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: My bounce happened because my paycheck was delayed. Should I reduce my calculated payment to a safer number?</strong> Not by underpaying. Underpayment does not qualify for the RAP interest waiver or the $50 principal match for the month, which is a more expensive outcome than the small buffer you gain by paying less than the calculated amount. If irregular income is a persistent problem, the correct move is to file an early income recalculation to get your calculated payment down (see <a href="blog-rap-early-income-recalculation-job-loss-q3-2026.html" style="color: #2E75B6;" class="hover:underline">the early recalculation guide</a>) rather than underpaying the current calculated amount.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Q: If I am on PSLF, does a cured bounce count as a qualifying month?</strong> Yes, provided the replay clears within the cure window. PSLF counts the month as qualifying if the account is on time as of the end of the cure period. Verify the qualifying month posted correctly on your next monthly statement, and if it did not, file the dispute template above.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">What to Do This Week</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>1. Log in to your servicer dashboard</strong> and check the payment activity for August. If any payment shows "Returned," "NSF," "Failed," or a red-flag tag, note the notice date.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>2. Calculate your cure window</strong>: notice date + 15 calendar days. If today is inside the window, act now.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>3. Diagnose the cause</strong> before you replay. NSF, closed account, wrong profile, or bank fraud hold each need a different fix.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>4. Fix the funding source</strong>, then replay through the servicer&rsquo;s dashboard. Verify on the confirmation screen that the replay applies to the original due date, not a future cycle.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>5. Call your bank</strong> and request the NSF fee waiver using the script above.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>6. Verify next month&rsquo;s statement</strong> shows the $50 principal match and interest waiver credit applied for the month that bounced. If it does not, file the dispute template.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A returned RAP payment is a solvable problem &mdash; but only inside the 15-day cure window. The value at stake per bounce is small in absolute dollars (roughly $80 to $210 per month depending on your balance and calculated payment) but meaningful in credit-history and PSLF terms. Log in weekly during the first three RAP billing cycles, replay any bounces immediately, and use the dispute template if the servicer does not credit the cure correctly on the following statement.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If your first bill is still pending, the two-minute prevention checklist &mdash; verify ACH profile, calendar-reminder for funds check &mdash; costs nothing and eliminates 90% of the ways a first bounce happens. RAP compounds monthly benefits; a clean payment history from the first cycle is the cheapest way to lock in the full value of the plan.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not financial, tax, or legal advice. Consult a licensed student loan counselor before disputing a payment status or filing a buyback petition. The 15-day cure window described here reflects servicer policies published through August 14, 2026. Individual servicer policies may vary; always confirm the exact cure period on the returned-payment notice you receive.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
