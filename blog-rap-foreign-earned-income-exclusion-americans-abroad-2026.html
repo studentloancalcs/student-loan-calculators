@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Do RAP Payments Drop If You Live Abroad? Foreign Earned Income Exclusion and Student Loan AGI in 2026</title>
+    <meta name="description" content="Americans abroad who claim the 2026 Foreign Earned Income Exclusion ($132,900 per person) can legally reduce the AGI that drives their RAP payment to as low as $10 per month. Here is exactly how it works, when FEIE beats the Foreign Tax Credit for RAP purposes, the servicer verification traps for foreign-address borrowers, and the PSLF-abroad rules that decide whether every low RAP payment still counts.">
+    <meta name="keywords" content="RAP foreign earned income exclusion 2026, student loan payment abroad, FEIE student loan RAP, expat student loan repayment 2026, Form 2555 RAP AGI, student loan Americans abroad, PSLF employer abroad 2026, foreign address RAP recertification">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-08-31">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-foreign-earned-income-exclusion-americans-abroad-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Do RAP Payments Drop If You Live Abroad? FEIE and Student Loan AGI in 2026">
+    <meta property="og:description" content="The 2026 Foreign Earned Income Exclusion is $132,900 per person. Because RAP uses Line 11 AGI, expats often qualify for a $10 monthly RAP payment while still earning six figures overseas. Here is how, when, and the servicer traps to avoid.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-rap-foreign-earned-income-exclusion-americans-abroad-2026.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAP + FEIE: How Expats Legally Get a $10 Student Loan Payment in 2026">
+    <meta name="twitter:description" content="The 2026 Foreign Earned Income Exclusion is $132,900. Because RAP calculates against Line 11 AGI, most Americans abroad qualify for the $10 minimum &mdash; if the servicer processes the application correctly.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Do RAP Payments Drop If You Live Abroad? Foreign Earned Income Exclusion and Student Loan AGI in 2026",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-08-31",
+        "dateModified": "2026-08-31",
+        "description": "The Repayment Assistance Plan calculates a borrower's monthly payment from Form 1040 Line 11 AGI. Because the 2026 Foreign Earned Income Exclusion removes up to $132,900 of foreign wages before Line 11 is calculated, most Americans abroad qualify for the $10 RAP minimum even at six-figure gross salaries. This guide walks through the FEIE-versus-Foreign-Tax-Credit choice as it applies specifically to RAP, the servicer traps for foreign-address borrowers, the PSLF-abroad employer eligibility rules, and full worked examples for teachers in Korea, engineers in Germany, and NGO workers in Kenya.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-rap-foreign-earned-income-exclusion-americans-abroad-2026.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does the Foreign Earned Income Exclusion actually lower my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. RAP is calculated against Form 1040 Line 11, which is Adjusted Gross Income. The FEIE is subtracted from gross income on Schedule 1 before Line 11 is computed, so a $132,900 exclusion (the 2026 limit) directly reduces the AGI the servicer uses. A single filer earning $130,000 abroad with FEIE elected has an AGI of roughly $0, which pushes the RAP payment to the $10 monthly floor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the 2026 FEIE limit and what income qualifies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For tax year 2026 the maximum exclusion is $132,900 per person on Form 2555. If both spouses meet the tests independently, each may exclude up to $132,900 for a combined $265,800. Qualifying income is foreign earned wages, salary, or self-employment income for services physically performed abroad. Passive income, US-source wages, US government pay, pensions, and distributions do not qualify. The Foreign Housing Exclusion sits on top of FEIE and can exclude additional amounts for high-cost cities such as Hong Kong, Singapore, Zurich, and Tokyo."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use FEIE or the Foreign Tax Credit for RAP purposes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most RAP borrowers abroad, FEIE beats the Foreign Tax Credit because FEIE reduces Line 11 AGI and the FTC does not. The FTC is applied on Schedule 3 as a credit against tax, after AGI is already computed. Two exceptions: if you live in a high-tax country (Germany, France, the UK, Canada, Australia) and want to preserve refundable credit tax benefits, or if you earn well above the FEIE cap and want to combine partial FEIE with FTC on the remainder, the math can favor a blended approach. Model both scenarios before filing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the servicer verify AGI when I live abroad?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Two paths. The IRS Data Retrieval Tool at studentaid.gov pulls Line 11 directly from your filed Form 1040 and is the fastest option; it works from any country as long as you have IRS.gov credentials. If DRT fails (common with certain foreign IP ranges), you can upload a signed Form 1040 page 1 plus Form 2555. The servicer must accept alternative documentation under 34 CFR 685; if the first ticket bounces citing a missing IRS transcript, escalate with a written request citing the alternative-documentation regulation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does working for a foreign employer count for PSLF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Only if the employer is a US-based 501(c)(3), a US federal, state, tribal, or local government entity, or a limited class of qualifying non-profit foreign employers with a US taxpayer identification number. A foreign private company does not qualify, even if the work is charitable in nature. A US NGO's overseas office generally does qualify. Peace Corps, US Foreign Service, and Fulbright placements typically qualify. Check the employer's PSLF status on the Department of Education's PSLF Help Tool before assuming credit."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "If FEIE zeroes my AGI, do I still owe the $10 minimum RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. RAP sets a $10 floor on monthly payments even when the calculated amount would be lower. Paying the $10 on time each month earns the interest waiver, the $50 principal match, and PSLF-qualifying credit exactly as a higher payment would. Skipping it because the formula 'would have been zero' forfeits all three benefits for that month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens at RAP recertification if my foreign situation changes mid-year?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RAP uses the most recent federal tax return on file. If you moved abroad mid-2026 and only claimed a partial-year FEIE, next year's recertification will still pull the 2026 return, and the RAP payment will reflect the partial exclusion. If you moved back to the US mid-year, the same logic applies in reverse and your payment goes up at the following recertification. You can request an early recertification under the income-change rule at any time; this is often useful when the tax year on file overstates or understates the current situation by more than 10%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the Foreign Housing Exclusion further reduce my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The Foreign Housing Exclusion is claimed on the same Form 2555 as FEIE and reduces AGI further for borrowers in high-cost cities. In 2026 the base housing amount is roughly $21,264 for standard locations, with higher city-specific caps for Hong Kong, Tokyo, Singapore, Geneva, Zurich, Dubai, and London (see IRS Notice 2026 update). Every additional dollar of exclusion is a dollar less of AGI, and once AGI is below the RAP first bracket, the $10 minimum applies regardless."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can self-employed expats use FEIE for RAP purposes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, but with one wrinkle. Self-employed foreign earned income qualifies for FEIE, but the exclusion does not reduce self-employment tax; only income tax. That means an expat freelancer still pays SE tax of 15.3% on net self-employment income, and RAP still calculates against the FEIE-reduced Line 11 AGI. Deduct Schedule C business expenses first, take FEIE on the net, and file Schedule SE separately for the self-employment tax obligation. Totalization agreements with the country of residence may waive SE tax; verify before filing."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">RAP and the Foreign Earned Income Exclusion: Americans Abroad in 2026</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>August 31, 2026</span>
+                <span>&bull;</span>
+                <span>11 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">Do RAP Payments Drop If You Live Abroad? The Foreign Earned Income Exclusion and Your Student Loan AGI in 2026</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">Roughly 900,000 US citizens with federal student loans live outside the United States. Because the Repayment Assistance Plan calculates monthly payments against Form 1040 Line 11 AGI &mdash; and the 2026 Foreign Earned Income Exclusion removes up to $132,900 of foreign wages <em>before</em> Line 11 is computed &mdash; most Americans abroad qualify for the $10 RAP minimum even at six-figure gross salaries. Here is exactly how it works, when FEIE beats the Foreign Tax Credit for RAP purposes, and the servicer traps that keep the math from landing correctly on the first pass.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- Ad Unit: Top of Article -->
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">This is one of the few genuinely favorable interactions between US tax law and federal student loan repayment. The mechanics have existed for decades under IBR and PAYE, but RAP's simpler formula &mdash; a flat percentage of AGI, with a hard $10 floor &mdash; makes the outcome sharper and the paperwork faster. A single filer earning $128,000 as an English teacher in Seoul, an engineer in Munich, or a consultant in Dubai can legally pay $10 a month on federal loans while earning the interest waiver, the $50 principal match, and PSLF-qualifying credit &mdash; provided the tax return is filed correctly and the servicer accepts foreign-address documentation on the first pass.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The catch is not the tax law. The catch is servicer processing. Foreign addresses trigger extra verification steps, the IRS Data Retrieval Tool sometimes silently fails from foreign IP ranges, and PSLF employer eligibility abroad narrows the list of employers that qualify. Get all three right and the arithmetic works. Miss any one and you leave money on the table for a full year until the next recertification.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: After Introduction -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">How FEIE Reduces AGI Before RAP Ever Sees It</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The order of operations on Form 1040 is the whole story. Wages go on Line 1a. Foreign earned income excluded under Section 911 is subtracted on Schedule 1, Line 8d, as a negative number. That negative flows to Line 10 of the 1040 (Adjustments), which reduces total income to produce Adjusted Gross Income on Line 11. RAP reads Line 11.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A worked example makes this concrete. Suppose you earned $128,000 as an English teacher in South Korea in 2025 and met either the physical presence test (330 days in a 12-month period abroad) or the bona fide residence test. On Form 2555 you claim the full $132,900 FEIE, but you can only exclude what you actually earned, so the exclusion caps at $128,000. Line 1a shows $128,000; Schedule 1 Line 8d shows -$128,000; Line 11 AGI shows $0 (or a small positive if you had US-source interest or dividends). The RAP formula bracket for AGI at or below the first threshold produces a scheduled payment below the floor, so the servicer bills $10.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">The RAP + FEIE Math in Four Lines</h3>
+                <p class="text-gray-700 mb-1">1. Foreign wages: $128,000</p>
+                <p class="text-gray-700 mb-1">2. FEIE (Form 2555, 2026 cap $132,900): &minus;$128,000</p>
+                <p class="text-gray-700 mb-1">3. Line 11 AGI: $0 (assuming no other US income)</p>
+                <p class="text-gray-700"><strong>4. RAP monthly payment: $10 (statutory floor)</strong></p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">You can model any AGI combination in the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> before filing to confirm the bracket and payment. Set AGI to your projected Line 11, dependent count to what will appear on the return, and filing status to what you plan to elect.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">FEIE vs. Foreign Tax Credit: Which Wins for RAP?</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">This is the single most consequential choice for a US expat with federal student loans, and the RAP-optimal answer often differs from the tax-optimal answer. The Foreign Tax Credit (FTC), claimed on Form 1116 and applied on Schedule 3, is a dollar-for-dollar credit against US tax liability &mdash; but it does not touch AGI. Line 11 stays the same whether you elect FTC or not.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If you live in a high-tax country such as Germany, France, the United Kingdom, Canada, or Australia, the FTC alone often wipes out your US tax liability without ever electing FEIE. From a pure tax-owed standpoint the FTC is simpler and preserves eligibility for certain refundable credits that FEIE users lose (the Additional Child Tax Credit, in particular). But for RAP purposes, an FTC-only election leaves your AGI at $128,000 and produces a RAP payment in the low hundreds of dollars per month &mdash; instead of $10.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For a borrower on PSLF or the 30-year RAP forgiveness path, that difference compounds. Ten years of $10 payments versus $290 payments is $33,600 of cash that stays in your pocket, and every one of those months still counts toward forgiveness. Unless the refundable-credit loss from FEIE exceeds that gap &mdash; rare for single filers, less rare for large families &mdash; FEIE wins on the RAP side.</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">FEIE-vs-FTC Decision Framework for RAP Borrowers</h3>
+                <p class="text-gray-700 mb-2"><strong>Choose FEIE if:</strong> Your foreign earned income is at or below $132,900, you have no children eligible for the refundable Additional Child Tax Credit (or few enough that the ACTC value is small), and you want the lowest possible RAP payment.</p>
+                <p class="text-gray-700 mb-2"><strong>Choose a blended FEIE + FTC if:</strong> Your foreign earned income exceeds $132,900. Claim FEIE up to the cap and take FTC on the remainder. Line 11 AGI equals the unexcluded remainder.</p>
+                <p class="text-gray-700"><strong>Choose FTC-only if:</strong> You have three or more qualifying children and the refundable ACTC exceeds the RAP savings from FEIE, or you plan to return to the US within a year and want to preserve the option to revoke FEIE without the 5-year lockout.</p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The 5-year revocation lockout is a real trap. Once you revoke FEIE, the IRS bars you from re-electing it for the next five tax years without private letter ruling permission. If you might move back to the US within a year or two and later go abroad again, take that lockout into account before revoking. For most steady expats, it is not a concern; for globally mobile knowledge workers, it can be.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Foreign Housing Exclusion: A Second Lever</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Sitting on top of FEIE on the same Form 2555 is the Foreign Housing Exclusion (or, for the self-employed, the Foreign Housing Deduction). It excludes qualifying housing expenses &mdash; rent, utilities other than telephone, insurance, real property taxes paid by the tenant &mdash; above a base amount and below a city-specific cap. For 2026 the base amount is approximately $21,264 for standard locations, with higher caps for high-cost cities updated annually in an IRS notice.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For a borrower earning above the FEIE cap in a high-cost city &mdash; say $180,000 in Zurich or Hong Kong &mdash; the housing exclusion often pulls the remaining AGI down into the lowest RAP bracket even when FEIE alone does not. Combine $132,900 FEIE with $35,000 housing exclusion and the same $180,000 salary yields Line 11 AGI of roughly $12,100. Depending on filing status and dependents, that either lands in the $10 floor or a very low fixed-percentage bracket.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Servicer Verification When You Live Abroad</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Filing the correct tax return is only half the job. The other half is getting the servicer to accept it on the first pass. Foreign addresses trigger three verification patterns that domestic addresses do not.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Verification Pattern 1: IRS Data Retrieval Tool from a foreign IP.</strong> DRT is the fastest path when it works. Log in at studentaid.gov, authorize the transfer, and Line 11 flows directly from the IRS into the RAP application. It works from most major foreign ISPs, but silently fails from certain VPN exit nodes and from sanctioned-country IP ranges. If DRT returns "unable to verify" after two attempts, switch to manual upload rather than retrying a third time.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Verification Pattern 2: Manual upload of Form 1040 with Form 2555 attached.</strong> Upload page 1 of the 1040 (showing Line 11), Schedule 1 (showing the FEIE deduction on Line 8d), and Form 2555 (showing the exclusion calculation and the physical presence or bona fide residence test). Redact SSN, address, and bank account information. This path takes 5 to 15 business days for the servicer to process versus 24 to 48 hours for DRT.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Verification Pattern 3: Foreign-address alternative documentation.</strong> Under 34 CFR 685, borrowers who cannot obtain an IRS transcript because they filed abroad or filed jointly with a non-resident spouse who used an ITIN can submit alternative documentation. This is a lightly-used but explicit regulatory pathway. If the servicer rejects a first submission citing a missing transcript, reply citing 34 CFR 685.209(a)(5)(iii)(B) and demand acceptance of the 1040 plus 2555 as the primary documentation.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Mid Article -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">PSLF Abroad: Which Employers Actually Qualify?</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">FEIE reduces RAP payments regardless of your employer. PSLF adds a separate employer-eligibility gate. For an American abroad, the qualifying-employer universe is narrower than most borrowers realize.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Qualifying:</strong> US federal government agencies with overseas posts (State Department, USAID, Peace Corps, US military civilian personnel), US-based 501(c)(3) organizations with overseas offices (International Rescue Committee, Save the Children, Doctors Without Borders USA, most US-headquartered universities with study-abroad or research programs), and Fulbright Program grantees. State, tribal, and local US government workers on temporary foreign assignment retain PSLF eligibility.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Not qualifying:</strong> Foreign private companies of any size, even in charitable-adjacent sectors. Foreign governments and foreign public universities. Foreign-founded NGOs without a US 501(c)(3) parent. US private companies' foreign subsidiaries organized as separate foreign entities.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The Employer Certification Form asks for the employer's US EIN. No EIN, no PSLF credit. Run every foreign or foreign-branch employer through the Department of Education's PSLF Help Tool at studentaid.gov/pslf before assuming credit &mdash; do not certify from assumption. Our <a href="pslf-calculator.html" style="color: #2E75B6;" class="hover:underline">PSLF Tracker</a> models the full 120-month timeline once you have confirmed employer eligibility.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Three Full Worked Examples</h2>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 1: Maria, English teacher in Seoul, $52,000 salary, EPIK program, single</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Maria has $58,000 in federal loans from her MA program. In 2025 she earned $52,000 teaching in Seoul under the EPIK program. She meets the physical presence test (330 days abroad). On Form 2555 she claims the full $52,000 as FEIE. Line 11 AGI is approximately $0 after standard deduction adjustments. Her 2026 RAP payment is $10 per month. EPIK is a Korean government program, so PSLF does not apply, but she still earns the interest waiver and the $50 principal match every month, and after 30 years the remaining balance is forgiven under the RAP non-PSLF forgiveness track. On a $58,000 balance with $10 monthly payments and $50 monthly principal matches, the loan pays down substantially over the first decade even at the minimum.</p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 2: David, engineer at a US NGO's Kenya office, $78,000 salary, married, one child</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">David works for a US-based 501(c)(3) NGO's Nairobi field office. His US EIN is on file and PSLF-qualifying. Salary $78,000. Wife earns local salary of KSh 3.2M (roughly $22,000 USD) with a Kenyan employer, filing MFJ. David claims $78,000 FEIE; wife claims $22,000 FEIE. Combined Line 11 AGI is approximately $0. RAP payment is $10 monthly, with one dependent deduction. Every payment counts toward the 120-month PSLF clock. David has 96 months of qualifying payments already; another 24 months of $10 payments abroad get him to forgiveness in 2028. Total remaining out-of-pocket: $240.</p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 3: Sarah, software consultant in Zurich, $185,000 salary, single, no PSLF</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Sarah works for a Swiss tech firm. No PSLF eligibility (foreign private employer). Salary $185,000. She claims $132,900 FEIE plus $35,000 Foreign Housing Exclusion (Zurich is in the high-cost cap table). Line 11 AGI: $17,100. Standard deduction reduces taxable income further, but AGI &mdash; the RAP input &mdash; stays at $17,100. In the RAP formula's lowest bracket, that produces a scheduled monthly payment well below $50; her actual bill is close to the floor. She commits to the 30-year forgiveness track with expected payments averaging under $60 per month over the loan life, well below what she would pay on a Standard 10-year plan on the same balance.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Common Mistakes That Cost Expats Money on RAP</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Mistake 1: Choosing FTC over FEIE without modeling the RAP impact.</strong> A tax preparer who does not specialize in student loans defaults to FTC in high-tax countries because it produces the lower tax bill. But for a RAP borrower, the AGI-reduction benefit of FEIE is often worth thousands per year in lower payments, especially over a 10-year PSLF horizon or 30-year forgiveness horizon.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Mistake 2: Skipping the $10 payment because "the formula would have been zero."</strong> The floor is not optional. Miss the $10 payment and you forfeit the interest waiver, the $50 principal match, and PSLF-qualifying credit for that month. All three losses are permanent for that month. Our <a href="blog-rap-one-day-late-payment-lose-benefits-2026.html" style="color: #2E75B6;" class="hover:underline">one-day-late rule guide</a> covers the timing precisely.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Mistake 3: Filing MFJ with a non-resident alien spouse.</strong> Electing to treat a non-resident alien spouse as a US resident for tax purposes (Section 6013(g)) subjects their worldwide income to US tax and can push the couple's AGI above the FEIE cap. MFS filing usually preserves the low RAP payment for the US spouse, at the cost of a slightly higher tax rate. Model both.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Mistake 4: Not planning for the year you move back to the US.</strong> The year you return, you lose the ability to claim a full FEIE (unless you meet the physical-presence 330-day test partially in the current tax year). Your AGI will rise, and 12 months later your RAP payment rises with it at recertification. Save aggressively in the last year abroad and the first year back to smooth the transition.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Before Bottom Line -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Frequently Asked Questions</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Do I have to file a US tax return at all if I live abroad?</strong> Yes. US citizens must file federal returns on worldwide income regardless of residence. FEIE is claimed on the return, not in lieu of it. RAP recertification requires a filed return each year.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: What about state student loans or private loans?</strong> RAP applies only to federal loans. State and private loans have their own repayment terms; FEIE has no effect on those. If your portfolio is mixed, RAP handles the federal portion and you negotiate the private portion separately. See our <a href="plan-comparison.html" style="color: #2E75B6;" class="hover:underline">Plan Comparison</a> tool for federal-plan modeling.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Does the FEIE reduce my student loan interest deduction?</strong> Effectively yes. The student loan interest deduction has an income phaseout, but FEIE-reduced AGI stays below the phaseout for most expats. The deduction is generally available if you paid interest and your MAGI is under the threshold. Consult a tax professional if your MAGI hovers near the phaseout.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: I'm a dual citizen filing in both countries. Does the foreign return affect RAP?</strong> No. RAP uses your US Form 1040 Line 11 only. The foreign country's tax return is irrelevant to the servicer, though it may be relevant to how much foreign tax paid you can claim on Form 1116 if you are using FTC.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Q: What if I fail the physical presence test partway through the tax year?</strong> You may still qualify for a partial FEIE prorated to the days abroad within a qualifying 12-month period. The math is on Form 2555 Part IV. A partial FEIE still reduces AGI, just by less than a full year of exclusion would.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">A 30-Day Setup Checklist</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If you are already abroad or moving abroad and want the RAP + FEIE combination working in your favor, run through this in order.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Day 1 to 3:</strong> Confirm your foreign address is on file with the IRS (Form 8822) and with your loan servicer.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Day 4 to 7:</strong> Model your projected Line 11 AGI in the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> under the FEIE, FTC, and blended scenarios. Choose the election that minimizes your RAP payment net of the tax difference.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Day 8 to 14:</strong> If you have not yet filed the most recent return, file it with Form 2555 attached and the elected FEIE amount computed correctly.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Day 15 to 21:</strong> Submit or resubmit your RAP application at studentaid.gov using DRT first, manual upload second. Include a note in the servicer message asking for confirmation once the application posts.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Day 22 to 28:</strong> Confirm the recalculated monthly amount on the servicer dashboard. Verify it matches the number from the calculator. If it does not, file a written dispute per the <a href="blog-rap-payment-refund-servicer-overbilling-september-2026.html" style="color: #2E75B6;" class="hover:underline">refund playbook</a>.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Day 29 to 30:</strong> Set up autopay from a US bank account (or an ACH-capable foreign account) to lock in the 1% autopay discount through June 30, 2028. Confirm the September 30, 2026 autopay enrollment deadline is met.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The 2026 Foreign Earned Income Exclusion of $132,900 per person, layered against RAP's AGI-based payment formula and $10 floor, is the single most powerful legal repayment strategy for the roughly 900,000 US expats with federal student loans. The mechanics are simple: FEIE reduces Line 11 AGI directly, and Line 11 is what the servicer reads. The paperwork is not: foreign addresses trigger extra verification, the DRT can silently fail, PSLF employer eligibility narrows sharply, and one wrong election can lock the whole thing up for five years.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Model the numbers before you file, elect FEIE unless the refundable-credit math clearly favors FTC, upload manually when DRT does not work, and never miss the $10 minimum. Do those four things and the RAP + FEIE combination pays for itself in the first month.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not financial, tax, or legal advice. FEIE amounts and RAP formula parameters reflect regulations and IRS guidance in effect for tax year 2026 and the RAP plan as launched July 1, 2026. Consult a licensed tax professional familiar with expatriate returns and a student loan counselor before making the FEIE-versus-FTC election, particularly if you are on a PSLF track or expect to move mid-year.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
