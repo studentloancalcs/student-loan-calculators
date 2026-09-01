@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>How HSA Contributions Lower Your 2026 RAP Payment: The Overlooked AGI Play for HDHP Borrowers</title>
+    <meta name="description" content="The 2026 HSA contribution limit is $4,400 for self-only coverage and $8,750 for family coverage. Because HSA contributions are an above-the-line deduction, every dollar directly reduces the AGI that RAP uses to size your monthly student loan payment. Here is exactly how the math works, the September-to-December contribution sprint that lands on your 2026 RAP recertification, and the HDHP eligibility traps that quietly disqualify borrowers before they realize it.">
+    <meta name="keywords" content="HSA contribution RAP payment 2026, student loan HSA AGI reduction, HDHP RAP borrower 2026, RAP recertification HSA, student loan payment lower AGI HSA, 2026 HSA limit $4400 $8750, above-the-line deduction student loan, RAP September deadline HSA">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-09-01">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-hsa-contribution-rap-payment-agi-reduction-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How HSA Contributions Lower Your 2026 RAP Payment: The Overlooked AGI Play">
+    <meta property="og:description" content="Every dollar contributed to an HSA reduces the AGI that RAP uses to calculate your monthly student loan payment. A family filer maxing $8,750 in 2026 can drop a projected RAP bill by $60 to $73 per month for the full 2027 servicing year.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-hsa-contribution-rap-payment-agi-reduction-2026.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HSA + RAP: How to Cut Your 2026 Student Loan Payment Before Recertification">
+    <meta name="twitter:description" content="The 2026 HSA limits are $4,400 self / $8,750 family. Because HSA contributions reduce Line 11 AGI, they directly lower the AGI that RAP reads at recertification. Here is the September-to-April sprint.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How HSA Contributions Lower Your 2026 RAP Payment: The Overlooked AGI Play for HDHP Borrowers",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-09-01",
+        "dateModified": "2026-09-01",
+        "description": "Health Savings Account contributions are one of the last remaining above-the-line deductions that reduce Adjusted Gross Income on Form 1040 Line 11. Because the Repayment Assistance Plan calculates monthly student loan payments as a flat percentage of AGI within progressive brackets, every dollar contributed to an HSA under the 2026 limits of $4,400 self-only or $8,750 family directly lowers the AGI that RAP reads at recertification. This guide walks through the mechanics, the HDHP eligibility test that trips up borrowers who assume any high-deductible plan qualifies, the September-through-April contribution window that lands on your first-year RAP recertification, three worked examples across income levels, and the sequencing rules for stacking HSA with 401(k) and traditional IRA contributions to compound the AGI reduction.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-hsa-contribution-rap-payment-agi-reduction-2026.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do HSA contributions actually lower my RAP payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. HSA contributions are an above-the-line adjustment on Schedule 1, Line 13 of Form 1040, which flows to Line 10 and reduces Adjusted Gross Income on Line 11 before RAP ever sees it. Because RAP applies a flat percentage of AGI within brackets that top out at 10%, every $1,000 of HSA contribution saves between $10 and $100 per year on your monthly student loan payment depending on your bracket. A family filer at the 8% bracket who maxes the 2026 family limit of $8,750 shaves $700 off the annual RAP obligation, spread across 12 monthly bills."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the 2026 HSA contribution limits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 2026 the IRS-set limits are $4,400 for self-only HDHP coverage and $8,750 for family HDHP coverage. Borrowers age 55 and older who are not enrolled in Medicare may add a $1,000 catch-up contribution. The limits take effect January 1, 2026, and 2026-tax-year contributions can be made up until the tax-filing deadline of April 15, 2027."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I have to be enrolled in a High-Deductible Health Plan for the whole year to contribute?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not necessarily. HSA eligibility is tested month by month. You may contribute a pro-rated portion of the annual limit for each month you were HDHP-eligible on the first day of the month. The last-month rule lets a borrower who becomes HDHP-eligible by December 1 contribute the full year's limit, provided they remain HDHP-eligible through the following December 31; violate that testing period and the excess is taxed as income plus a 10% penalty."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What counts as an HDHP for 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 2026 the plan must have a minimum annual deductible of $1,700 for self-only coverage or $3,400 for family coverage, and an out-of-pocket maximum of no more than $8,500 self-only or $17,000 family. The plan cannot pay for anything other than preventive care before the deductible is met. Many high-deductible-looking plans fail because they cover prescriptions or specialist visits pre-deductible; check the Summary of Benefits and Coverage for the HSA-qualified label before contributing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I contribute to maximize the RAP impact?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tax year the HSA contribution is credited to is the tax year whose AGI RAP will read at your next recertification. Contributions made between January 1, 2026 and April 15, 2027 can be designated as 2026-tax-year contributions on Form 8889. If your first RAP recertification lands in mid-to-late 2027, the servicer pulls the 2026 return; a fully-funded 2026 HSA reduces that 2026 AGI and drops the recertified payment for the entire 2027 to 2028 servicing year."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I stack HSA contributions with 401(k) and traditional IRA contributions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, and doing so compounds the AGI reduction. Traditional 401(k) contributions reduce W-2 Box 1 wages before AGI is even computed. Traditional IRA contributions (subject to income limits if you or your spouse have workplace coverage) are an above-the-line deduction on Schedule 1, Line 20. HSA contributions are Schedule 1, Line 13. All three land on Line 10 as adjustments and reduce Line 11 AGI. Roth versions of these accounts do not help RAP because they use after-tax dollars and do not reduce AGI."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does an employer HSA contribution count against my personal limit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The 2026 limits of $4,400 self / $8,750 family are combined limits including any employer or employer-match dollars deposited on your behalf through a cafeteria plan. If your employer contributes $1,500 to a family HDHP account, your personal deductible contribution is capped at $7,250. Employer contributions are already excluded from W-2 Box 1 wages, so they lower AGI too, but you cannot double-count them by deducting them again on Schedule 1."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the HSA + RAP combination interact with PSLF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It is complementary. Lower AGI means lower RAP payments, which means less cash paid out over a 120-month PSLF horizon, with the exact same PSLF credit earned each month. The interest waiver and $50 principal match on RAP still apply regardless of payment size. For a PSLF-track borrower, HSA contributions do double duty: they save on health care taxes and simultaneously reduce the amount forgiven at month 121 by reducing the payments made in months 1 through 120."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I use HSA funds for medical expenses this year, does that affect RAP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. HSA distributions for qualified medical expenses are tax-free and never appear on the return in a way that raises AGI. Non-qualified distributions are taxable and subject to a 20% penalty, and they do increase AGI, so they can raise a future RAP payment. Keep receipts, use HSA dollars only for qualified expenses, and the contribution-side AGI reduction stays intact permanently."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">HSA Contributions and RAP: The Overlooked AGI Play for 2026</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>September 1, 2026</span>
+                <span>&bull;</span>
+                <span>10 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">How HSA Contributions Lower Your 2026 RAP Payment: The Overlooked AGI Play for HDHP Borrowers</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">The Repayment Assistance Plan sizes your monthly student loan bill against Form 1040 Line 11 AGI. Health Savings Account contributions are one of the last remaining above-the-line deductions that reduce Line 11 directly, and the 2026 IRS limits &mdash; $4,400 for self-only HDHP coverage and $8,750 for family &mdash; are large enough to move a RAP payment by $10 to $73 per month. Here is exactly how the math works, the September-through-April contribution sprint that lands on your first RAP recertification, and the HDHP eligibility traps that quietly disqualify borrowers before they realize it.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- Ad Unit: Top of Article -->
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">Most borrowers who moved to the Repayment Assistance Plan on July 1, 2026 focused on the switch mechanics: what SAVE forbearance months carried over, when the first bill hit, whether the $50 principal match posted correctly. Fewer noticed that RAP's simple AGI-based formula opened a set of tax-planning levers that under IBR and PAYE were worth pursuing only for the largest balances. HSA contributions are the cleanest of those levers because they are an above-the-line deduction &mdash; they reduce AGI mechanically, not through a phaseout or a credit &mdash; and because the 2026 contribution limits are large relative to the AGI brackets that separate one RAP payment tier from another.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The setup is straightforward: enroll in an HSA-qualified High-Deductible Health Plan, open an HSA at any bank or brokerage that offers them, contribute up to the annual limit before the following April 15, and file Form 8889 with the tax return that captures those contributions. When the servicer recertifies your RAP payment against that return, the number is smaller than it would have been without the HSA. Here is the full pathway, the math, and the traps.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: After Introduction -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Why HSA Contributions Move RAP Payments Directly</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The order of operations on Form 1040 is what makes this work. Wages appear on Line 1a. HSA contributions (other than those already deducted through a Section 125 cafeteria plan) go on Schedule 1, Line 13. Schedule 1 total adjustments flow to Line 10 of the 1040. Line 10 reduces total income to produce Adjusted Gross Income on Line 11. RAP reads Line 11. Every dollar contributed to an HSA on Schedule 1 Line 13 is a dollar removed from Line 11 before the servicer sees it.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The RAP formula applies a flat percentage of AGI within progressive brackets. The bracket structure runs from 1% at the lowest incomes up to 10% at the highest, with a $10 statutory floor and dependent deductions that reduce the AGI figure the percentage is applied against. In the 8% bracket &mdash; which catches many family-filer borrowers with combined household income in the $80,000 to $120,000 range &mdash; every $1,000 of AGI reduction saves $80 per year, or roughly $6.67 per month, on the RAP bill.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-6" style="border-color: #2E75B6;">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">The HSA + RAP Math in Four Lines</h3>
+                <p class="text-gray-700 mb-1">1. Household AGI before HSA: $95,000</p>
+                <p class="text-gray-700 mb-1">2. 2026 family HSA contribution (Schedule 1 Line 13): &minus;$8,750</p>
+                <p class="text-gray-700 mb-1">3. Recertified Line 11 AGI: $86,250</p>
+                <p class="text-gray-700"><strong>4. Annual RAP savings at 8% bracket: $700 ($58/month for 12 months)</strong></p>
+            </div>
+
+            <p class="text-gray-700 leading-relaxed mb-6">You can model your own numbers in the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> by entering the AGI you expect after HSA contributions rather than gross wages. Run the calculator twice &mdash; once with the pre-HSA AGI, once with the post-HSA AGI &mdash; and the difference is your annualized savings.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The 2026 Limits and the HDHP Eligibility Test</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The IRS set the 2026 HSA contribution limits at $4,400 for self-only HDHP coverage and $8,750 for family HDHP coverage. Borrowers age 55 or older who are not yet enrolled in Medicare may add a $1,000 catch-up contribution, pushing the practical maximum to $5,400 self-only or $9,750 family (or $10,750 if both spouses are 55-plus, though the second catch-up must go in a spouse's own HSA).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The eligibility test is the part borrowers get wrong. The plan must meet the 2026 HDHP definition: a minimum annual deductible of $1,700 for self-only or $3,400 for family, and an out-of-pocket maximum of $8,500 self-only or $17,000 family. Crucially, the plan cannot pay for anything other than preventive care before the deductible is met. A plan that copays specialist visits or prescription drugs pre-deductible is not HDHP-qualified even if the deductible is high, and contributing to an HSA on a non-qualified plan triggers taxable-income and 10% penalty treatment on the whole contribution. Ask your HR benefits team or your insurer for the Summary of Benefits and Coverage; the HSA-qualified label is printed on it if the plan qualifies.</p>
+
+            <div class="bg-gray-50 border border-gray-200 p-6 rounded-lg mb-6">
+                <h3 class="font-bold mb-3" style="color: #1B2A4A;">2026 HDHP Qualification Checklist</h3>
+                <p class="text-gray-700 mb-2"><strong>Minimum deductible:</strong> $1,700 (self-only) or $3,400 (family)</p>
+                <p class="text-gray-700 mb-2"><strong>Maximum out-of-pocket:</strong> $8,500 (self-only) or $17,000 (family)</p>
+                <p class="text-gray-700 mb-2"><strong>Pre-deductible coverage:</strong> Preventive care only. No pre-deductible specialist copays, prescription copays, or urgent care copays.</p>
+                <p class="text-gray-700"><strong>No other disqualifying coverage:</strong> No general-purpose FSA, no Medicare enrollment, no coverage as a dependent on someone else's non-HDHP.</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The September-to-April Contribution Sprint</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Timing matters because the tax year the contribution is credited to is the tax year whose AGI the servicer will read at your next recertification. Contributions made between January 1, 2026 and April 15, 2027 can be designated as 2026-tax-year contributions on Form 8889. If your first RAP recertification falls in mid-to-late 2027, the servicer pulls the 2026 return &mdash; and a fully-funded 2026 HSA reduces that 2026 AGI and drops the recertified payment for the whole 2027 to 2028 servicing year.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Borrowers who moved onto RAP on July 1, 2026 typically face a first recertification anniversary somewhere between June and October 2027, depending on when the initial application posted. That gives you a window from now through April 15, 2027 to move as much cash into the 2026 HSA as your budget and the annual limit allow. Prorate month by month if you enrolled in the HDHP mid-year: eligible months divided by 12, times the annual limit, is your prorated cap. The last-month rule lets a December-enrolled borrower contribute the full year's limit, provided HDHP coverage continues through December 31, 2027.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Stacking HSA with 401(k) and Traditional IRA</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">HSA is one of three stackable pre-tax levers. Traditional 401(k) contributions come off W-2 Box 1 wages before AGI is computed at all &mdash; they are the most powerful lever, up to the 2026 elective deferral limit. Traditional IRA contributions land on Schedule 1 Line 20 and reduce AGI on the same basis as HSA, subject to workplace-coverage income limits that begin phasing out around $79,000 for single filers and $126,000 for married filing jointly (2026 phaseouts; verify against IRS Pub 590-A).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A borrower who fully funds a 401(k), a traditional IRA, and an HSA can reduce AGI by more than $30,000 in a single tax year. On a starting AGI of $110,000, that is a drop to roughly $79,000 &mdash; a two-bracket move on the RAP percentage schedule. The compounding matters most for PSLF-track borrowers where every month of lower payment during years one through ten reduces cash out of pocket without changing forgiveness at month 121. Our <a href="blog-how-to-lower-agi-reduce-student-loan-payments-2026.html" style="color: #2E75B6;" class="hover:underline">complete AGI-reduction playbook</a> covers the full stack in more detail.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Important:</strong> Roth versions of these accounts do not help RAP. Roth 401(k) and Roth IRA use after-tax dollars and do not appear on Schedule 1 as adjustments. They are excellent retirement tools; they are not RAP-payment reducers. If your household is on RAP and PSLF, prefer traditional accounts during the PSLF window and consider Roth conversions after forgiveness lands.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Mid Article -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Three Worked Examples</h2>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 1: Alex, single filer, $62,000 salary, self-only HDHP</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Alex is a first-year marketing analyst with $34,000 in federal loans. His employer offers an HSA-qualified HDHP with a $2,200 deductible. Alex contributes the full 2026 self-only limit of $4,400 through payroll deferral (contributions via cafeteria plan bypass Schedule 1 entirely and reduce W-2 Box 1 wages directly). His Line 11 AGI drops from $62,000 to $57,600. At the RAP bracket applicable to his income, the payment falls from roughly $310 per month to roughly $280. Annual savings: $360, on top of the federal and FICA tax savings from the HSA itself.</p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 2: Priya and Sam, married filing jointly, $118,000 combined, family HDHP, two kids</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Priya is a public school teacher on the PSLF track. Sam is an accountant. Together they earn $118,000. They enroll in the family HDHP through Priya's district and max the family HSA at $8,750 for 2026. Combined with a $5,000 traditional IRA contribution for Sam (Priya has 401(k) coverage, so IRA deductibility phases out for her; Sam is fully deductible), AGI drops from $118,000 to $104,250. At their dependent-adjusted RAP bracket, the recertified payment falls by roughly $87 per month. Over the remaining 84 months to Priya's PSLF forgiveness, that is $7,308 in cash saved, and the forgiven balance at month 121 is $7,308 larger.</p>
+
+            <h3 class="text-xl font-semibold mt-6 mb-3" style="color: #1B2A4A;">Example 3: Rob, self-employed contractor, $145,000 net, family HDHP, age 56</h3>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Rob works as a 1099 IT consultant. He set up a solo 401(k), a SEP-IRA alternative, and a self-established HSA on a family HDHP. In 2026 he defers the maximum solo 401(k) employee contribution, adds the employer profit-sharing contribution, and maxes the HSA at $9,750 (family limit plus $1,000 age-55 catch-up). His AGI drops from $145,000 (Schedule C net) to under $110,000. Rob is not on PSLF; he plans to use the 30-year RAP forgiveness track. The AGI reduction drops his monthly RAP payment by more than $200 for the coming servicing year and reduces the amount he pays over the life of the loan by an amount an order of magnitude larger than the tax savings alone.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Traps That Cost Borrowers the Deduction</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Trap 1: Enrolling in a general-purpose FSA at the same time.</strong> A general-purpose Flexible Spending Account disqualifies HSA eligibility. Some employers auto-enroll new hires in an FSA as a default. Opt out during open enrollment before contributing to an HSA, or the entire year's contribution becomes taxable plus penalty.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Trap 2: Missing the pre-deductible-coverage rule.</strong> Plans that pay for specialist visits, prescriptions, or urgent care before the deductible &mdash; even with a copay &mdash; are not HDHP-qualified. Read the Summary of Benefits and Coverage. If it lists any medical service other than preventive care as covered pre-deductible, the plan disqualifies.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Trap 3: Enrolling in Medicare during the year.</strong> Medicare enrollment (including Part A alone) disqualifies HSA contributions for the months of Medicare coverage. Borrowers approaching 65 who plan to keep working and stay on HDHP coverage should delay Medicare enrollment to preserve HSA eligibility, subject to their own Social Security and employer-coverage rules.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Trap 4: Non-qualified distributions.</strong> Money withdrawn from an HSA for anything other than qualified medical expenses is taxable and, before age 65, subject to a 20% penalty. Beyond the immediate tax hit, non-qualified distributions increase AGI in the year taken &mdash; which raises the next year's RAP payment. Keep every medical receipt, and use HSA funds only for qualified expenses.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Frequently Asked Questions</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Do employer HSA contributions count toward my limit?</strong> Yes. The $4,400 / $8,750 limits are combined limits including employer contributions. If your employer deposits $1,500 to your family HDHP HSA, your personal deductible contribution is capped at $7,250.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: My spouse and I both have HDHPs but only one has family coverage. Whose limit applies?</strong> If either spouse has family HDHP coverage, the family limit of $8,750 applies and can be split between the two HSAs in any ratio the couple chooses. Age-55 catch-ups must be contributed to each spouse's own HSA separately.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: Can I contribute to an HSA and still take the student loan interest deduction?</strong> Yes. The student loan interest deduction has an income phaseout, and HSA contributions reduce the MAGI that phaseout is measured against &mdash; so HSA contributions can actually restore the deduction for borrowers whose gross income puts them near the phaseout. See our <a href="blog-student-loan-interest-deduction-2026-rap-waiver-tax-break.html" style="color: #2E75B6;" class="hover:underline">2026 student loan interest deduction guide</a>.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>Q: My employer offers a Limited-Purpose FSA. Does that disqualify HSA?</strong> No. A Limited-Purpose FSA restricted to dental and vision expenses is compatible with HSA. It is the general-purpose FSA that disqualifies. Confirm the FSA plan document label before enrolling in both.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Q: If I switch off the HDHP mid-2027, do I lose the 2026 HSA deduction?</strong> No. The 2026 contribution is based on 2026 HDHP eligibility. Switching plans in 2027 only affects 2027 contribution eligibility, and only prospectively. The AGI reduction on the 2026 return, and the RAP payment reduction it produces, both stay intact.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">A Fall 2026 Action Plan</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">If you are already on RAP and want the HSA lever working in your favor by the time your first recertification lands in 2027, here is the sequence.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>Now through October 2026:</strong> Confirm your current health plan is HSA-qualified. Ask HR for the Summary of Benefits and Coverage and look for the HSA-qualified designation. If it is not, plan to switch during open enrollment.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>November to December 2026 open enrollment:</strong> Elect the HDHP option. Opt out of any general-purpose FSA. Elect the maximum HSA payroll deferral your budget allows. Payroll HSA deferrals bypass FICA in addition to income tax; direct-deposit contributions save income tax only.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>January through April 15, 2027:</strong> Top up any remaining 2026 HSA contribution room by direct deposit from a checking account. Designate the contribution as 2026-tax-year on Form 8889.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-2"><strong>April 2027:</strong> File the 2026 return with Form 8889 attached. Line 11 AGI reflects the full HSA deduction.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Recertification month 2027:</strong> Use the IRS Data Retrieval Tool at studentaid.gov to pull Line 11 automatically. The servicer recalculates the RAP payment against the reduced AGI; the new payment applies for the following 12 months. Verify the new bill amount matches the number produced by the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a>.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- Ad Unit: Before Bottom Line -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The Health Savings Account is one of the few retirement-adjacent accounts where the tax benefit and the RAP payment benefit both trigger from the same contribution. Each dollar into an HSA is a dollar off Line 11 AGI, and each dollar off Line 11 AGI is a proportional reduction in the next year's RAP monthly bill. The 2026 limits of $4,400 self-only and $8,750 family are large enough to move a payment by tens of dollars per month for a typical borrower, and by more than $200 per month for higher-income filers who stack HSA with 401(k) and traditional IRA contributions.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The catch is the eligibility test, not the arithmetic. Confirm the HDHP status of your plan, opt out of any general-purpose FSA, avoid non-qualified distributions, and file Form 8889 correctly. Do those four things this fall, and your first RAP recertification in 2027 lands on a lower AGI &mdash; and a lower payment &mdash; for the full servicing year.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not financial, tax, or legal advice. HSA and HDHP limits reflect IRS Revenue Procedure 2025-32 / Notice 2026-05 for tax year 2026. RAP formula parameters reflect the Repayment Assistance Plan as launched July 1, 2026 under P.L. 119-21. Consult a licensed tax professional and a student loan counselor before restructuring retirement or health-savings contributions, particularly if you are on a PSLF track, expect a large income change, or approach Medicare age.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
