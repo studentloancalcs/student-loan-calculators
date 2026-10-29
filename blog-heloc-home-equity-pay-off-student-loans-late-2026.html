@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V1256GG8SS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V1256GG8SS');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Using HELOC or Home Equity to Pay Off Student Loans in Late 2026: The Math on 7.36% HELOC vs 6.52% Federal Rates, Why It's Usually a Mistake, and the Narrow Case Where It Works</title>
+    <meta name="description" content="A full field guide for homeowners considering tapping home equity to pay off federal student loans in late 2026. The current rate spread (HELOC averaging 7.36% versus 6.52% subsidized federal, 8.07% grad, 9.07% PLUS), the five federal protections you give up on the switch, the IRS deductibility question, three worked examples at different balances, and the one narrow scenario where the move actually works.">
+    <meta name="keywords" content="HELOC pay off student loans, home equity student loan refinance, HELOC vs student loan 2026, pay off student loans with home equity, home equity loan student debt, HELOC refinance student loans 2026, tap home equity student loans, HELOC interest deduction student loans, parent PLUS HELOC payoff, cash out refinance student loans">
+    <meta name="author" content="Student Loan Calculator Team">
+    <meta name="publish_date" content="2026-10-29">
+    <link rel="canonical" href="https://studentloancalcs.github.io/student-loan-calculators/blog-heloc-home-equity-pay-off-student-loans-late-2026.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="HELOC to Pay Off Student Loans in Late 2026: The Math, the Risks, and the One Case Where It Works">
+    <meta property="og:description" content="HELOC averaging 7.36% versus 6.52% federal subsidized: why the rate spread lies, the five federal protections you give up, and the narrow scenario where tapping home equity actually works.">
+    <meta property="og:url" content="https://studentloancalcs.github.io/student-loan-calculators/blog-heloc-home-equity-pay-off-student-loans-late-2026.html">
+    <meta property="og:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HELOC to Pay Off Student Loans in Late 2026: The Math and the One Case Where It Works">
+    <meta name="twitter:description" content="Why the HELOC-versus-federal-student-loan rate spread lies, what protections you lose, and the narrow scenario where tapping home equity makes sense.">
+    <meta name="twitter:image" content="https://studentloancalcs.github.io/student-loan-calculators/og-image.png">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Using HELOC or Home Equity to Pay Off Student Loans in Late 2026: The Math on 7.36% HELOC vs 6.52% Federal Rates, Why It's Usually a Mistake, and the Narrow Case Where It Works",
+        "author": {
+            "@type": "Organization",
+            "name": "Student Loan Calculator Team"
+        },
+        "datePublished": "2026-10-29",
+        "dateModified": "2026-10-29",
+        "description": "A field guide for homeowners weighing a HELOC or home equity loan to retire federal student loan debt in late 2026: the current rate spread, the five federal protections you give up, IRS deductibility rules under the 2017 TCJA framework still in effect for 2026, three worked examples, and the one narrow case where the move works.",
+        "image": "https://studentloancalcs.github.io/student-loan-calculators/og-image.jpg",
+        "url": "https://studentloancalcs.github.io/student-loan-calculators/blog-heloc-home-equity-pay-off-student-loans-late-2026.html"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I use a HELOC to pay off my federal student loans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, mechanically you can. A HELOC (home equity line of credit) is a revolving credit line secured by your primary residence; the funds can be used for essentially any legal purpose, including paying off a federal Direct Loan, a Parent PLUS loan, or a private student loan. The lender does not restrict the use of funds the way, say, a car loan does. Mechanical ability is not the same as a good idea. When you move a federal student loan to a HELOC you convert unsecured debt (with no collateral except your tax refund via Treasury Offset) into secured debt (with your house as collateral). You also give up the five federal protections listed in this article: income-driven repayment, PSLF, death and disability discharge, deferment and forbearance, and the Treasury Offset floor on Social Security benefits for seniors. For most borrowers in October 2026, the rate spread is not large enough to compensate for the protections lost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is HELOC interest used to pay off student loans tax deductible?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Under the 2017 Tax Cuts and Jobs Act, which remains in effect for tax year 2026, home equity interest is only deductible when the proceeds are used to buy, build, or substantially improve the home that secures the loan. Using HELOC proceeds to pay off student loans is explicitly a non-qualifying use; the interest paid on that portion of the HELOC is personal interest and is not deductible on Schedule A. By contrast, federal student loan interest remains deductible up to $2,500 per year under the above-the-line student loan interest deduction (phased out at modified AGI between $85,000 and $100,000 single, and $175,000 and $205,000 married filing jointly in 2026). For most households, the student loan interest deduction is more valuable than the HELOC interest deduction would be even if HELOC-for-student-loans qualified."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What rate am I actually paying on a HELOC in late October 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Bankrate national average HELOC rate for a $30,000 line with a 700 FICO score and 80 percent combined loan-to-value ratio was 7.36 percent as of October 28, 2026, with a range of roughly 3.99 to 11.85 percent depending on lender and borrower profile. HELOC rates are typically variable and tied to the Prime Rate plus a lender margin; a Prime Rate change passes through to the HELOC payment on the following statement cycle. By comparison, federal Direct Subsidized and Undergraduate Unsubsidized Loans disbursed between July 1, 2026 and June 30, 2027 carry a fixed 6.52 percent rate; Graduate Unsubsidized Loans are at 8.07 percent fixed; Direct PLUS Loans (Parent PLUS and Grad PLUS) are at 9.07 percent fixed. For undergraduate borrowers with pre-2024 loans, rates are generally lower still (as low as 2.75 percent for loans originated during the 2020-21 academic year). The variable nature of the HELOC rate matters because the next three to five years of Federal Reserve policy could move the HELOC rate up or down by 150 basis points or more while the federal rate is frozen for the life of the loan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What federal protections do I lose when I move student loans to a HELOC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Five big ones. (1) Income-driven repayment: federal loans can enroll in RAP, IBR, or the tiered standard plan with payments as low as $10 per month during income drops; HELOCs have no such provision and the payment is contractually fixed on the amortization schedule. (2) Public Service Loan Forgiveness: 120 qualifying payments on federal loans while employed at a 501(c)(3), government, or AmeriCorps-eligible employer forgive the balance tax-free; HELOCs have no forgiveness. (3) Death and disability discharge: federal Direct Loans are discharged tax-free on the borrower's death or permanent total disability; a HELOC is a lien on the home that survives death and must be paid from the estate or by the surviving spouse. (4) Deferment and forbearance: federal borrowers have statutory rights to pause payments during unemployment, cancer treatment, military service, and economic hardship; HELOCs offer no comparable statutory pause, only lender discretion. (5) Treasury Offset protection for seniors: Social Security benefits are protected to a $750 monthly floor against federal student loan default; nothing protects the home from HELOC foreclosure."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I lose my job after moving student loans to a HELOC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The federal student loan version of job loss produces a RAP early recertification that drops the monthly payment to the $10 minimum within one to two billing cycles; PSLF continues to count; the forgiveness clock keeps ticking. The HELOC version of job loss produces a scheduled monthly payment that remains contractually due at the full amortization amount. Missing HELOC payments triggers the standard mortgage lien enforcement process: notice of default, loss mitigation review, acceleration, and in the worst case foreclosure on the home. The foreclosure process on a second-position lien (which a HELOC typically is) is more complicated than on a first mortgage but no less serious. Borrowers who put a six-figure student loan balance into a HELOC and then lose a job in 2027 or 2028 may find themselves negotiating with a HELOC servicer for forbearance that the lender is not required to grant, while the Education Department would have granted the equivalent as a $10 RAP payment within sixty days."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What about Parent PLUS loans - does HELOC make more sense there?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The case is marginally stronger but still almost always a mistake. Parent PLUS loans disbursed in the 2026-27 school year carry a 9.07 percent fixed rate, which is above the Bankrate HELOC average of 7.36 percent, so the rate math works. However, Parent PLUS loans have their own forgiveness pathway through consolidation into a Direct Consolidation Loan followed by enrollment in the Income-Contingent Repayment (ICR) plan (or the RAP for Parent PLUS consolidation loans permitted under the 2026 rulebook), and they are discharged tax-free on the parent borrower's death. A HELOC on the parent's home strips both protections. The right play for most Parent PLUS borrowers is to consolidate into Direct Consolidation, enroll in ICR or RAP, maintain the $10 minimum payment path through retirement if income permits, and let the death discharge or ICR 25-year forgiveness retire the balance. The exception is a parent with high income, no retirement timing concerns, and strong home equity who prefers to retire the balance within five to seven years at a fixed-rate home equity loan (not a variable HELOC)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the narrow scenario where a HELOC payoff of student loans actually works?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Four conditions must all hold. (1) The federal loan rate is substantially above the HELOC rate: this applies most clearly to Grad PLUS loans at 8.07 to 9.07 percent originated recently, and almost never to pre-2024 undergraduate loans at 2.75 to 5.5 percent. (2) The borrower does not and will not qualify for PSLF, RAP forgiveness, or the student loan interest deduction (very high income, private sector employment, no plans to change). (3) The borrower has a stable, high income with a job loss probability below five percent over the HELOC payoff period, and substantial liquid reserves (minimum six months of expenses outside the home equity). (4) The borrower uses a fixed-rate home equity loan rather than a variable HELOC to eliminate the interest rate risk from the comparison. When all four conditions hold, moving a $45,000 Grad PLUS balance from 9.07 percent to a 7.1 percent fixed home equity loan can save roughly $9,500 in interest over a ten-year payoff. For borrowers who fail any one of the four conditions, the student loan calculator and PSLF tracker will almost always show the federal path winning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use a cash-out refinance of my mortgage to pay off student loans instead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can, but it combines the HELOC risks with a mortgage rate reset. In October 2026 the 30-year fixed mortgage rate is roughly 6.2 to 6.6 percent nationally. A cash-out refinance that brings in enough proceeds to retire a $60,000 Grad PLUS balance also typically resets the entire mortgage rate, extends the mortgage term, and generates closing costs of roughly 2 to 5 percent of the new mortgage balance. For a borrower whose existing mortgage is at 3.5 percent (the pre-2022 rate environment), the rate reset to 6.5 percent on the full mortgage balance easily outweighs the student loan interest savings. The cash-out refinance to retire student loans only works for a borrower whose existing mortgage rate is above the current market rate, which is a shrinking population in late 2026. The home equity loan or HELOC leaves the first mortgage untouched and is almost always the better home-equity choice when the math points that way."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .header-navy { background-color: #1B2A4A; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header-navy text-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="index.html">Student Loan Calculators</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="nav-menu" class="hidden md:flex gap-6">
+                <li><a href="index.html" class="hover:text-blue-300">Home</a></li>
+                <li><a href="rap-calculator.html" class="hover:text-blue-300">RAP Calculator</a></li>
+                <li><a href="plan-comparison.html" class="hover:text-blue-300">Compare Plans</a></li>
+                <li><a href="save-transition.html" class="hover:text-blue-300">SAVE Transition</a></li>
+                <li><a href="payoff-calculator.html" class="hover:text-blue-300">Payoff</a></li>
+                <li><a href="pslf-calculator.html" class="hover:text-blue-300">PSLF</a></li>
+                <li><a href="college-cost.html" class="hover:text-blue-300">College Costs</a></li>
+                <li><a href="blog.html" class="hover:text-blue-300">Blog</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="index.html" class="block py-2 hover:text-blue-300">Home</a>
+            <a href="rap-calculator.html" class="block py-2 hover:text-blue-300">RAP Calculator</a>
+            <a href="plan-comparison.html" class="block py-2 hover:text-blue-300">Compare Plans</a>
+            <a href="save-transition.html" class="block py-2 hover:text-blue-300">SAVE Transition</a>
+            <a href="payoff-calculator.html" class="block py-2 hover:text-blue-300">Payoff</a>
+            <a href="pslf-calculator.html" class="block py-2 hover:text-blue-300">PSLF</a>
+            <a href="college-cost.html" class="block py-2 hover:text-blue-300">College Costs</a>
+            <a href="blog.html" class="block py-2 hover:text-blue-300">Blog</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <nav class="text-sm" style="color: #666;">
+            <a href="index.html" class="hover:underline" style="color: #2E75B6;">Home</a>
+            <span class="mx-2">/</span>
+            <a href="blog.html" class="hover:underline" style="color: #2E75B6;">Blog</a>
+            <span class="mx-2">/</span>
+            <span class="font-medium" style="color: #1B2A4A;">HELOC and Home Equity to Pay Off Student Loans in Late 2026</span>
+        </nav>
+    </div>
+
+    <!-- Article -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="flex items-center gap-4 mb-4 text-sm text-gray-600">
+                <span>October 29, 2026</span>
+                <span>&bull;</span>
+                <span>13 min read</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="color: #1B2A4A;">Using HELOC or Home Equity to Pay Off Student Loans in Late 2026: The Math on 7.36% HELOC vs 6.52% Federal Rates, Why It's Usually a Mistake, and the Narrow Case Where It Works</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">With federal student loan payments restarted on October 1 and homeowners sitting on record home equity, a tempting question is making the rounds in financial forums: should I tap my HELOC or take a home equity loan to retire my student debt and be done with it? The headline math looks seductive. The real math is more complicated. This article works through the current rate spread, the five federal protections that disappear the moment the balance moves to a home equity product, the IRS deductibility question that catches most borrowers by surprise, three worked examples at $25,000, $60,000, and $120,000 balances, and the one narrow case where tapping home equity actually works.</p>
+        </header>
+
+        <!-- AdSense Placeholder -->
+        <!-- adsense-top-slot -->
+
+        <div class="prose prose-lg max-w-none">
+            <p class="text-gray-700 leading-relaxed mb-6">The idea has been around for decades: borrow against the house, retire the student debt, consolidate everything into one monthly payment at a potentially lower rate. In 2008 and again in 2015, personal finance sites regularly recommended it. In October 2026, the recommendation has quietly disappeared from most mainstream outlets, and for good reason. The rate spread is thinner than it looks, the federal protections you surrender are structurally more valuable than most borrowers realize, and the one narrow scenario where the move works has been narrowed further by the 2026 Repayment Assistance Plan rulebook and the end of the SAVE plan transition. Below is the field guide you would hand a homeowner-borrower seriously considering the move.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Rate Spread as of October 28, 2026</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The Bankrate national average HELOC rate for a standard $30,000 line (700 FICO, 80 percent combined loan-to-value ratio, primary single-family home) was 7.36 percent as of October 28, 2026, with a range of 3.99 to 11.85 percent across lenders and borrower profiles. Fixed-rate home equity loans run roughly 15 to 50 basis points higher than variable HELOCs for the same borrower; call it 7.5 to 7.9 percent as a working national average for a thirty thousand dollar fixed home equity loan at the end of October 2026.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">On the federal student loan side, the rates for loans first disbursed between July 1, 2026 and June 30, 2027 are 6.52 percent for Direct Subsidized and Undergraduate Unsubsidized Loans, 8.07 percent for Graduate Unsubsidized Loans, and 9.07 percent for Direct PLUS Loans (both Parent PLUS and Grad PLUS). These are fixed for the life of the loan. Borrowers with older federal loans have mixed portfolios: undergraduate loans originated during the 2020-21 academic year carry a 2.75 percent rate; loans from 2021-22 at 3.73 percent; loans from 2023-24 at 5.5 percent. Grad PLUS from the same vintages ranges from 5.3 percent (2020-21) to 7.9 percent (2023-24).</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The naive spread calculation: a borrower with 9.07 percent current-vintage Grad PLUS could move the balance to a 7.36 percent HELOC and save 171 basis points. On a $45,000 balance over a 10-year payoff, that is roughly $4,500 in nominal interest savings. The problem is that the comparison treats one fixed-rate loan with federal protections against one variable-rate loan with none of them. A fair comparison must account for the variable rate risk, the protections surrendered, the IRS deductibility difference, and (for borrowers heading into retirement) the loss of federal death and disability discharge.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- adsense-mid-slot-1 -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Variable Rate Problem</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">A HELOC rate is almost always variable, tied to the Prime Rate plus a lender margin that stays fixed. Prime Rate changes with the Federal Reserve's federal funds target rate; when the Fed raises or cuts, the HELOC payment adjusts on the following billing cycle. The 7.36 percent average rate in late October 2026 reflects a Fed federal funds target of roughly 4.00 to 4.25 percent (down from the 2023 peak of 5.25 to 5.50 percent). If the Fed cuts another 100 basis points over the next twelve months, the HELOC rate drops to roughly 6.36 percent. If instead inflation re-accelerates and the Fed holds or hikes, the HELOC rate stays at 7.36 or moves to 8 percent or higher.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The federal student loan rate is frozen for the life of the loan. A borrower who paid off a 9.07 percent Grad PLUS with a 7.36 percent HELOC in October 2026 and then watched the HELOC rate climb to 9 percent in 2028 is now paying a higher rate than they would have on the federal loan, and the balance is now secured by their home instead of being a federal obligation. Fixed-rate home equity loans eliminate this risk at the cost of a slightly higher starting rate; borrowers seriously pursuing the home-equity-for-student-loans path should price fixed home equity loans, not variable HELOCs, to make the comparison honest.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Five Federal Protections You Surrender</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>1. Income-driven repayment.</strong> Federal student loans can enroll in the Repayment Assistance Plan (RAP), Income-Based Repayment (IBR), or the tiered standard plan. During an income drop, RAP's early recertification rule drops the monthly payment to the $10 minimum within one to two billing cycles. The 50 percent principal match and interest waiver during RAP mean a borrower paying $10 per month during a leave or job loss is still retiring $5 of principal per month and accruing no new interest. HELOCs offer none of this. The amortization schedule is contractual; a job loss means a missed payment, a notice of default, and in the worst case a foreclosure on the home. See our <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a> for the exact monthly payment on a federal loan at any AGI and family size.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>2. Public Service Loan Forgiveness.</strong> 120 qualifying monthly payments on federal Direct Loans while employed at a 501(c)(3) nonprofit, government agency, or AmeriCorps-eligible employer forgive the remaining balance tax-free. The 2026 PSLF rulebook has tightened some employer eligibility language (see our <a href="blog-pslf-employer-eligibility-substantial-illegal-purpose-2026.html" style="color: #2E75B6;" class="hover:underline">PSLF employer eligibility update</a>) but the core benefit is unchanged. A borrower on month 95 of PSLF who moves their balance to a HELOC loses the remaining 25 months of credit and the forgiveness that would have followed. For a nurse at a nonprofit hospital with a $62,000 balance paying $185 per month under RAP, forgiveness at month 120 produces roughly $55,000 of tax-free debt cancellation. A HELOC payoff at month 95 destroys that value. Our <a href="pslf-calculator.html" style="color: #2E75B6;" class="hover:underline">PSLF Tracker</a> models the exact forgiveness amount at any month of qualifying payment.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>3. Death and disability discharge.</strong> Federal Direct Loans are discharged tax-free on the borrower's death and on a Total and Permanent Disability (TPD) determination. The discharge is automatic for Direct Loans (the servicer processes it from a death certificate or TPD determination letter). A HELOC is a lien on the home that survives the borrower's death. The surviving spouse or estate must either refinance the lien, sell the home, or default and face foreclosure. For a sixty-year-old parent considering a HELOC to retire a $40,000 Parent PLUS balance, the death discharge value alone (if the parent reaches average life expectancy with the balance still outstanding) can run $5,000 to $15,000 in present-value terms, which closes most of the apparent rate advantage.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>4. Deferment and forbearance.</strong> Federal borrowers have statutory rights to pause payments during unemployment (up to 36 cumulative months of unemployment deferment), cancer treatment (special cancer deferment, unlimited duration during active treatment plus six months after), military service (USERRA and SCRA protections), and economic hardship (up to 36 months of hardship deferment, income-based criteria). HELOCs offer no statutory parallel. Some HELOC servicers offer short discretionary forbearance during hardship; most do not, and nothing requires them to.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>5. Treasury Offset floor for Social Security.</strong> Social Security retirement and disability benefits are protected against Treasury Offset for defaulted federal student loans to a $750 monthly floor (codified in the 2024 Protecting Older Americans Act). A HELOC lien has no comparable protection; foreclosure on a primary residence to satisfy a HELOC can proceed regardless of the borrower's age or Social Security status, subject only to state-specific homestead protections that in most states do not shield a home from the holder of a voluntary consensual lien like a HELOC.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The IRS Deductibility Question</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Under the 2017 Tax Cuts and Jobs Act (which remains in effect for tax year 2026), home equity interest is deductible only when the proceeds are used to buy, build, or substantially improve the home that secures the loan. Using HELOC proceeds to pay off student loans is explicitly a non-qualifying use; the interest paid on that portion of the HELOC balance is personal interest, not deductible on Schedule A. Many borrowers (and some loan officers) are still operating on the pre-2018 rule, under which home equity interest was deductible for most uses up to $100,000 of loan balance. That rule has been gone for nearly nine years and the TCJA sunset provisions do not restore it for 2026.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">On the federal student loan side, the $2,500 above-the-line student loan interest deduction (phased out at modified AGI between $85,000 and $100,000 single, and $175,000 and $205,000 married filing jointly for 2026) remains fully available. The deduction is available even for taxpayers who take the standard deduction (which is $16,100 single, $32,200 married filing jointly, and $24,150 head of household in 2026). For a borrower in the 22 percent federal bracket, the full $2,500 deduction is worth $550 per year. Over the ten-year payoff of a typical federal balance, that is $5,500 of foregone tax savings on the HELOC side of the comparison, which further erodes the apparent rate spread.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The RAP interest waiver complicates the deduction math further for current RAP enrollees. Under RAP's interest waiver, accrued interest beyond what the monthly payment covers is zeroed out each month; the borrower never actually pays that interest, so there is nothing to deduct. For a borrower at $10 per month RAP, the student loan interest deduction is effectively $120 per year, not $2,500. For higher-income RAP borrowers paying $300 to $600 per month, the deduction tracks the actual interest paid, which is still often below $2,500. The deduction is more valuable for borrowers on the tiered standard plan or on the extended plan where the full interest is being paid. See our <a href="blog-student-loan-interest-deduction-2026-rap-interest-waiver.html" style="color: #2E75B6;" class="hover:underline">RAP interest deduction guide</a> for the exact math.</p>
+
+            <!-- AdSense Placeholder -->
+            <!-- adsense-mid-slot-2 -->
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Three Worked Examples</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Example 1: $25,000 undergraduate balance, 5.5 percent rate (2023-24 vintage).</strong> Monthly federal payment on a 10-year standard plan is roughly $271. HELOC at 7.36 percent for the same ten years runs roughly $294 per month, which is higher despite the "lower" headline rate because the HELOC starts at the higher rate while this borrower's older federal loan is at 5.5 percent. The borrower pays an extra $23 per month and loses all five federal protections. Total extra interest paid over ten years: $2,760. The move is pure wealth destruction. Even a 5.5 percent fixed home equity loan would roughly break even on rate while still eliminating the protections. For this borrower, the <a href="payoff-calculator.html" style="color: #2E75B6;" class="hover:underline">federal payoff calculator</a> shows accelerated principal payments (an extra $100 per month on the standard federal plan) pay off the loan 2.5 years early with none of the HELOC risks.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Example 2: $60,000 Grad PLUS balance, 9.07 percent rate (2026-27 vintage).</strong> Monthly federal payment on the 10-year standard plan is roughly $763. HELOC at 7.36 percent for the same term runs roughly $706 per month, saving $57 per month and $6,840 over ten years. On paper this is the strongest HELOC-wins scenario in the current rate environment. In practice, the Grad PLUS borrower who is on a PSLF track at a nonprofit hospital, a research university, or a government lab would be giving up tax-free forgiveness of roughly $50,000 to $60,000 by paying the balance off instead of letting PSLF retire it. Even for a Grad PLUS borrower not on PSLF, enrolling in RAP produces monthly payments far below $763 for most income levels; the HELOC payment is contractually fixed while the RAP payment adjusts with income. The HELOC wins the pure rate math and loses on nearly every other dimension. See the <a href="plan-comparison.html" style="color: #2E75B6;" class="hover:underline">plan comparison tool</a> to model this borrower's exact RAP, IBR, and standard plan payments.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>Example 3: $120,000 mixed portfolio (undergraduate $40K at 4.5 percent, graduate $80K at 7.5 percent, mixed vintages).</strong> Blended federal rate: roughly 6.5 percent. HELOC at 7.36 percent is above the blended federal rate; the home equity move loses on rate before accounting for protections. The borrower who refinances only the graduate portion into a fixed home equity loan at 7.5 percent and keeps the undergraduate portion on federal plans does slightly better: they capture the stability of the fixed rate for the higher-rate portion and preserve federal protections for the undergraduate portion. This is the closest to a case where partial home equity payoff makes sense, and it still works only if the borrower is not pursuing PSLF, has substantial liquid reserves, and does not expect income volatility.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The One Narrow Scenario Where It Works</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Four conditions must all hold for a home equity payoff to beat the federal path:</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>(1) The federal loan rate is substantially above the current fixed home equity loan rate.</strong> This mostly means Grad PLUS originated 2024 or later (8-9 percent federal) versus fixed home equity loans at 7-7.5 percent. Pre-2024 undergraduate loans at 2.75 to 5.5 percent never qualify. Parent PLUS at 9.07 percent qualifies on rate but typically fails condition 4 below.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>(2) The borrower does not qualify for and will not pursue PSLF, RAP forgiveness, or the student loan interest deduction.</strong> High-income private-sector borrower, no plans to change employers, modified AGI above the deduction phaseout ceiling.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-4"><strong>(3) Income is stable with low job-loss probability over the payoff period</strong> (five to ten years), and the borrower has six months of liquid reserves outside the home equity position.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6"><strong>(4) The borrower uses a fixed-rate home equity loan, not a variable HELOC,</strong> and is young enough that the federal death discharge is not a material consideration.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">In practice, the person who passes all four tests is a 32-year-old tech worker with a $240,000 household income, $55,000 in Grad PLUS debt at 9.07 percent, no PSLF intent, strong home equity, and the ability to lock a 7.1 percent fixed home equity loan for ten years. For this person, the move saves roughly $7,000 to $10,000 in net present value interest. For roughly every other home-owning student loan borrower in late 2026, the federal path wins.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">Related Reading on This Site</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">For borrowers weighing the standard private student loan refinance path (which has its own tradeoffs but preserves the structure of unsecured debt), our <a href="blog-refinance-vs-income-driven-repayment-2026.html" style="color: #2E75B6;" class="hover:underline">refinance versus income-driven repayment guide</a> covers the private refinance decision in detail. For borrowers thinking about accelerated federal payoff instead of a lender switch, the <a href="payoff-calculator.html" style="color: #2E75B6;" class="hover:underline">payoff calculator</a> runs the arithmetic on extra monthly principal payments and shows the exact months saved. For Parent PLUS borrowers specifically weighing home equity against ICR or RAP for Parent PLUS consolidation, our <a href="blog-parent-plus-20000-cap-fill-gap-fall-2026.html" style="color: #2E75B6;" class="hover:underline">Parent PLUS 2026 strategy guide</a> walks through the consolidation-into-ICR path that preserves the death discharge.</p>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4" style="color: #1B2A4A;">The Bottom Line</h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6">The HELOC-pays-off-student-loans idea trades a federal obligation with five layers of consumer protection, a tax-free forgiveness pathway, and a lower-of-two-outcomes income-driven payment floor for a home equity lien with a variable rate, no forgiveness, and the house as collateral. The rate spread in October 2026 is thin (171 basis points at the extreme favorable case, often zero or negative for pre-2024 loans) and the risk transfer is enormous. The payoff math works only in the specific case of a high-income, high-stability, non-PSLF borrower with recent Grad PLUS debt who uses a fixed-rate home equity loan rather than a variable HELOC. For nearly every other borrower, the honest answer is to stay with the federal system, enroll in the right income-driven plan, make the strategic AGI-reduction moves that lower the payment legitimately, and let PSLF or RAP forgiveness retire the balance over 10 to 25 years.</p>
+
+            <p class="text-gray-700 leading-relaxed mb-6">Before pricing a HELOC or home equity loan for a student loan payoff, run the exact numbers on your federal balance using the <a href="rap-calculator.html" style="color: #2E75B6;" class="hover:underline">RAP Calculator</a>, the <a href="plan-comparison.html" style="color: #2E75B6;" class="hover:underline">plan comparison tool</a>, and (if applicable) the <a href="pslf-calculator.html" style="color: #2E75B6;" class="hover:underline">PSLF Tracker</a>. The federal path almost always wins the full comparison once protections, forgiveness value, tax deductibility, and income-driven floor adjustments are counted. The HELOC payoff that looks like a $5,000 win on the rate line is often a $25,000 loss on the full ledger.</p>
+
+            <div class="bg-blue-50 border-l-4 p-6 rounded-r-lg mb-8" style="border-color: #2E75B6;">
+                <p class="font-semibold mb-2" style="color: #1B2A4A;">Privacy Note</p>
+                <p class="text-gray-700 text-sm">All calculations happen in your browser. We never collect your data, loan balances, or personal information.</p>
+            </div>
+
+            <p class="text-sm text-gray-500 italic mt-6">This article is for informational purposes only and is not legal, tax, or financial advice. Federal student loan interest rates for 2026-27 are sourced from the Department of Education's Federal Student Aid partner site; HELOC rate averages are sourced from Bankrate's October 28, 2026 national survey. Home equity interest deductibility rules follow the 2017 Tax Cuts and Jobs Act as applied to tax year 2026 under IRS Publication 936. Student loan interest deduction limits follow IRS Publication 970 for tax year 2026. PSLF and RAP rules follow the Education Department's 2026 rulebook. Consult a licensed tax professional, financial planner, or housing counselor before making a decision to tap home equity for any purpose.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Calculators</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="rap-calculator.html" class="hover:underline">RAP Calculator</a></li>
+                        <li><a href="plan-comparison.html" class="hover:underline">Plan Comparison</a></li>
+                        <li><a href="save-transition.html" class="hover:underline">SAVE Transition Guide</a></li>
+                        <li><a href="payoff-calculator.html" class="hover:underline">Payoff Calculator</a></li>
+                        <li><a href="pslf-calculator.html" class="hover:underline">PSLF Tracker</a></li>
+                        <li><a href="college-cost.html" class="hover:underline">College Cost Comparator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Resources</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="blog.html" class="hover:underline">Blog</a></li>
+                        <li><a href="#" class="hover:underline">Repayment Plans</a></li>
+                        <li><a href="#" class="hover:underline">Loan Forgiveness Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Legal</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="privacy.html" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:underline">Terms of Use</a></li>
+                        <li><a href="#" class="hover:underline">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4" style="color: #1B2A4A;">Contact</h3>
+                    <p class="text-sm text-gray-600">Have questions? We're here to help.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Student Loan Calculators. All rights reserved. These tools are for educational purposes only. Not financial advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
